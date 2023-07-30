@@ -168,6 +168,7 @@ height:auto;
   grid-template-columns:70px auto 65px;
   height:70px;
   width:100%;
+  background-color: #ffffff80;
   border-radius:20px;
   margin-bottom:15px;
   -webkit-box-shadow:7px 7px 20px -5px rgba(0,0,0,.4);

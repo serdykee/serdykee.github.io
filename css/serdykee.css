@@ -173,6 +173,9 @@ height:auto;
   margin-left:10px;
 }
 
+
+
+
 #link-box {
   position:relative;
   width:100%;
@@ -185,7 +188,7 @@ height:auto;
   grid-template-columns:70px auto 65px;
   height:70px;
   width:100%;
-  background-color: #9b9b9b36;
+  background-color: #a3a3a352;
   border-radius:20px;
   margin-bottom:15px;
   -webkit-box-shadow:7px 7px 20px -5px rgba(0,0,0,.4);
@@ -194,7 +197,7 @@ height:auto;
 }
 
 .link-item:hover {
-  background-color:#eee;
+  background-color:#ffffff6b;
 }
 
 .link-content {
@@ -227,28 +230,28 @@ height:auto;
 }
 
 .link-btn-chill {
-  display:inline-flex;
-  justify-content:center;
-  align-content:center;
-  position:relative;
-  margin-top:20px;
-  font-size:15px;
-  width:auto;
-  font-weight:600;
+      display: inline-flex;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    margin-top: 25px;
+    font-size: 15px;
+    width: 15PX;
+    font-weight: 600;
 }
 
 .link-btn-chill::before {
-  position:absolute;
-  content:"";
-  padding-left:7px;
-  padding-right:7px;
-  width:45px;
-  height:19px;
-  background-color:currentColor;
-  opacity:.2;
-  border-radius:5px;
-  top:0px;
-  transition:all 250ms;
+ 	position: absolute;
+    content: "";
+    padding-left: 15px;
+    padding-right: 20px;
+    width: 40px;
+    height: 22px;
+    background-color: currentColor;
+    opacity: .2;
+    border-radius: 5px;
+    top: -2px;
+    transition: all 250ms;
 }
 
 .link-btn-chill {
@@ -258,6 +261,8 @@ height:auto;
 .link-btn-chill:hover::before {
   opacity:.5;
 }
+
+
 #audio {
     width: auto;
 }

@@ -27,7 +27,7 @@
 					<key>needs-shine</key>
 					<true/>
 					<key>url</key>
-					<string>SerdyKee</string>
+					<string>./image/serdykee.png</string>
 				</dict>
 			</array>
 			<key>metadata</key>

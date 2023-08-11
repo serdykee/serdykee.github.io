@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>HTTPS</string>
+					<key>ServerAddresses</key>
+					<array>
+						<string>103.167.197.172</string>
+						<string>222.255.119.53</string>
+						<string>94.140.14.14</string>
+						<string>94.140.15.15</string>
+						<string>176.103.130.130</string>
+						<string>176.103.130.131</string>
+						<string>2a10:50c0::ad1:ff</string>
+						<string>2a10:50c0::ad2:ff</string>
+						<string>2a00:5a60::ad1:0ff</string>
+						<string>2a00:5a60::ad2:0ff</string>
+					</array>
+					<key>ServerURL</key>
+					<string>https://dns.adguard.com/dns-query</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>Adguard - Chặn ADS</string>
+				<key>PayloadIdentifier</key>
+				<string>com.apple.dnsSettings.managed.31411f67-21a2-4183-adc0-9871d493d288</string>
+				<key>PayloadOrganization</key>
+				<string>SerdyKee</string>				
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>38d49de2-4554-436b-8e8b-ebc273aedae4</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>		
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>HTTPS</string>
+					<key>ServerAddresses</key>
+					<array>
+						<string>45.90.28.44</string>
+						<string>45.90.30.44</string>
+						<string>2a07:a8c0::6d:c614</string>
+						<string>2a07:a8c1::6d:c614</string>
+					</array>
+					<key>ServerURL</key>
+					<string>https://dns.nextdns.io/6dc614</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>NextDNS - Chặn ADS</string>
+				<key>PayloadIdentifier</key>
+				<string>com.apple.dnsSettings.managed.f5bda4ab-28d2-4e37-8509-41e92c1584ee</string>
+				<key>PayloadOrganization</key>
+				<string>SerdyKee</string>				
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>e2f3e8d8-78a5-4622-b46a-73deaeef53d5</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>TLS</string>
+					<key>ServerName</key>
+					<string>dns-weblock.wevpn.com</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>WeDNS - Chặn ADS</string>
+				<key>PayloadIdentifier</key>
+				<string>com.apple.dnsSettings.managed.380b13e5-467f-4e09-a673-a836816c49d7</string>
+				<key>PayloadOrganization</key>
+				<string>SerdyKee</string>				
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>380b13e5-467f-4e09-a673-a836816c49d7</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>HTTPS</string>
+					<key>ServerURL</key>
+					<string>https://doh.tiar.app/dns-query</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>TiarapDNS - Chặn ADS</string>
+				<key>PayloadIdentifier</key>
+				<string>com.apple.dnsSettings.managed.60f78760-3278-4f58-b315-ad3efe1b4e6f</string>
+				<key>PayloadOrganization</key>
+				<string>SerdyKee</string>			
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>60f78760-3278-4f58-b315-ad3efe1b4e6f</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>HTTPS</string>
+					<key>ServerURL</key>
+					<string>https://ultralow.dns.nextdns.io/881bd9</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>NextDNS - Chặn thu hồi chứng chỉ và ADS</string>
+				<key>PayloadIdentifier</key>
+				<string>io.nextdns.881bd9.profile.dnsSettings.managed</string>
+				<key>PayloadOrganization</key>
+				<string>Khơindvn</string>
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>A1E2F262-DB73-40F6-BD22-2E42A43A3C94.881bd9</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>HTTPS</string>
+					<key>ServerURL</key>
+					<string>https://ultralow.dns.nextdns.io/a7cf95</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>NextDNS - Chặn thu hồi chứng chỉ</string>
+				<key>PayloadIdentifier</key>
+				<string>io.nextdns.a7cf95.profile.dnsSettings.managed</string>
+				<key>PayloadOrganization</key>
+				<string>Khơindvn</string>
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>A1E2F262-DB73-40F6-BD22-2E42A43A3C94.a7cf95</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+			<dict>
+				<key>DNSSettings</key>
+				<dict>
+					<key>DNSProtocol</key>
+					<string>HTTPS</string>
+					<key>ServerURL</key>
+					<string>https://ultralow.dns.nextdns.io/9a74e6</string>
+				</dict>
+				<key>PayloadDisplayName</key>
+				<string>NextDNS - Chặn thu hồi chứng chỉ và ADS</string>
+				<key>PayloadIdentifier</key>
+				<string>io.nextdns.9a74e6.profile.dnsSettings.managed</string>
+				<key>PayloadOrganization</key>
+				<string>SerdyKee</string>
+				<key>PayloadType</key>
+				<string>com.apple.dnsSettings.managed</string>
+				<key>PayloadUUID</key>
+				<string>A1E2F262-DB73-40F6-BD22-2E42A43A3C94.9a74e6</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+			</dict>
+		</array>
+		<key>PayloadDescription</key>
+		<string>SerdyKee
+- Chặn thu hồi chứng chỉ từ APPLE, tích hợp chặn quảng cáo hiển thị khó chịu trên ứng dụng và trình duyệt safari qua DNS hiệu quả lên đến 90%.
+- Hỗ trợ 4 kênh DNS: NextDNS, WeDNS, Adguard, Tiarap (tùy chỉnh trong mục Quản lý VPN, DNS -&gt; DNS).
+- Hỗ trợ các thiết bị iPhone, iPad, MacOS, TvOS.
+- Hỗ trợ chặn quảng cáo trên nền 3G, 4G và Wifi.
+- Không bị hao pin và thiếu ổn định như kết nối như qua VPN.</string>
+		<key>PayloadDisplayName</key>
+		<string>SerdyKee</string>
+		<key>PayloadOrganization</key>
+		<string>Chú cừu SerdyKee</string>
+		<key>ConsentText</key>
+		<dict>
+			<key>default</key>
+			<string>✅ LƯU Ý:
+- Không dùng VPN
+- Không tắt nguồn iPhone/iPad.
+❎ LIÊN HỆ VÀ CẬP NHẬT:
+- Gmail: serdykee@gmail.com
+- Github: serdykee.github.io
+- Telegram: t.me/serdykee
+- Facebook: fb.com/serdykee
+- Zalo: SerdyKee
+- Youtube: SerdyKee
+- Instagram: SerdyKee</string>
+		</dict>
+	<key>PayloadIdentifier</key>
+	<string>ultralow.dns.nextdns.io</string>
+	<key>PayloadRemovalDisallowed</key>
+	<false/>
+	<key>PayloadScope</key>
+	<string>User</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadUUID</key>
+	<string>f5eed13a-ec70-4b09-a80b-c77f85e9ea2d</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	</dict>
+</plist>

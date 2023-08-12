@@ -25,18 +25,18 @@
     <link rel="manifest" href="https://bio.link/manifest.json">
     <link rel="dns-prefetch" href="https://analytics.bio.link">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-
+   	 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
     </style>
-<script>
-window.onload = function() {
-  var context = new AudioContext();
-}
-</script>
+
+
+
+
 </head>
 
 <body>
+
     <div class="min-h-full flex-h-center" id="background_div">
         <input type="hidden" value="https://bio.link" id="app-url">
         <input type="hidden" value="null" id="is-featured">
@@ -57,15 +57,32 @@ window.onload = function() {
             </div>
 
 
-            <img id="displayImage" class="display-image m-auto" src="./image/serdykee.jpg" alt role="presentation" />
+         	   <img id="displayImage" class="display-image m-auto" src="./image/serdykee.jpg" alt role="presentation" />
+          	 	 <h1 class="page-title page-text-color page-text-font mt-16 text-center">SerdyKee</h1>
+          	 	 <h2 class="page-bioline text-fs-12 page-text-color page-text-font m-0 ln-h-22 text-center"><span id="serdykee">Chú cừu SerdyKee và bầy sói</span></h2>
+
+<!-- SerdyKee animated typing -->
+	<script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>  
+	<script>
+    		var typed = new Typed('#serdykee', {
+     		 strings: ['Chú cừu SerdyKee và bầy sói', 'Để chặn thu hồi chứng chỉ hãy cài đặt cấu hình DNS của SerdyKee', 'Các ứng dụng bên dưới đã được ký chứng chỉ miễn phí', 'Mọi thắc mắc hãy liên hệ SerdyKee để được hướng dẫn'],
+      			typeSpeed: 90,
+			backSpeed: 1,
+			loop: true,
+			showCursor: true,
+  			  });
+  	</script>
 
 
-            <h1 class="page-title page-text-color page-text-font mt-16 text-center">
-                SerdyKee
-                            </h1>
-            <h2 class="page-bioline text-fs-16 page-text-color page-text-font mt-12 ln-h-22 text-center">
-                    Chú cừu SerdyKee và bầy sói
-                </h2>
+
+
+
+
+
+
+
+
+
 
             <div class="flex-both-center flex-wrap mt-16">
                 <div class="page-social relative">
@@ -159,29 +176,13 @@ window.onload = function() {
 
 
             </div>
-            <!-- Cài đặt ứng dụng trực tiếp -->
-            <div class="mt-24">
-                <div class="text-center page-text-font page-text-color page-item-title mt-20">Tải chứng chỉ miễn phí</div>
-
-                <div id="link-box">
-                    <div class="link-item">
-                        <div class="bio-story-thumb" style="background-image: url('./image/ESign.png');"></div>
-                        <div class="link-content">
-                            <p>Esign ShangHaiBank</p>
-                            <span onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_HDFC.plist', '_blank')">ShangHai Rural Commercial Bank Co., LTD</span>
-                        </div>
-                        <div class="link-btn">
-                            <div class="link-btn-chill light-orange" onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_ShangHaiBank.plist', '_blank')">INSTALL</div>
-                        </div>
-                    </div>
-                </div>
 
 
-                <!-- Cài đặt ứng dụng trực tiếp -->
+
+<!-- SerdyKee | Cài đặt ứng dụng trực tiếp -->
                 <div class="mt-24">
 
                     <div class="text-center page-text-font page-text-color page-item-title mt-20">Cài đặt ứng dụng trực tiếp</div>
-
 
                     <div id="link-box">
                         <div class="link-item">
@@ -252,13 +253,68 @@ window.onload = function() {
 
 
 
+<!-- SerdyKee | Chứng chỉ -->
+            <div class="mt-24">
+                <div class="text-center page-text-font page-text-color page-item-title mt-20">Tải chứng chỉ miễn phí</div>
+
+                <div id="link-box">
+                    <div class="link-item">
+                        <div class="bio-story-thumb" style="background-image: url('./image/ESign.png');"></div>
+                        <div class="link-content">
+                            <p>Esign ShangHaiBank</p>
+                            <span onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_HDFC.plist', '_blank')">ShangHai Rural Commercial Bank Co., LTD</span>
+                        </div>
+                        <div class="link-btn">
+                            <div class="link-btn-chill light-orange" onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_ShangHaiBank.plist', '_blank')">INSTALL</div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- SerdyKee Footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- SerdyKee Footer -->
 
                 <div class="footer-logo text-center">
                     <img src="./image/serdykee_footer.png" height="15%" width="15%" alt="SerdyKee" />
                 </div>
+
+
+
+
+
+
+
+
+
+
 
 
 

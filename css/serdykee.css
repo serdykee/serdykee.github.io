@@ -29,7 +29,13 @@ body,html{
 
 /* Chữ gõ */
 
+html {
+font-family: inter, sans-serif;
+}
 
+.text-center.page-text-font.page-text-color.page-item-title.mt-20 {}
+
+text-color {}
 
 
 /* Đường Kẻ */

@@ -302,13 +302,13 @@ height:auto;
 .link-btn-chill::before {
  	position: absolute;
  	content: "";
- 	padding-left: 2px;
- 	padding-right: 15px;
+ 	/* padding-left: 2px; */
+ 	/* padding-right: 15px; */
  	width: 40px;
  	height: 25px;
  	background-color: currentColor;
  	opacity: .2;
- 	border-radius: 15px;
+ 	/* border-radius: 15px; */
  	top: 22px;
  	transition: all 250ms;
 }

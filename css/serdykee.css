@@ -1,6 +1,6 @@
 body,html{
     /*!* -ms-scroll-chaining: none;*/-ms-scroll-chaining:none;margin:0;overscroll-behavior:none;padding:0}@-webkit-keyframes slidetounlock{0%{background-position:-100px 0}10%{background-position:-100px 0}50%{background-position:100px 0}to{background-position:100px 0}}@keyframes slidetounlock{0%{background-position:-100px 0}10%{background-position:-100px 0}50%{background-position:100px 0}to{background-position:100px 0}}
-.min-h-full{min-height:100vh}.flex{display:flex;}
+.serdykee {min-height:100vh}.flex{display:flex;}
 
 .flex-both-center{align-items:center;display:flex;justify-content:center;border-bottom:1.5px solid #e5e5e5;}.flex-wrap{flex-wrap:wrap} .flex-h-center{display:flex;justify-content:center;}
 
@@ -23,7 +23,7 @@ body,html{
 
 
 /* ROOT ------------------------------------------------------------------------------ */
-.page-full-wrap{margin-top:25px;padding-bottom: 25px;width:411px;z-index:10}
+.page-serdykee,.page-full-wrap{margin-top:25px;padding-bottom: 25px;width:411px;z-index:10}
 .page-item-wrap{transition:transform .15s cubic-bezier(.17,.67,.29,2.71) 0s}
 .page-item-wrap.show-embed{border-radius:30px;box-shadow:none;transform:unset;transition:unset}
 .page-item-wrap.expanded-form:hover,.page-item-wrap.show-embed:hover{transform:unset}
@@ -82,9 +82,7 @@ body,html{
 
 /* Chữ gõ */
 
-html {
-font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-}
+html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;}
 
 .text-center.page-text-font.page-text-color.page-item-title.mt-20 {color: #ebdcdc96;}
 
@@ -323,6 +321,53 @@ font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,s
   opacity:.5;
 }
 
+
+/* ---------------------------------------------------------- SERDYKEE | CHỮ NHÁY ---------------------------------------------------------- */
+
+@-webkit-keyframes my {
+  0% { color: #F8CD0A; } 
+  50% { color: #fff;  } 
+  100% { color: #F8CD0A;  } 
+}
+@-moz-keyframes my { 
+  0% { color: #F8CD0A;  } 
+  50% { color: #fff;  }
+  100% { color: #F8CD0A;  } 
+}
+@-o-keyframes my { 
+  0% { color: #F8CD0A; } 
+  50% { color: #fff; } 
+  100% { color: #F8CD0A;  } 
+}
+@keyframes my { 
+  0% { color: #ffffff;  } 
+  10% { color: #fa7979;  }
+  20% { color: #fd0303;  }
+  30% { color: #faf877;  }
+  40% { color: #fdf903fa;  }  
+  50% { color: #08ffea;  }
+  60% { color: #1767fc;  }  
+  70% { color: #ed21ff;  }
+  80% { color: #bd3166;  }
+  90% { color: #ec6d97;  }
+  100% { color: #ff1865;  } 
+} 
+.meme {
+        animation: my 700ms infinite;
+        -webkit-animation: my 700ms infinite;
+        -moz-animation: my 700ms infinite;
+        -o-animation: my 700ms infinite;
+
+}
+
+
+/* ---------------------------------------------------------- SERDYKEE | HEADER & FOOTER ---------------------------------------------------------- */
+
+.header {
+  bottom: 32px;
+  padding-top: 15px;
+  margin-top: 24px;
+}
 
 .footer {
     bottom: 32px;

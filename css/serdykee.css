@@ -15,7 +15,7 @@ body,html{
 
 .background-overlay{height:100vh;position:fixed;width:100%;z-index:0}
 .page-overlay{-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);background:rgba(0,0,0,.1);height:100vh;left:0;position:fixed;top:0;width:100vw;z-index:100}.page-overlay-btn{background:transparent;border-radius:6px;cursor:pointer;display:inline-block;font-family:Inter,sans-serif;font-size:1.2em;padding:10px 30px;text-decoration:none}.page-overlay-title{font-family:sans-serif;font-size:30px}.page-overlay-text{font-size:18px}.page-image{height:100%;left:0;position:fixed;top:0;width:100vw}.page-image{object-fit:cover;}.display-image{border-radius:50%;display:block;height:96px;width: 96px;}
-.text-center{text-align:center;}
+.text-center{padding-top: 7px;text-align:center;}
 .page-title{margin-bottom:0;}
 
 
@@ -326,6 +326,7 @@ font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,s
 
 .footer {
     bottom: 32px;
+    padding-top: 30px;
     left: calc(50% - 15px);
     position: absolute;
 }

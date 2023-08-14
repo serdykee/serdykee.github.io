@@ -287,18 +287,16 @@ height:auto;
 }
 
 .link-btn-chill {
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: -.3px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: -.0px;
   text-align: center;
-  color: #fff;
-  font-family: 'SF Pro Text';
+  margin-top: 30px;
   height: auto;
   line-height: 1;
   padding: 6px 14px;
   width: auto;
-  background-color: #41879f;
-  border-color: #41879f;
+
 }
 
 .link-btn-chill::before {
@@ -311,7 +309,7 @@ height:auto;
  	background-color: currentColor;
  	opacity: .2;
  	border-radius: 15px;
- 	/* top: 0px; */
+ 	top: 22px;
  	transition: all 250ms;
 }
 

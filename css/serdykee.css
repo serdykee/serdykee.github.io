@@ -416,19 +416,20 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
     top:-25px;
 }
 
-
-#backToTopBtn {
+/*----- Top Up -----*/
+#topup {
+  backdrop-filter: blur(1px);
   display: none;
   position: fixed;
   bottom: 20px;
-  right: 30px;
+  right: 40px;
   z-index: 99;
-  font-size: 18px;
+  /* font-size: 18px; */
   border: none;
   outline: none;
-  background-color: #000;
+  background-color: #cacaca71;
   color: white;
   cursor: pointer;
   padding: 15px;
-  border-radius: 4px;
+  border-radius: 8px;
 }

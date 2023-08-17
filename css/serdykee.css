@@ -439,38 +439,45 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
 #file-list {
   list-style: decimal;
   padding: 0;
-  /* list-style-position: outside; */
+
 }
 
 #file-list li {
-  margin-bottom: 12px;
-  margin-left: 15px;
+
+margin-top: 10px;
+
+margin-bottom: 5px;
+
+padding-left: 15px;
+
+padding-right: 15px;
+
+max-width: 100%;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+display: -webkit-inline-box;
+
+-webkit-line-clamp: 1;
+
+-webkit-box-orient: vertical;
 }
 
 #file-list li a {
-  display: block;
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.5s;
+
+display: inline;
+
+color: #ffffff;
+
+text-decoration: none;
+
+transition: color 0.5s;
 }
 
 #file-list li a:hover {
   color: #d0f52d;
-}
-.file-list-box {
-backdrop-filter: blur(1px);
-position: relative;
-display: grid;
-grid-template-columns: 80px auto 80px;
-height: 80px;
-width: 100%;
-background-color: #a3a3a352;
-border-radius: 23px;
-margin-bottom: 15px;
--webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,.4);
-box-shadow: 7px 7px 20px -5px rgba(0,0,0,.1);
-transition: all 250ms ease-in-out;
-color: #ffffff;
 }
 
 

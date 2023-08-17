@@ -256,7 +256,7 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
   -webkit-line-clamp:1;
   -webkit-box-orient:vertical;
   max-width: 130%;
-  /* overflow:hidden; */
+  overflow:hidden;
   text-overflow:ellipsis;
   color: #ffffff;
 }
@@ -416,20 +416,48 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
     top:-25px;
 }
 
+
+#file-list {
+  position: relative;
+  width: 100%;
+  border-radius: 23px;
+  -webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,.4);
+  box-shadow: 7px 7px 20px -5px rgb(0 0 0 / 40%);
+  backdrop-filter: blur(1px);
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px auto 80px;
+  height: 80px;
+  width: 100%;
+  background-color: #a3a3a352;
+  border-radius: 23px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,.4);
+  box-shadow: 7px 7px 20px -5px rgba(0,0,0,.1);
+  transition: all 250ms ease-in-out;
+  color: #747f24;
+}
+
+
+
+
+
 /*----- Top Up -----*/
 #topup {
   backdrop-filter: blur(1px);
   display: none;
   position: fixed;
-  bottom: 20px;
-  right: 40px;
+  bottom: 10px;
+  right: 10px;
   z-index: 99;
-  /* font-size: 18px; */
+  font-size: 8px;
   border: none;
   outline: none;
   background-color: #cacaca71;
   color: white;
   cursor: pointer;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 6px;
 }
+
+

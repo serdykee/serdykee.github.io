@@ -23,7 +23,7 @@ body,html{
 
 
 /* ROOT ------------------------------------------------------------------------------ */
-.page-serdykee,.page-full-wrap{margin-top:25px;padding-bottom: 25px;width:411px;z-index:10}
+.page-serdykee,.page-full-wrap{margin-top:25px;padding-bottom: 25px;width:411px;z-index:10;}
 .page-item-wrap{transition:transform .15s cubic-bezier(.17,.67,.29,2.71) 0s}
 .page-item-wrap.show-embed{border-radius:30px;box-shadow:none;transform:unset;transition:unset}
 .page-item-wrap.expanded-form:hover,.page-item-wrap.show-embed:hover{transform:unset}
@@ -52,6 +52,7 @@ body,html{
 .page-social:hover{transform:scale(1.1);transition:all .1s ease-in-out}
 
 .page-item-title{font-weight: 600;margin-bottom:15px;margin-left: 10px;}
+.page-item-title-center {font-weight: 600;margin-bottom: 15px;}
 
 .embed-wrap-inside{background-color:#fff;box-sizing:border-box;display:flex;height:100%;justify-content:center;overflow:hidden;padding:10px}
 .embed-wrap-inside iframe{min-width:500px;width:auto}
@@ -433,28 +434,49 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
   color: #ffffff;
   align-content: center;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   justify-items: start;
 }
 #file-list {
-  style-list: unset;
+  list-style: decimal;
   padding: 0;
+  /* list-style-position: outside; */
 }
 
 #file-list li {
   margin-bottom: 5px;
+  margin-left: 20px
+  margin-right: 20px
 }
 
 #file-list li a {
   display: block;
   color: #ffffff;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.5s;
 }
 
 #file-list li a:hover {
-  color: #ff0000;
+  color: #d0f52d;
 }
+.file-list-box {
+backdrop-filter: blur(1px);
+position: relative;
+display: grid;
+grid-template-columns: 80px auto 80px;
+height: 80px;
+width: 100%;
+background-color: #a3a3a352;
+border-radius: 23px;
+margin-bottom: 15px;
+-webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,.4);
+box-shadow: 7px 7px 20px -5px rgba(0,0,0,.1);
+transition: all 250ms ease-in-out;
+color: #ffffff;
+}
+
+
+
 
 
 

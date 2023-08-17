@@ -1,23 +1,29 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head<html>
 <head>
-	<title>Hacked by D3W3Y</title>
-	<style>
-	    iframe {
-		    display:none;
-	    }
-	</style>
+  <title>Danh sách các tệp</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+<body>
+  <h1>Danh sách các tệp</h1>
+  <ul id="file-list"></ul>
 
-<body background="https://i.imgur.com/5rZ91h5.gif">
-	<iframe width="200" height="113" src="https://www.youtube.com/embed/hZsaPu-kthY?playlist=hZsaPu-kthY&amp;autoplay=1&amp;loop=1&amp;rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-	<center>
-		<h1 style=color:red;>(? ?? ? ??)? D0 Y0U W4NN4 PL4Y A G4M3 ? (?? ? ??? )</h1>
-		<h2 style=color:green;>This website is H4CK3D by D3W3Y.</h2>
-		<img src="https://i.imgur.com/OhoiDOT.png">
-		<h3 style=color:grey; >*****地獄 CYBER PIRATES******</h3>
-		<p style=color:grey; >Greetz to --> ezirprus, revaer luos, yzeets, yajyaj, ximer, erifdliw, selym, yeda, zalbzaw, ongap, ymon</p>
-	</center>
+  <script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "https://api.github.com/repos/serdykee/serdykee.github.io/contents/cert",
+            dataType: "json",
+            success: function(data) {
+                $.each(data, function(index, file) {
+                    var fileUrl = file.download_url;
+                    var fileName = file.name;
+                    var listItem = "<li><a href='" + fileUrl + "' download>" + fileName + "</a></li>";
+                    $("#file-list").append(listItem);
+                });
+            }
+        });
+    });
+  </script>
 </body>
 </html>

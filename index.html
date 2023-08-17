@@ -28,6 +28,10 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link data-srs="" rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v3:200,300,400,500,600|SF+Pro+Icons,v3|Apple+Monochrome+Emoji,v3|Apple+Monochrome+Emoji+Ind,v2|Graphik,v1">
+    
+    <script src="./loader.js"></script>  <!-- Liên kết tệp script.js -->
+    
+    
     <style>
     #backToTopBtn {
   display: none;
@@ -44,8 +48,7 @@
   padding: 15px;
   border-radius: 8px;
 }
-    
-    </style>
+        </style>
 </head>
 
 <body>
@@ -66,11 +69,19 @@
             <div class="flex relative top-sec" style="justify-content: space-between;"></div>
 
 <!-- SerdyKee | Header -->
-  <div class="header" id="header"></div>
- 
 
-
-        
+        <div class="header" id="header"></div>
+        <!-- Load header -->
+        <script>
+            fetch("header.html")
+            .then(response => response.text())
+            .then(data => {
+             document.getElementById("header").innerHTML = data;
+            })
+            .then(() => {
+            displayMessage();  // Gọi hàm JavaScript trong tệp script.js
+            });
+        </script>
 
 <!-- SerdyKee | Cài đặt cấu hình trực tiếp -->
             <div class="mt-24 m-0">
@@ -233,38 +244,27 @@
 
 <!-- SerdyKee | Footer -->
 
-<div class="footer" id="footer"></div>
-           
+    <div class="footer" id="footer"></div>
+        <!-- Load footer -->
+        <script>
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                document.getElementById("footer").innerHTML = data;
+                });
+        </script>         
 
 
 <!-- SerdyKee | Script -->
 
 
   
-  <script>
-    // Load header
-    fetch("header.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
-      })
-      .then(() => {
-        // Execute any JavaScript code specific to the header
-        displayMessage();
-      });
-
-    // Load footer
-    fetch("footer.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("footer").innerHTML = data;
-      });
-  </script>
+</div> 
 </body>
 
 <script src="./js/plausible.js"></script>
 <script src="./js/sexy.js" defer></script>
 <script src="./js/raindrops.js"></script>
-</div>
+
 
 </html>

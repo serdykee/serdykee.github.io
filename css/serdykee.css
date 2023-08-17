@@ -444,9 +444,8 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
 }
 
 #file-list li {
-  margin-bottom: 5px;
-  margin-left: 20px
-  margin-right: 20px
+  margin-bottom: 12px;
+  margin-left: 15px;
 }
 
 #file-list li a {

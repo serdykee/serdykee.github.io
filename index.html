@@ -297,6 +297,7 @@
 
 <!-- SerdyKee Footer -->
 
+<div class="footer" id="footer"></div>
             <div class="footer text-center">
                 <a target="_blank" aria-label="SerdyKee" rel="noopener nofollow" href="./serdykee.html">
                     <img class="text-center" src="./image/serdykee_footer.png" height="20%" width="20%" alt="SerdyKee" />
@@ -326,7 +327,22 @@ function topFunction() {
 }
 </script>
 
+  
+    <script>
+    // Load header
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+      });
 
+    // Load footer
+    fetch("footer.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("footer").innerHTML = data;
+      });
+  </script>
 
 
 </body>

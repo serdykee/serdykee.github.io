@@ -127,25 +127,12 @@
         </svg>DANH SÁCH CHỨNG CHỈ MIỄN PHÍ</div>
 
 
-        <div id="file-list">sadasd</div>
+        <div id="file-list">
+    
+            </div>
  
 
-  <script>
-    $(document).ready(function() {
-        $.ajax({
-            url: "https://api.github.com/repos/serdykee/serdykee.github.io/contents/cert",
-            dataType: "json",
-            success: function(data) {
-                $.each(data, function(index, file) {
-                    var fileUrl = file.download_url;
-                    var fileName = file.name;
-                    var listItem = "<li><a href='" + fileUrl + "' download>" + fileName + "</a></li>";
-                    $("#file-list").append(listItem);
-                });
-            }
-        });
-    });
-  </script>
+  
  
 
 
@@ -170,11 +157,10 @@
 </div> 
 </body>
 <!----------------------------------------------------- SERDYKEE | SCRIPT ----------------------------------------------------->
-
+<script src="./js/filelist.js"></script>
 <script src="./js/topup.js"></script>
 <script src="./js/plausible.js"></script>
 <script src="./js/sexy.js" defer></script>
 <script src="./js/raindrops.js"></script>
-
 
 </html>

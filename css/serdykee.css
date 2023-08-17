@@ -416,13 +416,13 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
     top:-25px;
 }
 
-
+/*----- File List -----*/
 #file-list {
   backdrop-filter: blur(1px);
   position: relative;
   display: grid;
-  grid-template-columns: 80px auto 80px;
-  height: 80px;
+  /* grid-template-columns: 80px auto 80px; */
+  height: auto;
   width: 100%;
   background-color: #a3a3a352;
   border-radius: 23px;
@@ -430,9 +430,31 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
   -webkit-box-shadow: 7px 7px 20px -5px rgba(0,0,0,.4);
   box-shadow: 7px 7px 20px -5px rgba(0,0,0,.1);
   transition: all 250ms ease-in-out;
-  color: #747f24;
+  color: #ffffff;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: start;
+}
+#file-list {
+  style-list: unset;
+  padding: 0;
 }
 
+#file-list li {
+  margin-bottom: 5px;
+}
+
+#file-list li a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+#file-list li a:hover {
+  color: #ff0000;
+}
 
 
 

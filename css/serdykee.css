@@ -491,8 +491,8 @@ html {
 /* ROOT ------------------------------------------------------------------------------ */
 .page-serdykee,
 .page-full-wrap {
-  margin-top: 25px;
-  padding-bottom: 25px;
+  margin-top: 20px;
+  padding-bottom: 20px;
   width: 411px;
   z-index: 10;
   margin-left: 10px;
@@ -1368,8 +1368,8 @@ html {
   border-radius: 23px;
   /* margin-bottom: 25px; */
   padding-bottom: 15px;
-  -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .4);
-  /* box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .1); */
+   /* -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .4); */
+ box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .1);
   /* transition: all 2500ms ease-in-out; */
   color: #ffffff;
   align-content: center;

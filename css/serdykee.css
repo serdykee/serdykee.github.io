@@ -442,7 +442,8 @@ counter-reset: file-counter;
 #file-list {
   list-style: decimal;
   padding: 0;
-
+  counter-reset: file-counter;
+  list-style-type: none;
 }
 
 #file-list li {

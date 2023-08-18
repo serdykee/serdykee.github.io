@@ -341,17 +341,17 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
   100% { color: #F8CD0A;  } 
 }
 @keyframes my { 
-  0% {color: #ffffff;} 
-  10% { color: #fa7979;  }
-  20% { color: #fd0303;  }
-  30% { color: #faf877;  }
-  40% { color: #fdf903fa;  }  
-  50% { color: #08ffea;  }
-  60% { color: #1767fc;  }  
-  70% { color: #ed21ff;  }
-  80% { color: #bd3166;  }
-  90% { color: #ec6d97;  }
-  100% { color: #ff1865;  } 
+  0% {color: rgb(255, 255, 255);} 
+  10% { color: rgb(250, 121, 121); }
+  20% { color: rgb(253, 3, 3); }
+  30% { color: rgb(250, 248, 119); }
+  40% { color: rgba(253, 249, 3, 0.98); }  
+  50% { color: rgb(8, 255, 234); }
+  60% { color: rgb(23, 103, 252); }  
+  70% { color: rgb(237, 33, 255); }
+  80% { color: rgb(189, 49, 102); }
+  90% { color: rgb(236, 109, 151); }
+  100% { color: rgb(255, 24, 101); } 
 } 
 .meme {
         animation: my 10000ms infinite;

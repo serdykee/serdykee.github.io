@@ -495,6 +495,8 @@ html {
   padding-bottom: 25px;
   width: 411px;
   z-index: 10;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .page-item-wrap {
@@ -1423,4 +1425,19 @@ html {
   cursor: pointer;
   padding: 10px;
   border-radius: 6px;
+}
+
+
+
+.label-menu {
+  font-size: 11px;
+  /* top: -10px; */
+  background: var(--color_palette_1);
+  line-height: 15px;
+  padding: 2px 5px;
+  right: 1rem;
+  font-weight: 500;
+  color: #fff;
+  position: absolute;
+  border-radius: 0.25rem;
 }

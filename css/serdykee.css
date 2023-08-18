@@ -435,6 +435,9 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
   justify-content: center;
   /* align-items: center; */
   justify-items: start;
+counter-reset: file-counter;
+  list-style-type: none;
+
 }
 #file-list {
   list-style: decimal;
@@ -481,6 +484,10 @@ transition: color 0.5s;
 }
 
 
+#file-list li:before {
+  counter-increment: file-counter;
+  content: counter(file-counter) ". ";
+}
 
 
 

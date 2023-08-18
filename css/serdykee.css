@@ -354,10 +354,10 @@ html {font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,A
   100% { color: #ff1865;  } 
 } 
 .meme {
-        animation: my 3000ms infinite;
-        -webkit-animation: my 3000ms infinite;
-        -moz-animation: my 3000ms infinite;
-        -o-animation: my 3000ms infinite;
+        animation: my 10000ms infinite;
+        -webkit-animation: my 10000ms infinite;
+        -moz-animation: my 10000ms infinite;
+        -o-animation: my 10000ms infinite;
 }
 
 

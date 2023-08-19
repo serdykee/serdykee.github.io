@@ -1097,13 +1097,12 @@ html {
 }
 
 
-/* HOOP APP icon */
+/* ---------------------------------------------------- HOOP APP icon */
 
 #link-box {
   position: relative;
   width: 100%;
   border-radius: 23px;
-  -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .4);
   box-shadow: 7px 7px 20px -5px rgb(0 0 0 / 40%);
 }
 
@@ -1111,37 +1110,35 @@ html {
   backdrop-filter: blur(1px);
   position: relative;
   display: grid;
-  grid-template-columns: 80px auto 80px;
+  grid-template-columns: 80px auto 72px;
   height: 80px;
   width: 100%;
   background-color: #a3a3a352;
   border-radius: 23px;
   margin-bottom: 15px;
-  -webkit-box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .4);
-  box-shadow: 7px 7px 20px -5px rgba(0, 0, 0, .1);
   transition: all 250ms ease-in-out;
-  color: #747f24;
+  color: #ffffff;
 }
 
 .link-item:hover {
   background-color: #ffffff6b;
 }
 
-/* Tieu de app dong 1 */
+
 
 .link-content {
-  padding-top: 20px;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  max-width: 130%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #ffffff;
+  margin-top: 20px;
+  max-width: 100%;
 }
 
+/* Tieu de app dong 1 */
 .link-content p {
   margin: 0;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 600;
 }
 
@@ -1166,35 +1163,43 @@ html {
   color: #fffdfc;
 }
 
+/* BOX DOWNLOAD */
+.link-btn {
+  color: #fffdfc;
+}
 .link-btn-chill {
+  display: inline-block; /* thêm thuộc tính display để đảm bảo sử dụng đúng kích thước */
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: -.0px;
+  letter-spacing: -0.0px;
   text-align: center;
-  margin-top: 30px;
-  height: auto;
-  line-height: 1;
-  padding: 6px 14px;
-  width: auto;
+  margin-top: 24px;
+  height: 30px; /* điều chỉnh chiều cao để cân đối với nút */
+  line-height: 30px; /* điều chỉnh line-height để cân đối với nút */
+  padding: 0 10px; /* điều chỉnh padding cho cân đối */
+  border-radius: 15px; /* thêm border-radius để làm đường viền cong */
+  /* background-color: #ccc; */ /* màu nền cho nút */
+  /* color: #fff; */ /* màu chữ cho nút */
+  position: relative; /* thêm position để định vị ::before pseudo-element */
+  }
 
-}
+  .link-btn-chill {
+    transition: all 250ms ease-in-out;
+  }
 
 .link-btn-chill::before {
+  display: inline-block;
   position: absolute;
   content: "";
-  /* padding-left: 2px; */
-  /* padding-right: 15px; */
-  width: 40px;
+  width: 62px;
   height: 25px;
   background-color: currentColor;
   opacity: .2;
-  /* border-radius: 15px; */
-  top: 22px;
+  border-radius: 15px;
+  top: 50%;
+  left: -1px; /* thêm left để cân đối với nút */
+  transform: translateY(-50%); /* dịch chuyển ::before pseudo-element xuống 50% */
   transition: all 250ms;
-}
-
-.link-btn-chill {
-  transition: all 250ms ease-in-out;
 }
 
 .link-btn-chill:hover::before {

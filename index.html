@@ -146,7 +146,7 @@
                             <div class="bio-story-thumb" style="background-image: url('./image/ESign.png');"></div>
                             <div class="link-content">
                                 <p>Esign SerdyKee</p>
-                                <span onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_Suzhou.plist', '_blank')">Không tải vì chỉ Admin mới dùng được)</span>
+                                <span onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_Suzhou.plist', '_blank')">Không tải vì chỉ Admin mới dùng được</span>
                             </div>
                             <div class="link-btn">
                                 <div class="link-btn-chill light-orange" onclick="window.open('itms-services://?action=download-manifest&url=https://serdykee.github.io/plist/ESign_SerdyKee.plist', '_blank')">INSTALL</div>
@@ -255,7 +255,7 @@
                             <span onclick="window.open('./cert.html', '_blank')">ShangHai Rural Commercial Bank Co., LTD</span>
                         </div>
                         <div class="link-btn">
-                            <div class="link-btn-chill light-orange" onclick="window.open('./cert.html', '_blank')">DOWNLOAD</div>
+                            <div class="link-btn-chill light-orange" onclick="window.open('./cert.html', '_blank')">INSTALL</div>
                         </div>
                     </div>
                 </div>
@@ -285,7 +285,37 @@
 
 
   
-</div> 
+</div>
+
+
+
+<link rel="stylesheet" href="https://cdn.leanhduc.pro.vn/utilities/flying-man-loading-effect/style.css"/>
+<div class='loadd'>
+    <div class='body'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class='base'>
+            <span></span>
+            <div class='face'></div>
+        </div>
+    </div>
+    <div class='longfazers'>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<script src='//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js'></script>
+<script type='text/javascript'>
+    $(window).load(function () {
+        setTimeout(function () {
+            $(".loadd").fadeOut("slow");
+        }, 500)
+    });
+</script>
 </body>
 <!----------------------------------------------------- SERDYKEE | SCRIPT ----------------------------------------------------->
 <script src="./js/topup.js"></script>

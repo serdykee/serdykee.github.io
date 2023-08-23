@@ -1208,152 +1208,25 @@ html {
 
 
 /* ---------------------------------------------------------- SERDYKEE | CHỮ NHÁY ---------------------------------------------------------- */
-@-webkit-keyframes my {
-  0% {
-    color: rgb(255, 255, 255);
-}
-10% {
-    color: rgb(250, 121, 121);
-}
-20% {
-    color: rgb(253, 3, 3);
-}
-30% {
-    color: rgb(250, 248, 119);
-}
-40% {
-    color: rgba(253, 249, 3, 0.98);
-}
-50% {
-    color: rgb(8, 255, 234);
-}
-60% {
-    color: rgb(237, 33, 255);
-}
-70% {
-    color: rgb(87 142 243);
-}
-80% {
-    color: rgb(36 246 132);
-}
-90% {
-    color: rgb(18 183 92);
-}
-100% {
-    color: rgb(191 185 185);
-}
+
+.rainbow-text {
+    animation: rainbow 8s linear infinite;
 }
 
-@-moz-keyframes my {
-  0% {
-    color: rgb(255, 255, 255);
-}
-10% {
-    color: rgb(250, 121, 121);
-}
-20% {
-    color: rgb(253, 3, 3);
-}
-30% {
-    color: rgb(250, 248, 119);
-}
-40% {
-    color: rgba(253, 249, 3, 0.98);
-}
-50% {
-    color: rgb(8, 255, 234);
-}
-60% {
-    color: rgb(237, 33, 255);
-}
-70% {
-    color: rgb(87 142 243);
-}
-80% {
-    color: rgb(36 246 132);
-}
-90% {
-    color: rgb(18 183 92);
-}
-100% {
-    color: rgb(191 185 185);
-}}
+@keyframes rainbow {
+  0%,100% { color: rgb(255, 255, 255); }
 
-@-o-keyframes my {
-  0% {
-    color: rgb(255, 255, 255);
-}
-10% {
-    color: rgb(250, 121, 121);
-}
-20% {
-    color: rgb(253, 3, 3);
-}
-30% {
-    color: rgb(250, 248, 119);
-}
-40% {
-    color: rgba(253, 249, 3, 0.98);
-}
-50% {
-    color: rgb(8, 255, 234);
-}
-60% {
-    color: rgb(237, 33, 255);
-}
-70% {
-    color: rgb(87 142 243);
-}
-80% {
-    color: rgb(36 246 132);
-}
-90% {
-    color: rgb(18 183 92);
-}
-100% {
-    color: rgb(191 185 185);
-}}
+  20% { color: red; }
 
-@keyframes my {
-  0% {
-    color: rgb(255, 255, 255);
+  40% { color: orange; }
+
+  60% { color: yellow; }
+
+  80% { color: green; }
+  90% { color: blue; }
+  
+ 
 }
-10% {
-    color: rgb(250, 121, 121);
-}
-20% {
-    color: rgb(253, 3, 3);
-}
-30% {
-    color: rgb(250, 248, 119);
-}
-40% {
-    color: rgba(253, 249, 3, 0.98);
-}
-50% {
-    color: rgb(8, 255, 234);
-}
-60% {
-    color: rgb(237, 33, 255);
-}
-70% {
-    color: rgb(87 142 243);
-}
-80% {
-    color: rgb(36 246 132);
-}
-90% {
-    color: rgb(18 183 92);
-}
-100% {
-    color: rgb(191 185 185);
-}
-}
-.meme {
-  animation: my 12000ms infinite;
-  -webkit-animation: my 12000ms infinite;
-  -moz-animation: my 12000ms infinite;
-  -o-animation: my 12000ms infinite;}
 
 
 /* ---------------------------------------------------------- SERDYKEE | HEADER & FOOTER ---------------------------------------------------------- */

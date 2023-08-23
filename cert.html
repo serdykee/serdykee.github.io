@@ -18,6 +18,9 @@
 
     <script src="./loader.js"></script>  <!-- Liên kết tệp script.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+        <!-- hieu ung load tai trang caodem --->
+   
  
 <!------------------------------------------------------ SERDYKEE | STYLE ------------------------------------------------------>   
 
@@ -27,20 +30,20 @@
 
 </head>
 
-<body>
-<!-- hieu ung load tai trang caodem --->
-<script>
-jQuery('body').append('<div style="" id="loading"><div class="loader text-center"></div></div>');
-jQuery(window).on('load', function(){
-setTimeout(removeLoader, 200);
-});
-function removeLoader(){
-jQuery( "#loading" ).fadeOut(200, function() {
-jQuery( "#loading" ).remove();
-});
-}
-</script>
 
+<body>
+     <!-- hieu ung load tai trang caodem --->
+    <script>
+        jQuery('body').append('<div style="" id="loading"><div class="loader text-center"></div></div>');
+        jQuery(window).on('load', function(){
+        setTimeout(removeLoader, 300);
+        });
+        function removeLoader(){
+        jQuery( "#loading" ).fadeOut(500, function() {
+        jQuery( "#loading" ).remove();
+        });
+        }
+        </script>
 
 
 

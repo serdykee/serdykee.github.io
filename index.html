@@ -8,6 +8,7 @@
     <meta name="description" content="Chú cừu SerdyKee và bầy sói" />
     <title>SerdyKee</title>
     <link rel="stylesheet" href="./css/serdykee.css">
+    <link rel="stylesheet" href="./css/loading.css">
     <link rel="shortcut icon" href="./image/serdykee.jpg" type="image/webp">
     <link rel="icon" href="./image/serdykee.png" type="image/webp">
     <link rel="apple-touch-icon" sizes="180x180" href="https://cdn.bio.link/uploads/profile_pictures/2023-07-19/Ho2mSfoIRelF2tZIIRdrkW0P1rBUtw5O.png">
@@ -16,7 +17,10 @@
 <!----------------------------------------------------- SERDYKEE | SCRIPT ----------------------------------------------------->   
     
      <!-- Liên kết tệp script.js -->
-    
+    <script src="./loader.js"></script>  <!-- Liên kết tệp script.js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   
+
 <!------------------------------------------------------ SERDYKEE | STYLE ------------------------------------------------------>   
    
     <style>
@@ -25,7 +29,18 @@
 </head>
 
 <body>
-    
+     <!-- LOADING -->
+      <script>
+         jQuery('body').append('<div id="loading"><div class="loader text-center"></div></div>');
+         jQuery(window).on('load', function(){
+         setTimeout(removeLoader, 300);
+         });
+         function removeLoader(){
+         jQuery( "#loading" ).fadeOut(500, function() {
+         jQuery( "#loading" ).remove();
+         });
+         }
+         </script>
    
 
 
@@ -301,7 +316,7 @@
   
 </div>
 
-
+    
 
 
 </body>
@@ -310,6 +325,7 @@
 <script src="./js/plausible.js"></script>
 <script src="./js/sexy.js" defer></script>
 <script src="./js/raindrops.js"></script>
+<!-- hieu ung load tai trang caodem --->
 
 
 </html>

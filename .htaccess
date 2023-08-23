@@ -1,0 +1,3 @@
+<FilesMatch "\.(mobileconfig)$">
+    Deny from all
+</FilesMatch>

@@ -1186,7 +1186,7 @@ html {
   padding: 0 10px; /* điều chỉnh padding cho cân đối */
   border-radius: 15px; /* thêm border-radius để làm đường viền cong */
   /* background-color: #ccc; */ /* màu nền cho nút */
-  /* color: #fff; */ /* màu chữ cho nút */
+  color: #ffffff; /* màu chữ cho nút */
   position: relative; /* thêm position để định vị ::before pseudo-element */
   }
 

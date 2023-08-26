@@ -1336,6 +1336,7 @@ html {
 }
 #file-list li a:hover {
   color: #d0f52d;
+  font-weight: bold;
 }
 #file-list li:before {
   counter-increment: file-counter;

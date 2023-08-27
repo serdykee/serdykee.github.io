@@ -1,5 +1,4 @@
-body,
-html {
+body,html {
   scroll-behavior: smooth;
   /*!* -ms-scroll-chaining: none;*/
   -ms-scroll-chaining: none;

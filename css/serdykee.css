@@ -7,6 +7,12 @@ html {
   overscroll-behavior: none;
   padding: 0
   
+  
+  height: 100%;
+  background-image: linear-gradient(to bottom, #ffffff, #ffffff); /* dải màu chính của trang web */
+  background-color: #ffffff; /* màu trên và dưới của Safari */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 @-webkit-keyframes slidetounlock {

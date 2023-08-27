@@ -1,10 +1,12 @@
 body,
 html {
+  scroll-behavior: smooth;
   /*!* -ms-scroll-chaining: none;*/
   -ms-scroll-chaining: none;
   margin: 0;
   overscroll-behavior: none;
   padding: 0
+  
 }
 
 @-webkit-keyframes slidetounlock {

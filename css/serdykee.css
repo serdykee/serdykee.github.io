@@ -7,9 +7,8 @@ body,html {
   padding: 0
   
   
-  height: 100%;
-  background-image: linear-gradient(to bottom, #FFFF00, #FFFF00); /* dải màu chính của trang web */
-  background-color: #FFFF00; /* màu trên và dưới của Safari */
+  background-image: linear-gradient(to bottom, #000000, #000000); /* dải màu chính của trang web */
+  background-color: #000000; /* màu trên và dưới của Safari */
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

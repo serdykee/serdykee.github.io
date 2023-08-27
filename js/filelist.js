@@ -1,3 +1,4 @@
+
 $(document).ready(function() { 
     $.ajax({ 
         url: "https://api.github.com/repos/serdykee/serdykee.github.io/contents/cert", 
@@ -7,11 +8,7 @@ $(document).ready(function() {
             $.each(reversedData, function(index, file) { 
                 var fileUrl = file.download_url; 
                 var fileName = file.name; 
-
-                // Lấy số thứ tự từ index và thêm số 0 vào đầu
-                var fileNumber = (index + 1).toString().padStart(2, '0');
-
-                var listItem = "<li><a href='" + fileUrl + "' download>" + "File " + fileNumber + ": " + fileName + "</a></li>"; 
+                var listItem = "<li><a href='" + fileUrl + "' download>" + (index + 1).toString().padStart(2, '0') + ": " + fileName + "</a></li>"; 
                 $("#file-list").append(listItem); 
             });
 

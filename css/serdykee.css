@@ -1340,7 +1340,7 @@ html {
 }
 #file-list li:before {
   counter-increment: file-counter;
-  content: counter(file-counter) ". ";
+  content: counter(file-counter, decimal-leading-zero) ". ";
 }
 
 

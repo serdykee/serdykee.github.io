@@ -9,8 +9,8 @@ html {
   
   
   height: 100%;
-  background-image: linear-gradient(to bottom, #ffffff, #ffffff); /* dải màu chính của trang web */
-  background-color: #ffffff; /* màu trên và dưới của Safari */
+  background-image: linear-gradient(to bottom, #FFFF00, #FFFF00); /* dải màu chính của trang web */
+  background-color: #FFFF00; /* màu trên và dưới của Safari */
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

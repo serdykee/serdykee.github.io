@@ -1404,3 +1404,54 @@ background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scr
   padding-bottom: 1px;
   padding-left: 4px;
 }
+
+.heartbeat {
+  color: #e74c3c;
+  animation: heartbeat 1.5s infinite;
+  font-size: 14px
+}
+
+@keyframes heartbeat {
+  0% {
+      transform: scale( .75 )
+  }
+
+  20% {
+      transform: scale( 1 )
+  }
+
+  40% {
+      transform: scale( .75 )
+  }
+
+  60% {
+      transform: scale( 1 )
+  }
+
+  80% {
+      transform: scale( .75 )
+  }
+
+  100% {
+      transform: scale( .75 )
+  }
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+.fa-heart:before {
+  content: "❤"
+}
+
+
+.copyright {
+  font-family: Arial;
+  color: #ffffff63;
+  font-size: 70%;
+  margin-top: 5px;
+}

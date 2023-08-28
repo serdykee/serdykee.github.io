@@ -23,7 +23,23 @@
 
 <!------------------------------------------------------ SERDYKEE | STYLE ------------------------------------------------------>   
    
-    <style></style>
+    <style>
+   @media only screen and (max-width: 767px) {
+    /* Ẩn thanh địa chỉ trên Safari dưới 767px */
+    .top-bar,
+    .bottom-bar {
+        display: none !important;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    /* Ẩn thanh công cụ trên Safari dưới 1023px */
+    .safari-only {
+        display: none !important;
+    }
+}
+   
+</style>
 </head>
 
 <body>

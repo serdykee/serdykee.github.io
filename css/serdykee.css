@@ -1,14 +1,11 @@
 body,html {
-  scroll-behavior: smooth;
-  /*!* -ms-scroll-chaining: none;*/
+  scroll-behavior: smooth;   /*!* -ms-scroll-chaining: none;*/
   -ms-scroll-chaining: none;
   margin: 0;
   overscroll-behavior: none;
-  padding: 0
-  
-  
-  background-image: linear-gradient(to bottom, #000000, #000000); /* dải màu chính của trang web */
-  background-color: #000000; /* màu trên và dưới của Safari */
+  padding: 0;
+  background-image: linear-gradient(to bottom, #0b4658, #0b4658); /* dải màu chính của trang web */
+  background-color: #0b4658; /* màu trên và dưới của Safari */
   background-repeat: no-repeat;
   background-attachment: fixed;
 }

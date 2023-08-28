@@ -1391,6 +1391,17 @@ html {
     font-weight:bold;
     }
     .serdykee--style4 {
-background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scroll 0% 0% transparent;
-}
-    
+background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scroll 0% 0% transparent;
+
+}
+.box-new {
+  /* font-size: 12px; */
+  margin-left: 10px;
+  color: #fff;
+  background: #4080FF;
+  border-radius: 4px;
+  padding-top: 1px;
+  padding-right: 4px;
+  padding-bottom: 1px;
+  padding-left: 4px;
+}

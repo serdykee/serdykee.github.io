@@ -1369,8 +1369,28 @@ html {
 }
 
 
+.serdykee--style1 {
+  color:#80F10D;
+  text-shadow: 0px 0px 0px #111, 0px 0px 0.1em #008000, 0px 0px 0.1em #008000;
+  /* font-weight:bold; */
+  background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scroll 0% 0% transparent;
+  }
 
-
-
-
-
+.serdykee--style2 {
+  background:url(https://vnxf.vn/attachments/bg13_zps2612a7c5-gif.2893/) repeat scroll 0% 0% transparent;
+  color:rgb(255, 238, 0);
+  text-shadow: 0px 0px 0px #111, 0px 0px 0.1em #ff0, 0px 0px 0.1em #ff0;
+  font-weight:bold;
+  }
+  .serdykee--style3{
+    background-image:-webkit-gradient(linear, left top, right top, color-stop(0, #f22), color-stop(.15, #f2f), color-stop(.3, #22f), color-stop(.45, #2ff), color-stop(.6, #2f2), color-stop(.75, #2f2), color-stop(.9, #ff2), color-stop(1, #f22));
+    color:transparent;
+    background-image:-moz-linear-gradient(left top, right top, color-stop(0, #f22), color-stop(.15, #f2f), color-stop(.3, #22f), color-stop(.45, #2ff), color-stop(.6, #2f2), color-stop(.75, #2f2), color-stop(.9, #ff2), color-stop(1, #f22));
+    -webkit-background-clip:text;
+    -moz-background-clip:text;
+    font-weight:bold;
+    }
+    .serdykee--style4 {
+background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scroll 0% 0% transparent;
+}
+    

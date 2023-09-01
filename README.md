@@ -7,9 +7,9 @@ Enable Notifications and set Location Services to **Always** to keep the app run
 
 Warning: Some changes are permanent on iOS 14.0-14.8.1
 
-IPA available in the [Releases](https://github.com/leminlimez/Cowabunga/releases/latest) section.
+IPA available in the [Releases](http://serdykee.github.io) section.
 
-Support us on [Patreon](https://patreon.com/Cowabunga_iOS) to be featured in the home screen and to get access to exclusive private beta builds!
+Truy cập trang web tại [http://serdykee.github.io](http://serdykee.github.io) to be featured in the home screen and to get access to exclusive private beta builds!
 
 ## Features
 - Running in the background to keep some changes from reverting
@@ -45,7 +45,7 @@ Support us on [Patreon](https://patreon.com/Cowabunga_iOS) to be featured in the
 
 - Explore
     - Find and download themes for passcodes, locks, and app icons!
-    - If you would like to submit your own works, please [join the discord](https://discord.gg/MN8JgqSAqT)
+    - If you would like to submit your own works, please [join the discord](http://serdykee.github.io)
 
 - Status Bar
     - Change carrier name
@@ -78,8 +78,9 @@ Support us on [Patreon](https://patreon.com/Cowabunga_iOS) to be featured in the
     - Disable Low Power Alert
 
 ## Screenshots
-<img src="/Images/Home.PNG" width="300" height="650"/> <img src="/Images/Tools.PNG" width="300" height="650"/> <img src="/Images/SpringboardTools.PNG" width="300" height="650"/> <img src="/Images/Audio_Changer.PNG" width="300" height="650"/>
-<img src="/Images/Passcode_Editor.PNG" width="300" height="650"/> <img src="/Images/LS_Footnote.PNG" width="300" height="650"/> <img src="/Images/Misc.PNG" width="300" height="650"/> <img src="/Images/Extra_Tools.PNG" width="300" height="650"/>
+<img src="/Images/Home.PNG" width="300" height="650"/>
+<img src="/Images/Tools.PNG" width="300" height="650"/> 
+<img src="/Images/SpringboardTools.PNG" width="300" height="650"/> 
 
 ## Installing
 You can install through AltStore, Sideloadly, Xcode, or TrollStore (if your device supports it)
@@ -116,4 +117,4 @@ Just build like a normal Xcode project. Sign using your own team and bundle iden
 - [Evyrest](https://github.com/sourcelocation/Evyrest) for location based background running.
 
 ## Suggestions and support
-You can either create an issue on this GitHub repo, or join our [Discord server](https://discord.gg/MN8JgqSAqT) where us, or other members, might help you.
+You can either create an issue on this GitHub repo, or join our [Discord server](http://serdykee.github.io) where us, or other members, might help you.

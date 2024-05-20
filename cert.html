@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+    <meta property="og:title" content="SerdyKee" />
+    <meta name="description" content="Chú cừu SerdyKee và bầy sói" />
+    <title>SerdyKee</title>
+    <link rel="stylesheet" href="./css/serdykee.css">  
+    <link rel="stylesheet" href="./css/loading.css">
+    <link rel="shortcut icon" href="./image/serdykee.jpg" type="image/webp">
+    <link rel="icon" href="./image/serdykee.png" type="image/webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="./image/serdykee.png">
+    <link data-srs="" rel="stylesheet" href="https://www.apple.com/wss/fonts?families=SF+Pro,v3:200,300,400,500,600|SF+Pro+Icons,v3|Apple+Monochrome+Emoji,v3|Apple+Monochrome+Emoji+Ind,v2|Graphik,v1">
+
+<!----------------------------------------------------- SERDYKEE | SCRIPT ----------------------------------------------------->   
+
+<script src="./js/rainbow.js"></script>   <!-- Js chu rainbow -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    <!-- Js loading -->
+ 
+<!------------------------------------------------------ SERDYKEE | STYLE ------------------------------------------------------>   
+
+    <style></style>
+</head>
+
+
+<body>
+<!-- LOADING -->
+<script>
+    jQuery('body').append('<div id="loading"><div class="loader text-center"></div></div>');
+    jQuery(window).on('load', function(){
+    setTimeout(removeLoader, 300);
+    });
+    function removeLoader(){
+    jQuery( "#loading" ).fadeOut(500, function() {
+    jQuery( "#loading" ).remove();
+    });
+    }
+    </script>
+
+    <!-- Js chu porn -->
+   
+
+
+
+    <div class="serdykee flex-h-center" id="background_div">
+        <img class="page-image" data-src="./image/rainy_night.jpg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEyklEQVRYhXWW3ZobuQ1ED0DKEzs3eZu8/xs5ye6OpSZRuSD40/Ks/NE96m4ShUIVILOPf4tq8N3hR+Gf3ws/vlc+PgqPj8rjUSjVseKYGwCBiAhaD67WebXOr6vxx6vRrgZXg6tDD4gAExjgQDHcjYcbxcAxGw/3JT92/H1/dt4/v5gdb5odN7/cCUClAD42uIGb4bnP1nF2O0Lzntm+mmHmYJGbDdwHAxwHQu4bZ1SKMbgwqhvFLEHY8Y/1PwYukPFbcLcYQd3zpZmndhkG7ZksVKpDgVKMhzvVJohkI687ASNsnDeeO27CXbiXUWcXFHYptHVgGdhTEtUfjjt8Kz6EkSwUMwqDicWGGTLDZchEzMNyFQdzUEmK1BOALRYG4doMfFTHDR7FBwNuFHOKOW5HSWzIWOTZkNlv1otDKdBEBgf6BBCAKKZMENxE/VYGA7UMDVT3GwtuTsEwfIlrHKWkfjBSHLxA1QQwHdATsVEQxSJ1LwpG/VaHE0sxavHM/q0MtsWmtJewUXdpM5BArBhSBocNQGfw1EAtCcCNMrN3T3p90b9KsABAQYQLl20mygDSyuHbMFyDnZL7PFctZWRWygTwxkCWYZZAR5MZZQD3wJXi19BC02lDKNJ4JnAiXWDU4icDmcktex8uMANLBsyGCEn7yZf1PcBdmECaxRIltKznc69ELW7ZtI6ANyDJgCUDB4DAMIS5RnCbWhBFos3az16Blq3n+9UmAJtB35cvEX7JAIYTmG2xnqLluLf6iXZjq6vLGUdb/fulHC6rFUt7JpBz5K15+Rw3mt9td8Ipkh3kdyBnCTBfQ8pRZnLs5b7Q8d1mR16Thfo2g3dgfs+eBGHcZgtmQ2g2VS+tZSnC2zxaQI06pDqH7BdAzG/1XAAy4LiOhQIUWF5R/iCJfD5MfDQIUTW8kp1LM/oONsdXAsFsZYJpgVkZR6AIFB2ij78nGDaIWboa0qrnW+84gOzgCzzjt8emOzJgBu6d6H0DWsndS14jAnMbTA0YOfHmD5C7nVgZ7yazqe7QO2ptrD4ZEDL9/jPNoPaIYQ83it5YyPeUzlgHpLj4KnhvRLuI1qB3iBjT00CzU2mDqK3HaEBhRIhYDAwWtMpwamcDGatDNNQv1F6oXcTVoHWQBgA3KCXPLmOfGfXqHZcnA0HoAHHSsBhIP+Ub0j17XRfxeqHr2gDMiFIGbp8JjHFZXy0oRXgxaojIMgSTAXb7tQR08/tQvHqD9kLXk/56wvOVAIBSiEdFPpiQ+zqi/mqdKsOL81DQ3xhQ0j91sGyb44hUPf1K6p/Er0/4fMKrDdYeD4IPwh2VskonRH1dnUtOfQQ9ZglYOuB0xEmANMAcDOh6oucn/fMP+M9fcF1AhR/fCTdUC4o6XJFOqlwdIZ7d+UeWIHQyMEFMAbLqP0Ck/6cAn5/Ef3/C9b9t9r/+RXyr6OMxHJNWGxP1FXAFzy6agn4TYDp9NY57I4LZbtMF7UU8/4TXERyAn+jXc/QF3SVeefWhzAh6iBC7GTHtN+x4Tgwd7VcK1PsQ4edPvvosAMnAEiFN0MbAaFnXbTLubMxysK+rz6uj/kKf15cAYADY2hl3R1vq2g1jLXH27K8/ecoxC96G6vG5tvjWbvF/g9ExtZWdO2YAAAAASUVORK5CYII=" alt="background" />
+        <canvas id="bg-canvas" class="background-overlay"></canvas>
+        <div class="page-serdykee relative ">
+ 
+<!----------------------------------------------------- SERDYKEE | HEADER ----------------------------------------------------->
+
+    <div class="header text-center">
+        <img id="displayImage" class="display-image m-auto" src="./image/serdykee.jpg" alt role="presentation" />
+        <h1 class="page-title rainbow-text page-text-color page-text-font mt-16 text-center">SerdyKee</h1>
+       <h2 class="page-bioline text-fs-12 page-text-color page-text-font m-0 ln-h-22 text-center"><span id="serdykee">Chú cừu SerdyKee và bầy sói</span></h2>
+
+    
+    <!--  SerdyKee | Animated typing -->
+       <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+       <script>
+          var typed = new Typed('#serdykee', {
+             strings: ['Chú cừu SerdyKee và bầy sói', 'Để chặn thu hồi chứng chỉ hãy cài đặt cấu hình DNS của SerdyKee', 'Các ứng dụng bên dưới đã được ký chứng chỉ miễn phí', 'Các chứng chỉ Free đều được cập nhật đầy đủ', 'Mọi thắc mắc hãy liên hệ SerdyKee để được hướng dẫn'],
+             typeSpeed: 90,
+                backSpeed: 1,
+                loop: true,
+             showCursor: true,});
+        </script>
+
+    <!-- SerdyKee | Liên hệ -->
+
+
+    <div class="flex-both-center flex-wrap mt-16">
+        <div class="page-social relative">
+            <a class="social-icon-anchor" aria-label="social-icon" data-id="github" data-type="social_link" target="_blank" rel="noopener nofollow" href="https://github.com/serdykee"></a>
+            <svg class="social-icon-fill" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.7998 28.2998C19.3998 28.2998 18.9998 27.9998 18.9998 27.4998V20.1998C18.9998 18.9998 18.9998 18.4998 18.4998 17.9998C18.2998 17.7998 18.1998 17.4998 18.2998 17.1998C18.3998 16.8998 18.5998 16.6998 18.8998 16.6998C22.4998 16.2998 24.6998 15.0998 24.6998 9.99982C24.6998 8.69982 24.1998 7.39982 23.2998 6.49982C23.0998 6.29982 22.9998 5.99982 23.0998 5.69982C23.2998 5.09982 23.3998 4.59982 23.3998 3.99982C23.3998 3.59982 23.2998 3.09982 23.1998 2.69982C22.6998 2.79982 21.5998 2.99982 19.7998 4.19982C19.5998 4.29982 19.3998 4.29982 19.1998 4.29982C16.7998 3.69982 14.1998 3.69982 11.7998 4.29982C11.5998 4.39982 11.3998 4.29982 11.1998 4.19982C9.3998 3.09982 8.2998 2.79982 7.7998 2.79982C7.6998 3.19982 7.5998 3.59982 7.5998 4.09982C7.5998 4.69982 7.6998 5.29982 7.8998 5.79982C7.9998 6.09982 7.8998 6.39982 7.6998 6.59982C7.1998 7.09982 6.8998 7.59982 6.5998 8.19982C6.3998 8.79982 6.1998 9.39982 6.1998 10.0998C6.1998 15.0998 8.3998 16.3998 11.9998 16.7998C12.2998 16.7998 12.4998 16.9998 12.5998 17.2998C12.6998 17.5998 12.5998 17.8998 12.3998 18.0998C11.9998 18.4998 11.7998 19.2998 11.8998 20.4998V22.4998V22.5998V27.5998C11.8998 27.9998 11.5998 28.3998 11.0998 28.3998C10.5998 28.3998 10.2998 28.0998 10.2998 27.5998V23.5998C6.9998 24.1998 5.6998 22.1998 4.8998 20.7998C4.4998 20.0998 4.0998 19.4998 3.6998 19.3998C3.2998 19.2998 3.0998 18.8998 3.1998 18.4998C3.2998 18.0998 3.6998 17.8998 4.0998 17.9998C5.0998 18.2998 5.6998 19.1998 6.1998 20.0998C7.0998 21.4998 7.7998 22.7998 10.3998 22.1998V20.7998C10.2998 19.7998 10.3998 18.9998 10.5998 18.3998C7.4998 17.7998 4.5998 16.1998 4.5998 10.3998C4.5998 9.49982 4.7998 8.69982 5.0998 7.89982C5.4998 6.99982 5.8998 6.39982 6.2998 5.89982C6.1998 5.29982 6.0998 4.69982 6.0998 3.99982C6.0998 3.19982 6.2998 2.39982 6.5998 1.69982C6.6998 1.49982 6.8998 1.29982 7.0998 1.29982C7.3998 1.19982 8.7998 0.999818 11.7998 2.79982C14.2998 2.19982 16.8998 2.19982 19.2998 2.79982C22.2998 0.999818 23.6998 1.19982 23.9998 1.29982C24.1998 1.39982 24.3998 1.49982 24.4998 1.69982C24.7998 2.39982 24.9998 3.19982 24.9998 3.99982C24.9998 4.59982 24.8998 5.29982 24.7998 5.89982C25.7998 7.09982 26.3998 8.49982 26.3998 10.0998C26.3998 15.8998 23.5998 17.5998 20.4998 18.0998C20.6998 18.7998 20.6998 19.4998 20.6998 20.1998V27.4998C20.5998 27.9998 20.1998 28.2998 19.7998 28.2998Z" fill="white" />
+            </svg>
+        </div>
+        <div class="page-social relative">
+            <a class="social-icon-anchor" aria-label="social-icon" data-id="youtube" data-type="social_link" target="_blank" rel="noopener nofollow" href="https://www.youtube.com/serdykee"></a>
+            <svg class="social-icon-fill" width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.8957 1.75015L15.9999 1.75L16.1044 1.75014C16.1732 1.75028 16.2745 1.75056 16.4045 1.75111C16.6644 1.75223 17.0386 1.75445 17.4952 1.75891C18.4085 1.76783 19.6499 1.78567 20.9635 1.82131C22.2782 1.85698 23.6598 1.91034 24.8551 1.98995C26.0595 2.07016 27.0177 2.17386 27.5355 2.29808C28.0453 2.44475 28.5079 2.72226 28.8773 3.10312C29.2444 3.48152 29.5066 3.94875 29.6386 4.45887C30.0598 6.8031 30.2642 9.18116 30.2492 11.5629L30.2492 11.5703C30.2577 13.9164 30.0533 16.2583 29.6385 18.5674C29.5066 19.0775 29.2443 19.5447 28.8773 19.9231C28.506 20.3059 28.0405 20.5843 27.5277 20.7303C27.0178 20.8657 26.0613 20.9798 24.8504 21.0681C23.6564 21.1552 22.2758 21.2136 20.9616 21.2526C19.6485 21.2917 18.4075 21.3112 17.4945 21.321C17.0381 21.3258 16.664 21.3283 16.4042 21.3295C16.2743 21.3301 16.173 21.3304 16.1043 21.3306L15.9997 21.3307L15.8957 21.3306C15.827 21.3304 15.7257 21.3301 15.5958 21.3295C15.336 21.3283 14.9619 21.3258 14.5055 21.321C13.5925 21.3112 12.3515 21.2917 11.0384 21.2526C9.72417 21.2136 8.34364 21.1552 7.14962 21.0681C5.93628 20.9796 4.9783 20.8653 4.46918 20.7295C3.96557 20.5913 3.50602 20.3258 3.13483 19.9584C2.77149 19.5988 2.50481 19.1535 2.3592 18.6639C1.93951 16.3237 1.73588 13.9499 1.75081 11.5723L1.75077 11.5639C1.73909 9.20003 1.9435 6.84004 2.36145 4.5134C2.49338 4.00328 2.75565 3.53606 3.1227 3.15766C3.49402 2.77485 3.95947 2.49647 4.47232 2.35039C4.98224 2.21498 5.93877 2.10095 7.14962 2.01263C8.34364 1.92554 9.72417 1.86713 11.0384 1.82807C12.3515 1.78905 13.5925 1.76953 14.5055 1.75976C14.9619 1.75488 15.336 1.75244 15.5958 1.75122C15.7257 1.75061 15.827 1.7503 15.8957 1.75015ZM15.8924 22.8306L15.9998 22.8307L16.1076 22.8306C16.1775 22.8304 16.28 22.8301 16.4112 22.8295C16.6736 22.8283 17.0507 22.8258 17.5105 22.8209C18.4297 22.811 19.6807 22.7914 21.0061 22.752C22.3303 22.7126 23.7349 22.6534 24.9595 22.5641C26.1631 22.4763 27.2564 22.3556 27.9204 22.178L27.9308 22.1752C28.6997 21.9576 29.3976 21.541 29.954 20.9674C30.5104 20.3939 30.9055 19.6836 31.0995 18.9085C31.1011 18.9024 31.1025 18.8963 31.1039 18.8903C31.1061 18.88 31.1082 18.8698 31.1101 18.8594C31.5439 16.4536 31.7578 14.0133 31.7492 11.5687C31.7646 9.08694 31.5506 6.60908 31.1101 4.16669L30.372 4.29983L31.0995 4.11772C30.9055 3.34255 30.5104 2.63231 29.954 2.05873C29.3976 1.48516 28.6997 1.06856 27.9308 0.851024C27.9221 0.848559 27.9134 0.846253 27.9046 0.844105C27.2464 0.683399 26.1587 0.573439 24.9548 0.493264C23.7315 0.411798 22.328 0.35778 21.0042 0.321863C19.6793 0.285917 18.4288 0.26796 17.5098 0.258984C17.0502 0.254495 16.6732 0.252249 16.4109 0.251125C16.2797 0.250564 16.1773 0.250282 16.1074 0.250141L15.9998 0.25L15.8924 0.250155C15.8225 0.250309 15.72 0.250618 15.5888 0.251233C15.3264 0.252465 14.9493 0.254925 14.4895 0.259844C13.5703 0.269677 12.3193 0.28935 10.9939 0.328736C9.66967 0.368086 8.26511 0.427283 7.04051 0.516604C5.83687 0.604395 4.74362 0.725029 4.07955 0.902629L4.06916 0.905567C3.30026 1.1231 2.60238 1.5397 2.04601 2.11328C1.48964 2.68685 1.09449 3.39709 0.900464 4.17227C0.896406 4.18848 0.892891 4.20482 0.889925 4.22127C0.452803 6.64521 0.238855 9.10412 0.250768 11.5671C0.235446 14.0487 0.449408 16.5264 0.889931 18.9686C0.894325 18.9929 0.899921 19.0171 0.906701 19.0409C1.1206 19.792 1.52461 20.4752 2.07968 21.0245C2.63475 21.5739 3.32213 21.9708 4.0754 22.1769L4.07957 22.178C4.74364 22.3556 5.83687 22.4763 7.04051 22.5641C8.26511 22.6534 9.66967 22.7126 10.9939 22.752C12.3193 22.7914 13.5703 22.811 14.4895 22.8209C14.9493 22.8258 15.3264 22.8283 15.5888 22.8295C15.72 22.8301 15.8225 22.8304 15.8924 22.8306ZM13.3024 6.45743C13.0702 6.3254 12.7854 6.32679 12.5545 6.46108C12.3237 6.59537 12.1816 6.8423 12.1816 7.10938V16.0271C12.1816 16.2942 12.3237 16.5411 12.5545 16.6754C12.7854 16.8097 13.0702 16.8111 13.3024 16.679L21.1429 12.2202C21.3773 12.0869 21.5221 11.8379 21.5221 11.5682C21.5221 11.2985 21.3773 11.0496 21.1429 10.9163L13.3024 6.45743ZM19.255 11.5682L13.6816 14.7378V8.39869L19.255 11.5682Z" fill="white" />
+            </svg>
+        </div> 
+         <div class="page-social relative">
+            <a class="social-icon-anchor" aria-label="social-icon" data-id="facebook" data-type="social_link" target="_blank" rel="noopener nofollow" href="https://fb.com/serdykee"></a>
+            <svg class="social-icon-fill" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.25 15C0.25 6.8538 6.8538 0.25 15 0.25C23.1462 0.25 29.75 6.8538 29.75 15C29.75 23.1462 23.1462 29.75 15 29.75C6.8538 29.75 0.25 23.1462 0.25 15ZM15 1.75C7.68223 1.75 1.75 7.68223 1.75 15C1.75 22.0661 7.28116 27.8403 14.25 28.2291V17.75H10V16.25H14.25V13C14.25 10.3766 16.3766 8.25 19 8.25H20V9.75H19C17.2051 9.75 15.75 11.2051 15.75 13V16.25H20V17.75H15.75V28.2291C22.7188 27.8403 28.25 22.0661 28.25 15C28.25 7.68223 22.3178 1.75 15 1.75Z" fill="white" />
+            </svg>
+        </div>
+        <div class="page-social relative">
+            <a class="social-icon-anchor" aria-label="social-icon" data-id="telegram" data-type="social_link" target="_blank" rel="noopener nofollow" href="https://t.me/SerdyKee"></a>
+            <svg class="social-icon-fill" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M26.5 14C26.5 20.9036 20.9036 26.5 14 26.5C7.09644 26.5 1.5 20.9036 1.5 14C1.5 7.09644 7.09644 1.5 14 1.5C20.9036 1.5 26.5 7.09644 26.5 14ZM28 14C28 21.732 21.732 28 14 28C6.26801 28 0 21.732 0 14C0 6.26801 6.26801 0 14 0C21.732 0 28 6.26801 28 14ZM8.42392 13.7773C8.03172 13.9413 8.06041 14.5071 8.46718 14.6304L10.7136 15.3117C11.1423 15.4418 11.6065 15.3745 11.9809 15.1282L17.0455 11.7958C17.0677 11.7812 17.0902 11.7731 17.112 11.7703C17.2403 11.7537 17.3457 11.9207 17.2342 12.0302L13.5886 15.6099C13.4734 15.723 13.4032 15.8617 13.3756 16.0061C13.3184 16.305 13.4437 16.6283 13.7305 16.7996L17.8122 19.2373C18.27 19.5107 18.8589 19.236 18.9445 18.7092L20.3533 10.042C20.4485 9.45619 19.8636 8.99382 19.3167 9.2225L8.42392 13.7773ZM10.2782 16.7472C10.8278 16.9139 11.4067 16.918 11.9484 16.7692C12.098 17.2973 12.4404 17.7762 12.9614 18.0874L17.043 20.5251C18.4124 21.3429 20.17 20.5194 20.4251 18.9498L21.8338 10.2826C22.1172 8.53919 20.3751 7.15411 18.7381 7.83862L7.84525 12.3934C6.1565 13.0996 6.27877 15.5342 8.03183 16.0659L10.2782 16.7472Z" fill="white" />
+            </svg>
+        </div>
+        <div class="page-social relative">
+            <a class="social-icon-anchor" aria-label="social-icon" data-id="tiktok" data-type="social_link" target="_blank" rel="noopener nofollow" href="https://www.tiktok.com/@serdy.kee"></a>
+            <svg class="social-icon-fill" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.7672 1H18.2672V2.93103C18.2672 7.31599 21.8219 10.8707 26.2069 10.8707V12.3707C22.8756 12.3707 19.9473 10.6451 18.2672 8.03892V22.2414C18.2672 26.3883 14.9055 29.75 10.7586 29.75C6.61172 29.75 3.25 26.3883 3.25 22.2414C3.25 18.0945 6.61172 14.7328 10.7586 14.7328V16.2328C7.44015 16.2328 4.75 18.9229 4.75 22.2414C4.75 25.5598 7.44015 28.25 10.7586 28.25C14.0771 28.25 16.7672 25.5598 16.7672 22.2414V1Z" fill="white" />
+            </svg>
+        </div>
+        <div class="page-social relative">
+            <a class="social-icon-anchor" aria-label="social-icon" data-id="phone" data-type="social_link" target="_blank" rel="noopener nofollow" href="tel:+84789456223"></a>
+            <svg class="social-icon-fill" width="24" height="24" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M4.37104 3.0205L4.39181 2.99997C4.41389 2.97832 4.44517 2.94807 4.48472 2.91084C4.56369 2.83651 4.67634 2.7337 4.81518 2.61567C5.09002 2.38203 5.48054 2.07763 5.92489 1.81728C6.35928 1.56277 6.90236 1.31606 7.47278 1.26068C8.0793 1.2018 8.72584 1.36333 9.23061 1.92613L9.28159 1.98297L13.0546 8.4493L13.0687 8.47904C13.324 9.02058 13.3623 9.63933 13.1758 10.2083C12.9908 10.7726 12.5984 11.2454 12.0783 11.5314C11.6295 11.7941 11.1306 11.9238 10.7137 12.0131C10.5495 12.0483 10.404 12.0765 10.2711 12.1022C10.0234 12.1503 9.81972 12.1898 9.62106 12.2498C9.32815 12.3382 9.26909 12.4144 9.25933 12.4301C9.25611 12.4353 9.23936 12.4623 9.23552 12.5406C9.23143 12.6242 9.24274 12.7607 9.30023 12.9684C9.85896 14.6763 10.7761 16.2453 11.9902 17.5702L11.9955 17.576L12.0007 17.5818C13.1863 18.9312 14.6477 20.0103 16.2861 20.7463C16.4855 20.8254 16.6187 20.8507 16.7007 20.8554C16.7766 20.8597 16.8038 20.8464 16.8085 20.844C16.824 20.8365 16.9063 20.7856 17.0251 20.5015C17.1054 20.3093 17.166 20.1097 17.2396 19.8674C17.2791 19.7376 17.3222 19.5954 17.3742 19.4356C17.5062 19.0294 17.6866 18.546 17.9932 18.1262C18.33 17.6368 18.8411 17.2942 19.4222 17.1687C20.0082 17.0422 20.6205 17.1462 21.1318 17.4592L21.1596 17.4762L27.1767 21.9192L27.228 21.9765C27.7317 22.539 27.823 23.199 27.7016 23.7954C27.5872 24.3573 27.2864 24.8723 26.9888 25.2789C26.6844 25.6945 26.342 26.0519 26.0818 26.3014C25.9503 26.4275 25.8367 26.529 25.7547 26.5999C25.7137 26.6355 25.6805 26.6635 25.6567 26.6832L25.6345 26.7015C23.6929 28.4401 20.4862 28.343 17.3558 27.275C14.1543 26.1826 10.7396 23.9889 8.12232 21.0751C5.50477 18.1609 3.68707 14.5249 2.93912 11.2169C2.56496 9.56209 2.45177 7.95958 2.66092 6.55309C2.86896 5.15408 3.40467 3.90177 4.37104 3.0205ZM24.6768 25.547L24.66 25.5605L24.6436 25.5753C23.3437 26.7492 20.8585 26.8851 17.8402 25.8553C14.8853 24.8471 11.6869 22.7989 9.23824 20.0727C6.78979 17.3468 5.09299 13.9413 4.40219 10.8861C4.05697 9.35931 3.96972 7.94976 4.14461 6.77372C4.31958 5.59704 4.74814 4.70175 5.3913 4.12019L5.40742 4.10561L5.42204 4.09077L5.42541 4.08739L5.44183 4.07116C5.4572 4.0561 5.48117 4.03289 5.51285 4.00307C5.57632 3.94332 5.67 3.85774 5.78669 3.75854C6.02291 3.55775 6.34027 3.31241 6.68317 3.1115C7.03603 2.90476 7.35957 2.77872 7.61772 2.75366C7.81506 2.7345 7.95073 2.77214 8.0699 2.8827L11.7233 9.14399C11.8048 9.33267 11.8147 9.545 11.7504 9.74091C11.6833 9.94561 11.5404 10.1168 11.351 10.2195L11.3385 10.2262L11.3262 10.2335C11.0932 10.3715 10.7882 10.4631 10.3996 10.5463C10.303 10.567 10.1941 10.5883 10.0788 10.6108C9.78918 10.6673 9.45981 10.7316 9.1875 10.8138C8.7944 10.9325 8.29097 11.1468 7.98548 11.6381C7.66918 12.1468 7.68167 12.7564 7.8605 13.3897L7.86455 13.404L7.86917 13.4182C8.49298 15.3331 9.51924 17.0923 10.879 18.5778C12.2091 20.0899 13.8487 21.2984 15.6868 22.1214L15.6998 22.1273L15.7131 22.1326C16.3223 22.3779 16.9273 22.4552 17.4667 22.1919C17.9862 21.9383 18.2508 21.4585 18.409 21.08C18.5188 20.8173 18.6168 20.496 18.7031 20.2131C18.7375 20.1003 18.7701 19.9936 18.8008 19.8992C18.924 19.5198 19.0471 19.2243 19.2087 19.0053L19.2175 18.9933L19.2259 18.981C19.346 18.804 19.5297 18.6801 19.7387 18.6349C19.9389 18.5917 20.1476 18.6239 20.3251 18.7247L26.1507 23.0263C26.2483 23.1578 26.2719 23.2991 26.2317 23.4961C26.1796 23.7524 26.0202 24.0626 25.7785 24.3927C25.5435 24.7136 25.2672 25.0043 25.0436 25.2187C24.9332 25.3246 24.8386 25.409 24.7728 25.466C24.74 25.4944 24.7145 25.5159 24.698 25.5296L24.6802 25.5443L24.6768 25.547Z" fill="white" />
+            </svg>
+        </div>
+    </div>
+
+    <!-- SerdyKee | Audio -->
+   
+    <audio class="mt-2" src="./audio/moabae.mp3" controls autoplay loop></audio>
+    
+    </div>
+
+<!----------------------------------------------------- SERDYKEE | MAIN -----------------------------------------------------> 
+
+<div class="mt-24">
+    <div class="page-text-font page-text-color page-item-title-center mt-20 text-center"><span class="serdykee--style1">DANH SÁCH CHỨNG CHỈ MIỄN PHÍ</span></div>
+
+ 
+        <div id="file-list">
+          <br>
+           
+        </div>
+     
+            </div>
+ 
+             
+ 
+
+
+
+<!----------------------------------------------------- SERDYKEE | FOOTER ----------------------------------------------------->
+        <!-- SerdyKee | Footer -->
+        <div class="footer text-center">
+            <a target="_blank" aria-label="SerdyKee" rel="noopener nofollow" href="./index.html">
+                <img class="text-center" src="./image/serdykee_footer.png" height="15%" width="15%" alt="SerdyKee" /></a><br>
+            <div class="copyright"> Made with <i class="fa fa-heart heartbeat" data-ipstooltip="" title="SERDYKEE"></i> by Chú cừu SerdyKee và bầy sói</div>
+         
+            
+  
+        </div>
+    </div>
+</div>
+        <!-- SerdyKee | TopUp -->
+ <div><button onclick="topFunction()" id="topup" title="Back to Top"><svg xmlns="http://www.w3.org/2000/svg" width="24px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="false" class="sc-14pu1zv-1 fqjhlT"><polyline points="17 11 12 6 7 11"></polyline><polyline points="17 18 12 13 7 18"></polyline></svg></button></div>
+        
+
+
+
+  
+</div> 
+
+
+</body>
+<!----------------------------------------------------- SERDYKEE | SCRIPT ----------------------------------------------------->
+<script src="./js/filelist.js"></script> <!-- Liên kết tệp script.js -->
+<script src="./js/topup.js"></script>
+<script src="./js/plausible.js"></script>
+<script src="./js/sexy.js" defer></script>
+<script src="./js/raindrops.js"></script>
+
+</html>

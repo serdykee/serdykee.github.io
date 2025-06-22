@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tạo Ảnh Tình Yêu</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tạo Ảnh Tình Yêu</h1>
+  <input type="text" id="nameInput" placeholder="Nhập tên của bạn"><br><br>
+  <button onclick="generateImage()">Tạo ảnh</button>
+
+  <canvas id="canvas" width="500" height="300" style="display:none;"></canvas>
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    function generateImage() {
+      const name = document.getElementById('nameInput').value;
+      if (!name) return alert('Vui lòng nhập tên!');
+
+      // Vẽ ảnh trên canvas
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Background
+      ctx.fillStyle = '#fce4ec';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Text
+      ctx.fillStyle = '#d81b60';
+      ctx.font = 'bold 28px Arial';
+      ctx.fillText(`Tình yêu của ${name}`, 50, 150);
+
+      // Hiện canvas và ảnh
+      canvas.style.display = 'block';
+
+      const imgURL = canvas.toDataURL();
+      document.getElementById('result').innerHTML = `
+        <p>Ảnh của bạn:</p>
+        <img src="${imgURL}" width="300"><br><br>
+        <a href="${generateShareLink(name)}" target="_blank">🔗 Link chia sẻ</a>
+      `;
+    }
+
+    function generateShareLink(name) {
+      const data = {
+        t: [name],
+        a: "nca" // bạn có thể tùy ý thay đổi
+      };
+      const base64 = btoa(JSON.stringify(data));
+      return window.location.origin + window.location.pathname + '?b=' + base64;
+    }
+
+    // Load từ base64 nếu có
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.has('b')) {
+        try {
+          const decoded = JSON.parse(atob(params.get('b')));
+          if (decoded.t && decoded.t.length) {
+            document.getElementById('nameInput').value = decoded.t[0];
+            generateImage();
+          }
+        } catch (e) {
+          console.error('Invalid base64');
+        }
+      }
+    };
+  </script>
+</body>
+</html>

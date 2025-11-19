@@ -69,9 +69,7 @@
       background: linear-gradient(90deg, #fff, #c8fff1 40%, #ffd7e6 80%);
       -webkit-background-clip: text; background-clip:text; color: transparent;
     }
-    .typing{ max-height: 180px;          /* Giới hạn chiều cao */
-  overflow-y: auto;           /* Cho phép cuộn */
-  scrollbar-width: none; white-space:pre-wrap; font-size: clamp(16px, 3.6vw, 18px); line-height:1.6; min-height:4.4em; color:#f2f6ff; text-align: justify; }
+    .typing{ white-space:pre-wrap; font-size: clamp(16px, 3.6vw, 18px); line-height:1.6; min-height:4.4em; color:#f2f6ff; text-align: justify; }
    .cursor {
   display: inline-block;
   width: 10px;                 /* gạch đứng mảnh */
@@ -219,7 +217,7 @@
         } else { stepIndex++; setTimeout(runStep, step.pause||120); }
       } else { stepIndex++; setTimeout(runStep,120); }
     }
-    function renderText(){ el.textContent = currentText; el.appendChild(cursor); el.scrollTop = el.scrollHeight; // Tự động cuộn xuống cuối }
+    function renderText(){ el.textContent = currentText; el.appendChild(cursor); }
     setTimeout(runStep, 420);
 
     // button actions
@@ -254,4 +252,5 @@
   </script>
 </body>
 </html>
+
 

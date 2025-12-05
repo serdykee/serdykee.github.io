@@ -172,8 +172,25 @@
       min-height: 4.4em; 
       color: #f2f6ff; 
       text-align: justify; 
-    }
-    
+  /* === BỔ SUNG & SỬA ĐỔI QUAN TRỌNG === */
+    min-height: 4.4em; /* Giữ nguyên chiều cao tối thiểu */
+    max-height: 550px; /* Giới hạn chiều cao tối đa của vùng hiển thị văn bản */
+    overflow-y: hidden; /* Ban đầu ẩn thanh cuộn */
+    transition: all 1s ease; /* Thêm transition cho hiệu ứng mượt mà */
+}
+    /* THÊM MỘT CLASS MỚI để kích hoạt cuộn */
+.typing.scrollable {
+    overflow-y: auto; /* Cho phép cuộn khi nội dung tràn */
+    /* Tùy chọn: Thêm kiểu cuộn tùy chỉnh cho Chrome/Safari */
+scrollbar-width: none;
+}
+.typing.scrollable::-webkit-scrollbar {
+display: none; /* Hoàn toàn ẩn thanh cuộn */
+}
+
+	
+	
+	
     .cursor {
       display: inline-block;
       width: 10px;          
@@ -302,55 +319,68 @@
       {text: "💖", pause: 1200}
     ];
 
-    // -----------------------------------------------------
-    // 3. XỬ LÝ LOGIC GÕ CHỮ
-    // -----------------------------------------------------
-    const el = document.getElementById('typeTarget');
-    const cursor = document.createElement('span');
-    cursor.className = 'cursor';
-    el.appendChild(cursor);
+// -----------------------------------------------------
+// 3. XỬ LÝ LOGIC GÕ CHỮ (Đã thêm chức năng cuộn tự động)
+// -----------------------------------------------------
+const el = document.getElementById('typeTarget');
+const cursor = document.createElement('span');
+cursor.className = 'cursor';
+el.appendChild(cursor);
 
-    const charSpeed = 50, delSpeed = 25;  
-    let stepIndex = 0, charIndex = 0, currentText = '';
+const charSpeed = 50, delSpeed = 25;  
+let stepIndex = 0, charIndex = 0, currentText = '';
 
-    function runStep(){
-      if(stepIndex >= sequence.length){
+function runStep(){
+    if(stepIndex >= sequence.length){
+        // === KHI KẾT THÚC GÕ CHỮ ===
         document.getElementById('actions').classList.add('show');
+        // Kích hoạt class scrollable và cuộn về cuối
+        el.classList.add('scrollable');
+        el.scrollTop = el.scrollHeight; 
         return;
-      }
-      const step = sequence[stepIndex];
-      
-      if(step.text !== undefined){
+    }
+    const step = sequence[stepIndex];
+    
+    if(step.text !== undefined){
         if(charIndex < step.text.length){
-          currentText += step.text.charAt(charIndex++);
-          renderText();
-          setTimeout(runStep, charSpeed + (Math.random()*18 - 8));
+            currentText += step.text.charAt(charIndex++);
+            renderText();
+            // === LOGIC CUỘN MỀM MẠI KHI GÕ ===
+            // Cuộn xuống 9999px nếu nội dung tràn ra khỏi khung
+            if (el.scrollHeight > el.clientHeight) {
+                el.scrollTop = el.scrollHeight; 
+            }
+            // ===================================
+            setTimeout(runStep, charSpeed + (Math.random()*18 - 8));
         } else {  
-          charIndex = 0;  
-          stepIndex++;  
-          setTimeout(runStep, step.pause||220);  
+            charIndex = 0;  
+            stepIndex++;  
+            setTimeout(runStep, step.pause||220);  
         }
-      } 
-      else if(step.delete !== undefined){
+    } 
+    else if(step.delete !== undefined){
         if(step.delete > 0){
-          currentText = currentText.slice(0, -1);  
-          step.delete--;
-          renderText();
-          setTimeout(runStep, delSpeed + (Math.random()*12 - 6));
+            currentText = currentText.slice(0, -1);  
+            step.delete--;
+            renderText();
+            setTimeout(runStep, delSpeed + (Math.random()*12 - 6));
         } else {  
-          stepIndex++;  
-          setTimeout(runStep, step.pause||120);  
+            stepIndex++;  
+            setTimeout(runStep, step.pause||120);  
         }
-      } else {  
+    } else {  
         stepIndex++;  
         setTimeout(runStep,120);  
-      }
     }
-    
-    function renderText(){ el.textContent = currentText; el.appendChild(cursor); }
-    
-    setTimeout(runStep, 420);
+}
 
+function renderText(){ 
+    // Giữ nguyên logic hiển thị văn bản
+    el.textContent = currentText; 
+    el.appendChild(cursor); 
+}
+
+setTimeout(runStep, 420);
     // -----------------------------------------------------
     // 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC
     // -----------------------------------------------------
@@ -488,7 +518,6 @@
 
 </body>
 </html>
-
 
 
 

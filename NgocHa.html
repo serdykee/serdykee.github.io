@@ -6,6 +6,8 @@
   <title>💌 Tâm thư gửi em !</title>
   <meta name="description" content="Chú cừu SerdyKee và bầy sói !" />
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+
   <style>  
     /* =========================================
        1. CẤU HÌNH MÀU SẮC & BIẾN (VARIABLES)
@@ -33,59 +35,53 @@
       background: radial-gradient(1200px 800px at 10% 10%, #2a2a72 0%, #1f1c2c 35%, #111 100%) fixed;
     }
 
+    /* ĐỊNH NGHĨA KEYFRAME SPIN CHO NHẠC */
+    @keyframes spin { 
+      100% { transform: rotate(360deg); } 
+    }
 
+    .music-control {
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 100;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 24px;
+        color: var(--text); /* Đảm bảo icon có màu */
+        
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px) saturate(180%);
+        -webkit-backdrop-filter: blur(10px) saturate(180%);
+        
+        display: flex;  
+        justify-content: center;  
+        align-items: center;
+        cursor: pointer;  
+        
+        border: 1px solid rgba(255, 255, 255, 0.6); 
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
+                    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 
+        transition: all 0.3s ease;
+        animation: spin 8s linear infinite;  
+        animation-play-state: paused;
+    }
 
-.music-control {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Dùng 50% thay vì 100% cho chuẩn */
-    font-size: 24px; /* Tăng kích thước icon nhạc */
-    
-    /* === CẢI THIỆN HIỆU ỨNG TRONG SUỐT === */
-    background: rgba(255, 255, 255, 0.1); /* Tăng nhẹ độ trong suốt */
-    backdrop-filter: blur(10px) saturate(180%); /* Tăng độ mờ và độ bão hòa */
-    -webkit-backdrop-filter: blur(10px) saturate(180%); /* Hỗ trợ trình duyệt */
-    
-    display: flex; 
-    justify-content: center; 
-    align-items: center;
-    cursor: pointer; 
-    
-    /* Viền trắng sáng hơn, mỏng hơn, có độ bóng nhẹ */
-    border: 1px solid rgba(255, 255, 255, 0.6); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
-                inset 0 0 0 1px rgba(255, 255, 255, 0.05); /* Bóng bên trong nhẹ */
-
-    transition: all 0.3s ease;
-    animation: spin 8s linear infinite; 
-    animation-play-state: paused;
-}
-
-/* Hiệu ứng khi đang phát nhạc (Thêm Glow) */
-.music-control.playing { 
-    animation-play-state: running; 
-    background: rgba(255, 107, 159, 0.5); /* Nền hồng mờ */
-    border-color: rgba(255, 107, 159, 0.8);
-    /* Tỏa sáng hồng lãng mạn */
-    box-shadow: 0 0 15px rgba(255, 107, 159, 0.8),
-                0 0 25px rgba(255, 192, 203, 0.6);
-}
-
-@keyframes spin { 
-    100% { transform: rotate(360deg); } 
-}
-
+    /* Hiệu ứng khi đang phát nhạc (Thêm Glow) */
+    .music-control.playing {  
+        animation-play-state: running;  
+        background: rgba(255, 107, 159, 0.5);
+        border-color: rgba(255, 107, 159, 0.8);
+        box-shadow: 0 0 15px rgba(255, 107, 159, 0.8),
+                    0 0 25px rgba(255, 192, 203, 0.6);
+    }
 
 
     /* =========================================
        2. HIỆU ỨNG TRÁI TIM BAY (ĐÃ SỬA Z-INDEX)
        ========================================= */
-    /* SỬA: Đổi z-index từ -1 thành 1 để hiện lên trên background */
     .hearts{ position:fixed; inset:0; pointer-events:none; z-index: 1; }
     
     .hearts i{ position:absolute; width:16px; height:16px; transform: rotate(45deg);
@@ -101,22 +97,19 @@
       0%{ transform:translateY(10vh) rotate(45deg) scale(.8);} 
       100%{ transform:translateY(-110vh) rotate(45deg) scale(1.1);} 
     }
-	
+    
     /* =========================================
        2. HIỆU ỨNG SAO RƠI
        ========================================= */
-.stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
-.star {
-    position: absolute; top: 50%; left: 50%;
-    height: 2px; background: linear-gradient(-45deg, #5f91ff, rgba(0,0,255,0));
-    filter: drop-shadow(0 0 6px #699bff);
-    animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
-}
-@keyframes tail { 0% { width: 0; } 30% { width: 100px; } 100% { width: 0; } }
-@keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(300px); } }
-
-
-
+    .stars { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+    .star {
+      position: absolute; top: 50%; left: 50%;
+      height: 2px; background: linear-gradient(-45deg, #5f91ff, rgba(0,0,255,0));
+      filter: drop-shadow(0 0 6px #699bff);
+      animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
+    }
+    @keyframes tail { 0% { width: 0; } 30% { width: 100px; } 100% { width: 0; } }
+    @keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(300px); } }
 
 
     /* =========================================
@@ -136,7 +129,6 @@
       
       position: relative; 
       overflow: hidden;
-      /* SỬA: Thêm z-index cao hơn trái tim để chữ luôn nằm đè lên tim */
       z-index: 10; 
       
       animation: rise .9s ease-out both, glowPulse 3s ease-in-out infinite;
@@ -165,7 +157,7 @@
     /* =========================================
        4. HIỆU ỨNG GÕ CHỮ
        ========================================= */
-    .typing{ 
+    .typing{  
       white-space: pre-wrap; 
       font-size: clamp(16px, 3.6vw, 18px); 
       line-height: 1.6; 
@@ -176,11 +168,11 @@
     
     .cursor {
       display: inline-block;
-      width: 10px;               
+      width: 10px;          
       line-height: 1em;
-      height: 1.2em;             
+      height: 1.2em;        
       margin-left: 1px;
-      vertical-align: text-bottom; 
+      vertical-align: text-bottom;
       border-left: 2px solid currentColor;
       animation: blink 1s steps(1) infinite;
     }
@@ -189,7 +181,7 @@
     /* =========================================
        5. BUTTONS
        ========================================= */
-    .actions{ 
+    .actions{  
       display: none; 
       gap: 10px; margin-top: 18px; 
       align-items: center; flex-wrap: wrap; justify-content: center;
@@ -202,7 +194,7 @@
     }
     @keyframes fadeUp {
       from { opacity:0; transform: translateY(40px); }
-      to   { opacity:1; transform: translateY(0); }
+      to  { opacity:1; transform: translateY(0); }
     }
 
     .btn{
@@ -217,20 +209,26 @@
     
     .btn.primary{ color: #0a0d0f; background: linear-gradient(180deg, #7cf7d4, #48e4bd); border-color: transparent; }
     .btn.heart{ background: linear-gradient(180deg, #ff9ac0, #ff6b9f); border-color: transparent }
-    .note{ margin-top: 10px; font-size: 12px; opacity: .75 }
+    .note{ margin-top: 10px; font-size: 16px; opacity: .9; text-align: center; font-weight: 600; }
   </style>
 </head>
 
 	
 <body>
 <audio id="bgMusic" loop><source src="./audio/khongthoigian_yes.mp3" type="audio/mpeg"></audio>
-<div class="music-control" onclick="toggleMusic()">🎵</div>
+<audio id="effectMusic"><source src="./audio/khongthoigian_yes.mp3" type="audio/mpeg"></audio> 
+
+<div class="music-control" id="music-control-btn" onclick="toggleMusic()">
+    <i class="fas fa-play" id="music-icon"></i> 
+</div>
+
+
   <div class="hearts" aria-hidden="true"></div>
   <div class="stars"></div>
   <section class="serdykee">
-   <h1>Gửi người anh thương…</h1>
-   
-   <p id="typeTarget" class="typing"></p>
+    <h1>Gửi người anh thương…</h1>
+    
+    <p id="typeTarget" class="typing"></p>
 
     <div class="actions" id="actions">
       <button class="btn heart" id="btnYes">💖 ĐỒNG Ý</button>
@@ -253,7 +251,8 @@
         h.style.bottom = (-10 + Math.random()*20) + 'vh';
         h.style.setProperty('--dur', (18+Math.random()*14)+'s');
         h.style.animationDelay = (Math.random()*-20)+'s';
-        h.style.fontSize = (12 + Math.random()*50) + 'px';      
+        // SỬA: Chỉnh lại size của i để phù hợp với CSS trái tim
+        h.style.setProperty('--size', (12 + Math.random()*12) + 'px');
         ctn.appendChild(h);
       }
     })();
@@ -263,17 +262,11 @@
     // -----------------------------------------------------
     const sequence = [
       {text: "Ngọc Hà yêu dấu !", pause: 2200},
-      {text: "\nAnh vốn dĩ không phải là một người hoàn hỏaoo...", pause: 700},{delete: 8, pause: 500},
-      {text: "hảo,", pause: 1250},
-      {text: " anh vẫn đầy những khuyết điểm và những thiếu soots !", pause: 1200},{delete: 7, pause: 200},
-      {text: "sót, ", pause: 500},
+      {text: "\nAnh vốn dĩ không phải là một người hoàn hảo,", pause: 1250},
+      {text: " anh vẫn đầy những khuyết điểm và những thiếu sót, ", pause: 500},
       {text: "chẳng phải lúc nào cũng dịu dàng trước em. ", pause: 4200},
       {text: "Mỗi một ngày anh đều cố gắng dành cho em thứ tình yêu mà em xứng đáng được nhận, cho em thứ cảm giác an toàn nhiều hơn, cùng nhau trải qua những ngày tồi tệ, để tìm được những ngày bình yên, như lúc này. ", pause: 4200},
-      {text: "\nAnh từng nghĩ mình sẽ", pause: 1200},
-      {delete: 7, pause: 300},
-      {text: "trái tim mình sẽ chẳng thể rung động lại nữa...", pause: 2200},
-      {delete: 3, pause: 420},
-      {text: ". Sau", pause: 650},
+      {text: "\nAnh từng nghĩ trái tim mình sẽ chẳng thể rung động lại nữa... Sau", pause: 650},
       {text: " những tổn thương cũ, ", pause: 900},
       {text: "sau những đổ vỡ không lời, ", pause: 900},
       {text: "anh dần học cách im lặng và tự khâu vá những vết đau mà chẳng ai thấy. ", pause: 3000},
@@ -298,8 +291,6 @@
       {text: "và ", pause: 2200},
       {text: "bằng cả trái tim đã sống lại ", pause: 900},
       {text: "- vì em ", pause: 900},
-      {text: "😘😘😘", pause: 300},
-      {delete: 6, pause: 200},
       {text: "💖", pause: 1200}
     ];
 
@@ -311,7 +302,7 @@
     cursor.className = 'cursor';
     el.appendChild(cursor);
 
-    const charSpeed = 50, delSpeed = 25; 
+    const charSpeed = 50, delSpeed = 25;  
     let stepIndex = 0, charIndex = 0, currentText = '';
 
     function runStep(){
@@ -326,25 +317,25 @@
           currentText += step.text.charAt(charIndex++);
           renderText();
           setTimeout(runStep, charSpeed + (Math.random()*18 - 8));
-        } else { 
-          charIndex = 0; 
-          stepIndex++; 
-          setTimeout(runStep, step.pause||220); 
+        } else {  
+          charIndex = 0;  
+          stepIndex++;  
+          setTimeout(runStep, step.pause||220);  
         }
       } 
       else if(step.delete !== undefined){
         if(step.delete > 0){
-          currentText = currentText.slice(0, -1); 
+          currentText = currentText.slice(0, -1);  
           step.delete--;
           renderText();
           setTimeout(runStep, delSpeed + (Math.random()*12 - 6));
-        } else { 
-          stepIndex++; 
-          setTimeout(runStep, step.pause||120); 
+        } else {  
+          stepIndex++;  
+          setTimeout(runStep, step.pause||120);  
         }
-      } else { 
-        stepIndex++; 
-        setTimeout(runStep,120); 
+      } else {  
+        stepIndex++;  
+        setTimeout(runStep,120);  
       }
     }
     
@@ -353,43 +344,71 @@
     setTimeout(runStep, 420);
 
     // -----------------------------------------------------
-    // 4. XỬ LÝ SỰ KIỆN NÚT BẤM
+    // 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC
     // -----------------------------------------------------
 
-const note = document.getElementById('note');
-// Lấy các thẻ audio
-const bgMusic = document.getElementById('bgMusic');
-const effectMusic = document.getElementById('effectMusic');
-const musicBtn = document.querySelector('.music-control');
-const vinyl = document.querySelector('.vinyl-record');
+    const note = document.getElementById('note');
+    const bgMusic = document.getElementById('bgMusic');
+    // SỬA: Lấy đúng ID
+    const effectMusic = document.getElementById('effectMusic'); 
+    const musicBtn = document.getElementById('music-control-btn'); 
+    // THÊM: Icon Play/Pause
+    const musicIcon = document.getElementById('music-icon');
 
-// Nút Đồng ý
-document.getElementById('btnYes').addEventListener('click', ()=>{ 
-    
-    // 1. DỪNG NHẠC NỀN
-    if (!bgMusic.paused) {
+    // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
+    function toggleMusic(){
+      if(bgMusic.paused){
+        // Yêu cầu tương tác của người dùng để phát nhạc
+        bgMusic.play().then(() => {
+          musicBtn.classList.add('playing');
+          musicIcon.classList.remove('fa-play');
+          musicIcon.classList.add('fa-pause');
+        }).catch(error => {
+          console.error('Lỗi phát nhạc:', error);
+        });
+      }else{
         bgMusic.pause();
-        // Cập nhật trạng thái nút và đĩa than
         musicBtn.classList.remove('playing');
-        if(vinyl) vinyl.style.animationPlayState = 'paused';
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-play');
+      }
     }
+    // Gán hàm vào window để gọi từ onclick trong HTML
+    window.toggleMusic = toggleMusic;
 
-    // 2. PHÁT NHẠC HIỆU ỨNG
-    // Đặt lại thời gian về 0 để đảm bảo nhạc luôn phát từ đầu
-    effectMusic.currentTime = 0; 
-    effectMusic.play().catch(e => console.log('Lỗi phát nhạc hiệu ứng:', e));
 
-    // 3. HIỂN THỊ THÔNG BÁO VÀ HIỆU ỨNG
-    sparkle(); // Bắn pháo bông nhỏ
-    note.innerHTML='Yay! 💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
-});
+    // Nút Đồng ý
+    document.getElementById('btnYes').addEventListener('click', ()=>{ 
+      // 1. DỪNG NHẠC NỀN
+      if (!bgMusic.paused) {
+        bgMusic.pause();
+        musicBtn.classList.remove('playing');
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-play');
+      }
 
-// Nút Suy nghĩ thêm
-document.getElementById('btnNo').addEventListener('click', ()=>{ 
-    note.innerHTML='Không sao đâu ! Anh sẽ chờ em ⏳';
-});
+      // 2. PHÁT NHẠC HIỆU ỨNG (effectMusic)
+      if(effectMusic){
+          effectMusic.currentTime = 0;  
+          effectMusic.play().catch(e => console.log('Lỗi phát nhạc hiệu ứng:', e));
+      }
+
+      // 3. HIỂN THỊ THÔNG BÁO VÀ HIỆU ỨNG
+      sparkle(); 
+      note.innerHTML='**Yay!** 💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
+      // Ẩn nút "KHÔNG ĐỒNG Ý"
+      document.getElementById('btnNo').style.display = 'none';
+      document.getElementById('btnYes').textContent = '💌 CHẤP NHẬN RỒI ĐÓ!';
+
+    });
+
+    // Nút Suy nghĩ thêm
+    document.getElementById('btnNo').addEventListener('click', ()=>{ 
+      note.innerHTML='**Không sao đâu!** Anh sẽ chờ em ⏳';
+    });
+    
     // -----------------------------------------------------
-    // 5. HIỆU ỨNG SPARKLE (Thêm lại hàm này để nút bấm đẹp hơn)
+    // 5. HIỆU ỨNG SPARKLE 
     // -----------------------------------------------------
     function sparkle(){
       const card = document.querySelector('.serdykee');
@@ -407,7 +426,7 @@ document.getElementById('btnNo').addEventListener('click', ()=>{
         s.style.opacity='0.95';
         s.style.transform='translate(-50%,-50%)';
         s.style.pointerEvents='none';
-        s.style.zIndex = '20'; // Đảm bảo hạt nổ bay lên trên cùng
+        s.style.zIndex = '20';
         
         const dx=(Math.random()*120-60), dy=(Math.random()*80-60);
         s.animate([
@@ -419,28 +438,8 @@ document.getElementById('btnNo').addEventListener('click', ()=>{
         setTimeout(()=>s.remove(),1400); 
       }
     }
-	
-	// -----------------------------------------------------
-    // 6. HIỆU ỨNG NHẠC
-    // -----------------------------------------------------
-	
-	function toggleMusic(){
-    const music = document.getElementById('bgMusic');
-    const btn = document.querySelector('.music-control');
-    if(music.paused){
-        music.play();
-        btn.classList.add('playing');
-    }else{
-        music.pause();
-        btn.classList.remove('playing');
-    }
-}
+
   </script>
 
 </body>
 </html>
-
-
-
-
-

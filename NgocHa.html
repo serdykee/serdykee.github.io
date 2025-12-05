@@ -406,7 +406,10 @@
     document.getElementById('btnNo').addEventListener('click', ()=>{ 
       note.innerHTML='**Không sao đâu!** Anh sẽ chờ em ⏳';
     });
-    
+
+
+
+	  
     // -----------------------------------------------------
     // 5. HIỆU ỨNG SPARKLE 
     // -----------------------------------------------------
@@ -439,7 +442,42 @@
       }
     }
 
+// -----------------------------------------------------
+// 1.5. THÊM HIỆU ỨNG SAO RƠI (SHOOTING STARS)
+// -----------------------------------------------------
+(function seedStars() {
+    const ctn = document.querySelector('.stars');
+    const N = 15; // Số lượng sao băng bạn muốn
+
+    for (let i = 0; i < N; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        
+        // Thiết lập vị trí, kích thước, và thời gian animation ngẫu nhiên
+        const randomX = Math.random() * 100 + 'vw';
+        const randomY = Math.random() * 100 + 'vh';
+        const randomDuration = 3 + Math.random() * 5 + 's'; // 3s đến 8s
+        const randomDelay = Math.random() * -10 + 's'; // Delay âm để các ngôi sao xuất hiện ngay
+
+        star.style.left = randomX;
+        star.style.top = randomY;
+        star.style.animationDuration = randomDuration;
+        star.style.animationDelay = randomDelay;
+        
+        // Kích thước của đuôi sao
+        star.style.width = 1 + Math.random() * 2 + 'px'; 
+
+        ctn.appendChild(star);
+    }
+})();
+
+
+
+
+
+	  
   </script>
 
 </body>
 </html>
+

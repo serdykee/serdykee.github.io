@@ -356,17 +356,39 @@
     // -----------------------------------------------------
     // 4. XỬ LÝ SỰ KIỆN NÚT BẤM
     // -----------------------------------------------------
-    const note = document.getElementById('note');
-    
-    document.getElementById('btnYes').addEventListener('click', ()=>{ 
-        sparkle(); 
-        note.innerHTML='Yay! 💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
-    });
-    
-    document.getElementById('btnNo').addEventListener('click', ()=>{ 
-        note.innerHTML='Không sao đâu ! Anh sẽ chờ em ⏳';
-    });
 
+const note = document.getElementById('note');
+// Lấy các thẻ audio
+const bgMusic = document.getElementById('bgMusic');
+const effectMusic = document.getElementById('effectMusic');
+const musicBtn = document.querySelector('.music-control');
+const vinyl = document.querySelector('.vinyl-record');
+
+// Nút Đồng ý
+document.getElementById('btnYes').addEventListener('click', ()=>{ 
+    
+    // 1. DỪNG NHẠC NỀN
+    if (!bgMusic.paused) {
+        bgMusic.pause();
+        // Cập nhật trạng thái nút và đĩa than
+        musicBtn.classList.remove('playing');
+        if(vinyl) vinyl.style.animationPlayState = 'paused';
+    }
+
+    // 2. PHÁT NHẠC HIỆU ỨNG
+    // Đặt lại thời gian về 0 để đảm bảo nhạc luôn phát từ đầu
+    effectMusic.currentTime = 0; 
+    effectMusic.play().catch(e => console.log('Lỗi phát nhạc hiệu ứng:', e));
+
+    // 3. HIỂN THỊ THÔNG BÁO VÀ HIỆU ỨNG
+    sparkle(); // Bắn pháo bông nhỏ
+    note.innerHTML='Yay! 💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
+});
+
+// Nút Suy nghĩ thêm
+document.getElementById('btnNo').addEventListener('click', ()=>{ 
+    note.innerHTML='Không sao đâu ! Anh sẽ chờ em ⏳';
+});
     // -----------------------------------------------------
     // 5. HIỆU ỨNG SPARKLE (Thêm lại hàm này để nút bấm đẹp hơn)
     // -----------------------------------------------------
@@ -415,5 +437,8 @@
     }
 }
   </script>
+  <audio id="effectMusic">
+  <source src="khongthoigian_yes.mp3" type="audio/mpeg">
+</audio>
 </body>
 </html>

@@ -109,8 +109,16 @@
       animation: tail 3000ms ease-in-out infinite, shooting 3000ms ease-in-out infinite;
     }
     @keyframes tail { 0% { width: 0; } 30% { width: 100px; } 100% { width: 0; } }
-    @keyframes shooting { 0% { transform: translateX(0); } 100% { transform: translateX(300px); } }
 
+@keyframes shooting { 
+    0% { 
+        transform: translate(0, 0) rotate(-45deg); 
+    } 
+    100% { 
+        /* Rơi chéo xuống 300px theo cả X và Y */
+        transform: translate(300px, 300px) rotate(-45deg); 
+    } 
+}
 
     /* =========================================
        3. KHUNG CHỨA NỘI DUNG (ĐÃ SỬA Z-INDEX)
@@ -480,4 +488,5 @@
 
 </body>
 </html>
+
 

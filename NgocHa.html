@@ -378,16 +378,14 @@ function runStep(){
         setTimeout(runStep,120);  
     }
 }
-
+  // Cuộn mượt, KHÔNG nhảy
 function renderText(){
   textEl.textContent = currentText;
 
-  // Cuộn mượt, KHÔNG nhảy
-  if (el.scrollHeight > el.clientHeight) {
+  requestAnimationFrame(() => {
     el.scrollTop = el.scrollHeight;
-  }
+  });
 }
-
 
 setTimeout(runStep, 2000);
     // -----------------------------------------------------
@@ -538,6 +536,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

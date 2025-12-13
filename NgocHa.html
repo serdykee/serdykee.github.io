@@ -327,6 +327,27 @@ const cursor = document.createElement('span');
 cursor.className = 'cursor';
 el.appendChild(cursor);
 
+
+// VUỐT TOÀN MÀN ĐỂ CUỘN NỘI DUNG
+let startY = 0;
+
+document.addEventListener('touchstart', (e) => {
+  if (!el.classList.contains('scrollable')) return;
+  startY = e.touches[0].clientY;
+}, { passive: true });
+
+document.addEventListener('touchmove', (e) => {
+  if (!el.classList.contains('scrollable')) return;
+
+  const currentY = e.touches[0].clientY;
+  const deltaY = startY - currentY;
+
+  el.scrollTop += deltaY;
+  startY = currentY;
+}, { passive: true }); // HẾT VUỐT TOÀN MÀN ĐỂ CUỘN NỘI DUNG
+
+
+	  
 const charSpeed = 50, delSpeed = 25;  
 let stepIndex = 0, charIndex = 0, currentText = '';
 
@@ -522,6 +543,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

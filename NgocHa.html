@@ -389,20 +389,17 @@ setTimeout(runStep, 2000);
     // -----------------------------------------------------
     // 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC
     // -----------------------------------------------------
-
-    const note = document.getElementById('note');
-    const bgMusic = document.getElementById('bgMusic');
-    // SỬA: Lấy đúng ID
+const actions = document.getElementById('actions');
+const note = document.getElementById('note');
+    const effectMusic = document.getElementById('effectMusic');     // SỬA: Lấy đúng ID nhạc
     const effectMusic = document.getElementById('effectMusic'); 
-    const musicBtn = document.getElementById('music-control-btn'); 
-    // THÊM: Icon Play/Pause
+    const musicBtn = document.getElementById('music-control-btn'); // THÊM: Icon Play/Pause
     const musicIcon = document.getElementById('music-icon');
-// === ÂM LƯỢNG NHẠC ===
+    const musicBtn = document.getElementById('music-control-btn');  
+    const musicIcon = document.getElementById('music-icon');     // THÊM: Icon Play/Pause
 bgMusic.volume = 0.2;      // Nhạc nền dịu xuống
 effectMusic.volume = 1.0;  // Hiệu ứng max lực 
-
-	  
-    // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
+	      // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
     function toggleMusic(){
       if(bgMusic.paused){
         // Yêu cầu tương tác của người dùng để phát nhạc
@@ -420,13 +417,11 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
         musicIcon.classList.add('fa-play');
       }
     }
-    // Gán hàm vào window để gọi từ onclick trong HTML
-    window.toggleMusic = toggleMusic;
-
-
-    // Nút Đồng ý
-    document.getElementById('btnYes').addEventListener('click', ()=>{ 
-      // 1. DỪNG NHẠC NỀN
+    window.toggleMusic = toggleMusic;     // Gán hàm vào window để gọi từ onclick trong HTML
+	  
+// ===== NÚT ĐỒNG Ý =====
+document.getElementById('btnYes').addEventListener('click', () => {
+    // 1. DỪNG NHẠC NỀN
       if (!bgMusic.paused) {
         bgMusic.pause();
         musicBtn.classList.remove('playing');
@@ -439,20 +434,40 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
           effectMusic.currentTime = 0;  
           effectMusic.play().catch(e => console.log('Lỗi phát nhạc hiệu ứng:', e));
       }
+	
+	sparkle();
 
-      // 3. HIỂN THỊ THÔNG BÁO VÀ HIỆU ỨNG
-      sparkle(); 
-      note.innerHTML='💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
-      // Ẩn nút "ĐỒNG Ý"
-      document.getElementById('btnYes').style.display = 'none';
-      document.getElementById('btnYes').textContent = '💌 NHẮN TIN NGAY CHO ANH NHÉ!';
-    });
+  note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
 
-    // Ẩn nút "KHÔNG ĐỒNG Ý"
-    document.getElementById('btnNo').addEventListener('click', ()=>{ 
-      note.innerHTML='⏳ Không sao cả, Anh sẽ chờ em !';
-    });
+  actions.innerHTML = `
+    <button class="btn heart primary" id="btnChat">
+      💌 NHẮN TIN CHO ANH
+    </button>
+  `;
 
+  document.getElementById('btnChat').addEventListener('click', () => {
+    note.innerHTML = '💫 Anh đang chờ tin nhắn của em…';
+    // 👉 nếu muốn mở link chat thì gắn ở đây
+    // window.open('https://m.me/xxxxx', '_blank');
+  });
+});
+
+// ===== NÚT KHÔNG ĐỒNG Ý =====
+document.getElementById('btnNo').addEventListener('click', () => {
+  note.innerHTML = '🌙 Không sao cả… Anh tôn trọng quyết định của em.';
+
+  actions.innerHTML = `
+    <button class="btn" id="btnBye">
+      👋 TẠM BIỆT
+    </button>
+  `;
+
+  document.getElementById('btnBye').addEventListener('click', () => {
+    note.innerHTML = '🍃 Chúc em luôn bình yên…';
+  });
+});
+
+	
 
 
 	  
@@ -533,6 +548,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

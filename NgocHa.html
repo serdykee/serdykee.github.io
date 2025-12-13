@@ -38,7 +38,7 @@
       align-items: center;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: var(--text); 
-      letter-spacing: .2px;
+      letter-spacing: .1px;
       /* Background dạng gradient tối màu */
       background: radial-gradient(1200px 800px at 10% 10%, #2a2a72 0%, #1f1c2c 35%, #111 100%) fixed;
     }
@@ -443,16 +443,15 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
       // 3. HIỂN THỊ THÔNG BÁO VÀ HIỆU ỨNG
       sparkle(); 
-      note.innerHTML='**Yay!** 💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
-      // Ẩn nút "KHÔNG ĐỒNG Ý"
-      document.getElementById('btnNo').style.display = 'none';
-      document.getElementById('btnYes').textContent = '💌 CHẤP NHẬN RỒI ĐÓ!';
-
+      note.innerHTML='💫 Anh đang chờ đợi câu trả lời của em đấy. Còn chờ gì nữa mà không nhắn tin cho anh !';
+      // Ẩn nút "ĐỒNG Ý"
+      document.getElementById('btnYes').style.display = 'none';
+      document.getElementById('btnYes').textContent = '💌 NHẮN TIN NGAY CHO ANH NHÉ!';
     });
 
-    // Nút Suy nghĩ thêm
+    // Ẩn nút "KHÔNG ĐỒNG Ý"
     document.getElementById('btnNo').addEventListener('click', ()=>{ 
-      note.innerHTML='**Không sao đâu!** Anh sẽ chờ em ⏳';
+      note.innerHTML='⏳ Không sao cả, Anh sẽ chờ em !';
     });
 
 
@@ -535,6 +534,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

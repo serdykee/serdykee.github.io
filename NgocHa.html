@@ -392,7 +392,11 @@ setTimeout(runStep, 420);
     const musicBtn = document.getElementById('music-control-btn'); 
     // THÊM: Icon Play/Pause
     const musicIcon = document.getElementById('music-icon');
+// === ÂM LƯỢNG NHẠC ===
+bgMusic.volume = 0.5;      // Nhạc nền dịu xuống
+effectMusic.volume = 1.0;  // Hiệu ứng max lực 
 
+	  
     // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
     function toggleMusic(){
       if(bgMusic.paused){
@@ -518,6 +522,7 @@ setTimeout(runStep, 420);
 
 </body>
 </html>
+
 
 
 

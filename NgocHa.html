@@ -389,14 +389,13 @@ setTimeout(runStep, 2000);
     // -----------------------------------------------------
     // 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC
     // -----------------------------------------------------
+const bgMusic = document.getElementById('bgMusic');
+const effectMusic = document.getElementById('effectMusic');
+const musicBtn = document.getElementById('music-control-btn');
+const musicIcon = document.getElementById('music-icon');
 const actions = document.getElementById('actions');
 const note = document.getElementById('note');
-    const effectMusic = document.getElementById('effectMusic');     // SỬA: Lấy đúng ID nhạc
-    const effectMusic = document.getElementById('effectMusic'); 
-    const musicBtn = document.getElementById('music-control-btn'); // THÊM: Icon Play/Pause
-    const musicIcon = document.getElementById('music-icon');
-    const musicBtn = document.getElementById('music-control-btn');  
-    const musicIcon = document.getElementById('music-icon');     // THÊM: Icon Play/Pause
+const bgMusic = document.getElementById('bgMusic');
 bgMusic.volume = 0.2;      // Nhạc nền dịu xuống
 effectMusic.volume = 1.0;  // Hiệu ứng max lực 
 	      // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
@@ -441,20 +440,20 @@ document.getElementById('btnYes').addEventListener('click', () => {
 
   actions.innerHTML = `
     <button class="btn heart primary" id="btnChat">
-      💌 NHẮN TIN CHO ANH
+      💌 NHẮN TIN CHO ANH NHÉ
     </button>
   `;
 
   document.getElementById('btnChat').addEventListener('click', () => {
-    note.innerHTML = '💫 Anh đang chờ tin nhắn của em…';
+    note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
     // 👉 nếu muốn mở link chat thì gắn ở đây
-    // window.open('https://m.me/xxxxx', '_blank');
+    window.open('https://serdykee.github.io', '_blank');
   });
 });
 
 // ===== NÚT KHÔNG ĐỒNG Ý =====
 document.getElementById('btnNo').addEventListener('click', () => {
-  note.innerHTML = '🌙 Không sao cả… Anh tôn trọng quyết định của em.';
+  note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
 
   actions.innerHTML = `
     <button class="btn" id="btnBye">
@@ -463,7 +462,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
   `;
 
   document.getElementById('btnBye').addEventListener('click', () => {
-    note.innerHTML = '🍃 Chúc em luôn bình yên…';
+    note.innerHTML = '🍃 Chúc em luôn bình yên …';
   });
 });
 
@@ -548,6 +547,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 

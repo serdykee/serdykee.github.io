@@ -10,7 +10,7 @@
   <!-- Open Graph -->
 <meta property="og:type" content="website">
   <meta property="og:url" content="https://serdykee.github.io">
-  <meta property="og:title" content="💌 Tâm thư gửi em - Từ một người rất thương em !">
+  <meta property="og:title" content="💌 Tâm thư gửi em ! - SerdyKee">
   <meta property="og:description" content="💖 Tận sâu trong đáy lòng anh !">
   <meta property="og:image" content="https://serdykee.github.io/image/serdykee.jpg">
 	
@@ -256,7 +256,10 @@
   <section class="serdykee">
     <h1>Gửi người anh thương…</h1>
     
-    <p id="typeTarget" class="typing"></p>
+    <p id="typeTarget" class="typing">
+  <span id="typedText"></span><span class="cursor"></span>
+</p>
+
 
     <div class="actions" id="actions">
       <button class="btn heart" id="btnYes">💖 ĐỒNG Ý</button>
@@ -326,9 +329,9 @@
 // 3. XỬ LÝ LOGIC GÕ CHỮ (Đã thêm chức năng cuộn tự động)
 // -----------------------------------------------------
 const el = document.getElementById('typeTarget');
-const cursor = document.createElement('span');
-cursor.className = 'cursor';
-el.appendChild(cursor);
+const el = document.getElementById('typeTarget');
+const textEl = document.getElementById('typedText');
+
 	  
 const charSpeed = 50, delSpeed = 25;  
 let stepIndex = 0, charIndex = 0, currentText = '';
@@ -377,11 +380,15 @@ function runStep(){
     }
 }
 
-function renderText(){ 
-    // Giữ nguyên logic hiển thị văn bản
-    el.textContent = currentText; 
-    el.appendChild(cursor); 
+function renderText(){
+  textEl.textContent = currentText;
+
+  // Cuộn mượt, KHÔNG nhảy
+  if (el.scrollHeight > el.clientHeight) {
+    el.scrollTop = el.scrollHeight;
+  }
 }
+
 
 setTimeout(runStep, 2000);
     // -----------------------------------------------------
@@ -532,6 +539,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

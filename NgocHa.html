@@ -173,26 +173,22 @@
     /* =========================================
        4. HIỆU ỨNG GÕ CHỮ
        ========================================= */
-    .typing{  
-      white-space: pre-wrap; 
-      font-size: clamp(16px, 3.6vw, 18px); 
-      line-height: 1.6; 
-      color: #f2f6ff; 
-      text-align: justify; 
-  /* === BỔ SUNG & SỬA ĐỔI QUAN TRỌNG === */
-    min-height: 4.4em; /* Giữ nguyên chiều cao tối thiểu */
-    max-height: 350px; /* Giới hạn chiều cao tối đa của vùng hiển thị văn bản */
-    overflow-y: hidden; /* Ban đầu ẩn thanh cuộn */
-    transition: all 1s ease; /* Thêm transition cho hiệu ứng mượt mà */
+ .typing{  
+  white-space: pre-wrap; 
+  font-size: clamp(16px, 3.6vw, 18px); 
+  line-height: 1.6; 
+  color: #f2f6ff; 
+  text-align: justify;
+
+  height: 350px;                 /* 🔒 CỐ ĐỊNH TỪ ĐẦU */
+  overflow-y: auto;              /* LUÔN CUỘN */
+  scroll-behavior: smooth;       /* ✨ MƯỢT */
+  -webkit-overflow-scrolling: touch; /* 📱 MƯỢT TRÊN MOBILE */
+
+  scrollbar-width: none;
 }
-    /* THÊM MỘT CLASS MỚI để kích hoạt cuộn */
-.typing.scrollable {
-    overflow-y: auto; /* Cho phép cuộn khi nội dung tràn */
-    /* Tùy chọn: Thêm kiểu cuộn tùy chỉnh cho Chrome/Safari */
-scrollbar-width: none;
-}
-.typing.scrollable::-webkit-scrollbar {
-display: none; /* Hoàn toàn ẩn thanh cuộn */
+.typing::-webkit-scrollbar{
+  display:none;
 }
 
 	
@@ -333,28 +329,6 @@ const el = document.getElementById('typeTarget');
 const cursor = document.createElement('span');
 cursor.className = 'cursor';
 el.appendChild(cursor);
-
-
-// VUỐT TOÀN MÀN ĐỂ CUỘN NỘI DUNG
-let startY = 0;
-
-document.addEventListener('touchstart', (e) => {
-  if (!el.classList.contains('scrollable')) return;
-  startY = e.touches[0].clientY;
-});
-	  
-document.addEventListener('touchmove', (e) => {
-  if (!el.classList.contains('scrollable')) return;
-
-  e.preventDefault(); // CHÌA KHÓA
-  const currentY = e.touches[0].clientY;
-  const deltaY = startY - currentY;
-
-  el.scrollTop += deltaY;
-  startY = currentY;
-}, { passive: false }); // HẾT VUỐT TOÀN MÀN ĐỂ CUỘN NỘI DUNG
-
-
 	  
 const charSpeed = 50, delSpeed = 25;  
 let stepIndex = 0, charIndex = 0, currentText = '';
@@ -558,6 +532,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

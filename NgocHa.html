@@ -8,11 +8,11 @@
   <meta name="description" content="Chú cừu SerdyKee và bầy sói !" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="SerdyKee">
+<meta property="og:type" content="website">
   <meta property="og:url" content="https://serdykee.github.io">
   <meta property="og:title" content="💌 Tâm thư gửi em - Từ một người rất thương em !">
   <meta property="og:description" content="💖 Tận sâu trong đáy lòng anh !">
-  <meta property="og:image" content="./image/serdykee.jpg">
+  <meta property="og:image" content="https://serdykee.github.io/image/serdykee.jpg">
 	
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 
@@ -177,7 +177,6 @@
       white-space: pre-wrap; 
       font-size: clamp(16px, 3.6vw, 18px); 
       line-height: 1.6; 
-      min-height: 4.4em; 
       color: #f2f6ff; 
       text-align: justify; 
   /* === BỔ SUNG & SỬA ĐỔI QUAN TRỌNG === */
@@ -342,17 +341,18 @@ let startY = 0;
 document.addEventListener('touchstart', (e) => {
   if (!el.classList.contains('scrollable')) return;
   startY = e.touches[0].clientY;
-}, { passive: true });
-
+});
+	  
 document.addEventListener('touchmove', (e) => {
   if (!el.classList.contains('scrollable')) return;
 
+  e.preventDefault(); // CHÌA KHÓA
   const currentY = e.touches[0].clientY;
   const deltaY = startY - currentY;
 
   el.scrollTop += deltaY;
   startY = currentY;
-}, { passive: true }); // HẾT VUỐT TOÀN MÀN ĐỂ CUỘN NỘI DUNG
+}, { passive: false }); // HẾT VUỐT TOÀN MÀN ĐỂ CUỘN NỘI DUNG
 
 
 	  
@@ -551,6 +551,7 @@ effectMusic.volume = 1.0;  // Hiệu ứng max lực
 
 </body>
 </html>
+
 
 
 

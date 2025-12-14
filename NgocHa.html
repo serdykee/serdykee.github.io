@@ -136,7 +136,7 @@
   height: 120px;              /* 👈 CHỈ CAO ĐỦ CHỨA TIÊU ĐỀ */
   padding: 28px;
   border-radius: 22px;
-
+  animation: glowPulse 5s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
   background: var(--glass-bg);
   border: 1px solid var(--glass-brd);
   backdrop-filter: blur(var(--blur)) saturate(140%);
@@ -160,6 +160,7 @@
 
 .serdykee.open{
   height: 520px;   /* 👈 chiều cao khi xổ */
+	  animation: glowPulse 2.8s ease-in-out infinite;
 }
 
 .serdykee.open .typing{
@@ -582,6 +583,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 

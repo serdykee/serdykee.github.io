@@ -117,7 +117,23 @@ pointer-events: auto;
 
 @keyframes rise{ from{ transform: translateY(16px); opacity:0 } to{ transform: translateY(0); opacity:1 } }
 
-
+/* Hiệu ứng lóe sáng */
+.serdykee::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0));
+  transform: skewX(-25deg);
+  animation: shine 2s infinite;
+}
+@keyframes shine {
+  0% { left: -75%; }
+  50% { left: 125%; }
+  100% { left: 125%; }
+}
+	
 
 
 
@@ -134,23 +150,6 @@ color: transparent;
 text-shadow: 0 2px 12px rgba(0, 150, 255, .25);
 }
 
-/* Hiệu ứng lóe sáng */
-h1::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -75%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(120deg, rgba(255,255,255,0.6), rgba(255,255,255,0));
-  transform: skewX(-25deg);
-  animation: shine 2s infinite;
-}
-
-@keyframes shine {
-  0% { left: -75%; }
-  50% { left: 125%; }
-  100% { left: 125%; }
-}
 /* =========================================
       4. HIỆU ỨNG GÕ CHỮ
       ========================================= */
@@ -605,6 +604,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

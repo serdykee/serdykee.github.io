@@ -87,7 +87,7 @@ transform: translate(500px, 500px) rotate(45deg);
 
 /* =========================================
       3. KHUNG CHỨA NỘI DUNG (ĐÃ SỬA Z-INDEX)
-      ========================================= */
+	========================================= */
 .serdykee{
 width: min(1200px, 90vw); 
 height: 95px;              /* 👈 CHỈ CAO ĐỦ CHỨA TIÊU ĐỀ */
@@ -99,12 +99,16 @@ border: 1px solid var(--glass-brd);
 backdrop-filter: blur(var(--blur)) saturate(140%);
 -webkit-backdrop-filter: blur(var(--blur)) saturate(140%);
 box-shadow: 0 20px 50px var(--shadow);
-
 overflow: hidden;
 transition: height 1s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
 }
-
-
+.serdykee.open{
+height: 520px;   /* 👈 chiều cao khi xổ */
+}
+.serdykee.open .typing{
+opacity: 1;
+pointer-events: auto;
+}
 @keyframes glowPulse {
 0% {box-shadow: 0 0 0px rgba(255,255,255,0.0); border-color: rgba(255,255,255,0.35);}
 50% {box-shadow: 0 0 18px rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.8);}
@@ -115,14 +119,6 @@ transition: height 1s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
 
 
 
-.serdykee.open{
-height: 520px;   /* 👈 chiều cao khi xổ */
-}
-
-.serdykee.open .typing{
-opacity: 1;
-pointer-events: auto;
-}
 
 
 
@@ -230,6 +226,7 @@ display: none;
 .note.show{
   display: block;
   opacity: 1;
+	text-align: center;
   transform: translateY(0);
 }
 
@@ -568,6 +565,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

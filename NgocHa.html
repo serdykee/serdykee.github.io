@@ -183,15 +183,21 @@
        5. BUTTONS
        ========================================= */
     .actions{  
-      display: none; 
-      gap: 10px; margin-top: 18px; 
-      align-items: center; flex-wrap: wrap; justify-content: center;
-      opacity: 0;
+  display: none;
+  opacity: 0;
+  margin-top: 0;
+  padding: 0;
+  height: 0;
+  overflow: hidden;
     }
     
     .actions.show{
-      display: flex;
-      animation: fadeUp 1s ease forwards;
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+  height: auto;
+  opacity: 1;
+  animation: fadeUp 1s ease forwards;
     }
     @keyframes fadeUp {
       from { opacity:0; transform: translateY(40px); }
@@ -209,7 +215,18 @@
     .btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.35); border-color: rgba(255,255,255,.6); }
     .btn.primary{ color: #0a0d0f; background: linear-gradient(180deg, #7cf7d4, #48e4bd); border-color: transparent; }
     .btn.heart{ background: linear-gradient(180deg, #ff9ac0, #ff6b9f); border-color: transparent }
-    .note{ margin-top: 10px; font-size: 16px; opacity: .9; text-align: center; font-weight: 600; }
+    .note{    display: none;
+  margin-top: 8px;
+  padding: 10px 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all .5s ease;
+		 }
+		  .note.show{
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
   </style>
 </head>
 
@@ -413,8 +430,9 @@ document.getElementById('btnYes').addEventListener('click', () => {
 	
 	sparkle();
 
-  note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
-
+	note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
+	note.classList.add('show');
+	
   actions.innerHTML = `
     <button class="btn heart primary" id="btnChat">
       💌 NHẮN TIN CHO ANH NHÉ
@@ -430,8 +448,24 @@ document.getElementById('btnYes').addEventListener('click', () => {
 
 // ===== NÚT KHÔNG ĐỒNG Ý =====
 document.getElementById('btnNo').addEventListener('click', () => {
-  note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
 
+ // 1. DỪNG NHẠC NỀN
+      if (!bgMusic.paused) {
+        bgMusic.pause();
+        musicBtn.classList.remove('playing');
+        musicIcon.classList.remove('fa-pause');
+        musicIcon.classList.add('fa-play');
+      }
+
+      // 2. PHÁT NHẠC HIỆU ỨNG (effectMusic)
+      if(effectMusic){
+          effectMusic.currentTime = 0;  
+          effectMusic.play().catch(e => console.log('Lỗi phát nhạc hiệu ứng:', e));
+	  }
+		sparkle();
+note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
+note.classList.add('show');
+	
   actions.innerHTML = `
     <button class="btn" id="btnBye">
       👋 TẠM BIỆT
@@ -524,6 +558,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 

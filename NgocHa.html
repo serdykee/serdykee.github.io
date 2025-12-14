@@ -475,24 +475,27 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     note.innerHTML = '🌙 Anh sẽ tôn trọng quyết định của em !';
     note.classList.add('show');
     // 5. Thay nút bằng nút Bye
-    actions.innerHTML = `<button class="btn" id="btnBye">👋 TẠM BIỆT NHÉ</button>`;
-    document.getElementById('btnBye').addEventListener('click', () => {
-    note.innerHTML = '🍃 Chúc em luôn bình yên …';
- 	document.body.innerHTML = `
+actions.innerHTML = '';
+    const btnBye = document.createElement('button');
+    btnBye.className = 'btn';
+    btnBye.textContent = '👋 TẠM BIỆT NHÉ';
+    actions.appendChild(btnBye);
+// 5. Gắn event listener cho nút Bye
+    btnBye.addEventListener('click', () => {
+      document.body.innerHTML = `
         <div style="
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: #111; /* nền tối giống web cũ */
+            background: #111;
             color: #fff;
             font-size: 3rem;
             text-align: center;
         ">
             👋 Tạm biệt !
         </div>
-    `;
-
+      `;
 
 		
     });
@@ -572,6 +575,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

@@ -478,7 +478,20 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     actions.innerHTML = `<button class="btn" id="btnBye">👋 TẠM BIỆT NHÉ</button>`;
     document.getElementById('btnBye').addEventListener('click', () => {
     note.innerHTML = '🍃 Chúc em luôn bình yên …';
-	document.body.innerHTML = '<h1 style="text-align:center; margin-top:10vh; color:#fff;">👋 Tạm biệt !</h1>';
+		    // Ẩn thư và note
+    const card = document.querySelector('.serdykee');
+    const note = document.getElementById('note');
+    card.style.display = 'none';
+    note.style.display = 'none';
+    // Hiển thị thông báo tạm biệt
+    const byeMsg = document.createElement('h1');
+    byeMsg.textContent = '👋 Tạm biệt!';
+    byeMsg.style.textAlign = 'center';
+    byeMsg.style.marginTop = '40vh';
+    byeMsg.style.color = '#fff';
+    byeMsg.style.zIndex = '10'; // đảm bảo nằm trên các hiệu ứng
+    document.body.appendChild(byeMsg);
+	//document.body.innerHTML = '<h1 style="text-align:center; margin-top:10vh; color:#fff;">👋 Tạm biệt !</h1>';
     });
 });
 
@@ -556,6 +569,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

@@ -406,81 +406,79 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 }
 
 // -----------------------------------------------------
-// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC
+// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC CHUẨN MOBILE
 // -----------------------------------------------------
 const bgMusic = document.getElementById('bgMusic');
-const yesMusic = document.getElementById('yesMusic');
-const noMusic  = document.getElementById('noMusic');
 const actions = document.getElementById('actions');
 const note = document.getElementById('note');
 
-bgMusic.volume = 0.2;      // Nhạc nền dịu
-yesMusic.volume = 1.0;
-noMusic.volume  = 1.0;
-
-
-
+// Nhạc nền dịu
+bgMusic.volume = 0.2;
 
 // ===== NÚT ĐỒNG Ý =====
 document.getElementById('btnYes').addEventListener('click', () => {
-// 1. GIẢM NHẠC NỀN (KHÔNG PAUSE)
-if (bgMusic && !bgMusic.paused) {
-  bgMusic.volume = 0;
-}
-// 🔊 PHÁT NHẠC ĐỒNG Ý
-if (yesMusic) {
-  yesMusic.currentTime = 0;
-  yesMusic.play().catch(e => console.log(e));
-}
+    // 1. DỪNG NHẠC NỀN HOÀN TOÀN
+    if(bgMusic && !bgMusic.paused){
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+    }
 
-sparkle();
+    // 2. PHÁT NHẠC HIỆU ỨNG YES RIÊNG
+    const yesEffect = new Audio('./audio/yes.mp3');
+    yesEffect.volume = 1;
+    yesEffect.play().catch(e => console.log(e));
 
-  note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
+    // 3. HIỆU ỨNG PHÁO HOA
+    sparkle();
 
-	note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
-	note.classList.add('show');
-	
-actions.innerHTML = `
-   <button class="btn heart primary" id="btnChat">
-     💌 NHẮN TIN CHO ANH NHÉ
-   </button>
- `;
+    // 4. Hiển thị note
+    note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
+    note.classList.add('show');
 
-document.getElementById('btnChat').addEventListener('click', () => {
-note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
-// 👉 nếu muốn mở link chat thì gắn ở đây
-window.open('https://serdykee.github.io', '_blank');
-});
+    // 5. Thay nút bằng nút Chat
+    actions.innerHTML = `
+       <button class="btn heart primary" id="btnChat">
+         💌 NHẮN TIN CHO ANH NHÉ
+       </button>
+    `;
+
+    document.getElementById('btnChat').addEventListener('click', () => {
+        note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
+        window.open('https://serdykee.github.io', '_blank'); // gắn link chat
+    });
 });
 
 // ===== NÚT KHÔNG ĐỒNG Ý =====
 document.getElementById('btnNo').addEventListener('click', () => {
-  note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
+    // 1. DỪNG NHẠC NỀN HOÀN TOÀN
+    if(bgMusic && !bgMusic.paused){
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+    }
 
- // 1. GIẢM NHẠC NỀN (KHÔNG PAUSE)
-if (bgMusic && !bgMusic.paused) {
-  bgMusic.volume = 0;
-}
-// 🔊 PHÁT NHẠC KHÔNG ĐỒNG Ý
-if (yesMusic) {
-  noMusic.currentTime = 0;
-  noMusic.play().catch(e => console.log(e));
-}
-		sparkle();
-note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
-note.classList.add('show');
-	
-actions.innerHTML = `
-   <button class="btn" id="btnBye">
-     👋 TẠM BIỆT
-   </button>
- `;
+    // 2. PHÁT NHẠC HIỆU ỨNG NO RIÊNG
+    const noEffect = new Audio('./audio/no.mp3');
+    noEffect.volume = 1;
+    noEffect.play().catch(e => console.log(e));
 
-document.getElementById('btnBye').addEventListener('click', () => {
-note.innerHTML = '🍃 Chúc em luôn bình yên …';
+    // 3. HIỆU ỨNG PHÁO HOA
+    sparkle();
+
+    // 4. Hiển thị note
+    note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
+    note.classList.add('show');
+
+    // 5. Thay nút bằng nút Bye
+    actions.innerHTML = `
+       <button class="btn" id="btnBye">
+         👋 TẠM BIỆT
+       </button>
+    `;
+
+    document.getElementById('btnBye').addEventListener('click', () => {
+        note.innerHTML = '🍃 Chúc em luôn bình yên …';
+    });
 });
-});
-
 
 
 
@@ -562,6 +560,7 @@ ctn.appendChild(star);
 
 </body>
 </html>
+
 
 
 

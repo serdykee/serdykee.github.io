@@ -226,29 +226,22 @@ display: none;
     display: block;
     opacity: 1;
     text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
     position: relative;
-
     /* Rainbow gradient chạy ngang */
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
     background-size: 200%;  /* để gradient đủ dài chạy */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     /* Viền sáng */
     text-shadow: 0 0 5px #fff, 0 0 10px #fff;
-
     /* Animation tổng hợp */
     animation: rainbowMove 3s linear infinite, glow 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
 }
-
 /* Rainbow gradient chạy sang phải */
 @keyframes rainbowMove {
     0%   { background-position: 0%; }
     100% { background-position: 200%; }
 }
-
 /* Float trôi lên xuống */
 @keyframes float {
     0% { transform: translateY(0); }
@@ -595,6 +588,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

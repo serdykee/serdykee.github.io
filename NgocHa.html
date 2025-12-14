@@ -123,41 +123,18 @@ pointer-events: auto;
 
 
 h1 {
-    position: relative;
-    display: inline-block;
-    font-weight: 800;
-    font-size: clamp(24px, 5vw, 34px);
-    line-height: 1.2;
-    background: linear-gradient(20deg, #ffda72, #5412f3);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    text-shadow: 0 2px 8px rgba(255,255,255,0.2);
+margin: 0px 0 0px;
+font-weight: 800;
+font-size: clamp(24px, 5vw, 34px);
+line-height: 1.2;
+background: linear-gradient(20deg, #ffda72, #5412f3);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+color: transparent;
+text-shadow: 0 2px 12px rgba(0, 150, 255, .25);
 }
 
-/* Tạo nhiều “sao” bằng pseudo-elements với CSS variables */
-h1::before,
-h1::after {
-    content: '✨✨✨';
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 0.8rem;
-    opacity: 0;
-    animation: sparkle 3s linear infinite;
-}
 
-h1::after {
-    animation-delay: 1s; /* để 2 dòng sao nhấp nháy xen kẽ */
-}
-
-/* Keyframes cho sparkle */
-@keyframes sparkle {
-    0%, 100% { transform: translate(0,0) scale(0.5); opacity: 0; }
-    25% { transform: translate(10px,-10px) scale(1); opacity: 1; }
-    50% { transform: translate(20px,5px) scale(0.5); opacity: 0.7; }
-    75% { transform: translate(30px,-5px) scale(1); opacity: 1; }
-}
 /* =========================================
       4. HIỆU ỨNG GÕ CHỮ
       ========================================= */
@@ -612,6 +589,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

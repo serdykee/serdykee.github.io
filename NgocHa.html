@@ -324,7 +324,7 @@ display: none;
 <div class="hearts" aria-hidden="true"></div>
 <div class="stars"></div>
 <section class="serdykee">
-<h1 id="openLetter" style="cursor:pointer"><span id="typedH1"></span><span class="cursor"></span></h1>
+<h1 id="openLetter" style="cursor:pointer">Gửi người anh thương…</h1>
 
 <p id="typeTarget" class="typing"><span id="typedText"></span><span class="cursor"></span></p>
 
@@ -355,12 +355,6 @@ ctn.appendChild(h);
 }
 })();
 
-
-
-
-
-
-	
 // -----------------------------------------------------
 // 2. NỘI DUNG THƯ
 // -----------------------------------------------------
@@ -369,43 +363,35 @@ const sequence = [
 {text: "💖", pause: 1200}
 ];
 
-// -----------------------------
-// HIỆU ỨNG GÕ CHỮ CHO H1, THƯ
-// -----------------------------
-const h1Text = "Gửi người anh thương…"; // chữ h1
-const typedH1 = document.getElementById('typedH1');
-let h1Index = 0;
 
-function typeH1() {
-    if(h1Index < h1Text.length){
-        typedH1.textContent += h1Text.charAt(h1Index++);
-        setTimeout(typeH1, 100); // tốc độ gõ
-    }
+
+// -----------------------------------------------------
+// 3. HIỆU ỨNG BẨM XỔ RA
+// -----------------------------------------------------
+
+let started = false;
+
+document.getElementById('openLetter').addEventListener('click', () => {
+if(started) return;
+started = true;
+
+const card = document.querySelector('.serdykee');
+card.classList.add('open');
+
+// 🎵 TỰ PHÁT NHẠC NỀN KHI MỞ THƯ
+if (bgMusic) {
+bgMusic.currentTime = 0;
+bgMusic.volume = 0.2;
+bgMusic.play().catch(e => {
+console.log('Không phát được nhạc:', e);
+});
 }
 
-// Khi mở thư, bắt đầu gõ h1 + gõ thư - HIỆU ỨNG BẨM XỔ RA
-document.getElementById('openLetter').addEventListener('click', () => {
-    if(started) return;
-    started = true;
-
-    const card = document.querySelector('.serdykee');
-    card.classList.add('open');
-
-    // Phát nhạc nền
-    if (bgMusic) {
-        bgMusic.currentTime = 0;
-        bgMusic.volume = 0.2;
-        bgMusic.play().catch(e => console.log(e));
-    }
-
-    // Bắt đầu gõ h1
-    typeH1();
-
-    // Bắt đầu gõ nội dung thư sau 2.5s
-    setTimeout(() => {
-        runStep(); // gõ chữ trong .typing
-    }, 2500);
+setTimeout(() => {
+runStep(); // ✍️ bắt đầu gõ chữ
+}, 2500);
 });
+
 
 
 
@@ -603,8 +589,6 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
-
-
 
 
 

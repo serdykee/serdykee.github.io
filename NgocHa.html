@@ -208,10 +208,9 @@ to  { opacity:1; transform: translateY(0); }
 
 .btn{
 padding: 10px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.35);
-background: linear-gradient(180deg, rgba(255,255,255,.18), rgba(255,255,255,.06));
+background: linear-gradient(177deg, rgb(241 208 208 / 18%), rgb(247 112 60 / 6%));
 color: var(--text); font-weight: 700; letter-spacing: .3px; cursor: pointer;
 backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-box-shadow: 0 10px 24px rgba(0,0,0,.3);
 transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
 .btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.35); border-color: rgba(255,255,255,.6); }
@@ -228,8 +227,18 @@ display: none;
   opacity: 1;
 	text-align: center;
   transform: translateY(0);
+	animation: rainbow 2s linear infinite;
 }
-
+@keyframes rainbow {
+    0%   { color: rgb(255, 0, 0); }
+    14%  { color: rgb(255, 127, 0); }
+    28%  { color: rgb(255, 255, 0); }
+    42%  { color: rgb(0, 255, 0); }
+    57%  { color: rgb(0, 0, 255); }
+    71%  { color: rgb(75, 0, 130); }
+    85%  { color: rgb(148, 0, 211); }
+    100% { color: rgb(255, 0, 0); }
+}
 
 .footer {
   position: fixed;
@@ -565,6 +574,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

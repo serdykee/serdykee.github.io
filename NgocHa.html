@@ -452,12 +452,11 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     // 3. Hiệu ứng pháo hoa
     sparkle();
     // 4. Hiển thị note
-    note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
+    note.innerHTML = '💖 Anh đang chờ hồi âm của em đấy !';
     note.classList.add('show');
     // 5. Thay nút bằng nút Chat
-    actions.innerHTML = `<button class="btn heart primary" id="btnChat">💌 NHẮN TIN CHO ANH BIẾT NHÉ</button>`;
+    actions.innerHTML = `<button class="btn heart primary" id="btnChat">💌 NHẮN TIN CHO ANH NHÉ</button>`;
     document.getElementById('btnChat').addEventListener('click', () => {
-	note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
     window.open('https://serdykee.github.io', '_blank'); // gắn link chat
     });
 });
@@ -536,11 +535,10 @@ easing: 'cubic-bezier(.2,.8,.2,1)'
 card.appendChild(s);
 setTimeout(()=>s.remove(),2000);
 }
-}
-
+}	
 	
 // -----------------------------------------------------
-// 1.5. THÊM HIỆU ỨNG SAO RƠI (SHOOTING STARS)
+// 1.5. HIỆU ỨNG SAO RƠI (SHOOTING STARS)
 // -----------------------------------------------------
 (function seedStars() {
 const ctn = document.querySelector('.stars');
@@ -570,6 +568,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

@@ -123,40 +123,41 @@ pointer-events: auto;
 
 
 h1 {
-    margin: 0px 0 0px;
+    position: relative;
+    display: inline-block;
     font-weight: 800;
     font-size: clamp(24px, 5vw, 34px);
     line-height: 1.2;
-
+    
     /* Gradient text */
     background: linear-gradient(20deg, #ffda72, #5412f3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
 
-    /* Base text-shadow nhẹ */
-    text-shadow: 0 2px 12px rgba(0, 150, 255, 0.25);
-
-    /* Animation glow */
-    animation: glow 1.5s ease-in-out infinite;
+    /* Glow viền nhẹ */
+    text-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
 }
 
-/* Keyframes cho hiệu ứng lóe sáng viền chữ */
-@keyframes glow {
-    0%, 100% {
-        text-shadow: 
-            0 2px 12px rgba(0, 150, 255, 0.25),
-            0 0 2px rgba(255, 255, 255, 0.1),
-            0 0 4px rgba(255, 255, 255, 0.1);
-    }
-    50% {
-        text-shadow: 
-            0 2px 12px rgba(0, 150, 255, 0.5),
-            0 0 10px rgba(255, 255, 255, 0.5),
-            0 0 20px rgba(255, 255, 255, 0.5);
-    }
+/* Pseudo-element cho sparkle */
+h1::after {
+    content: '✨';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    opacity: 0;
+    animation: sparkle 2s linear infinite;
 }
 
+/* Keyframes sparkle */
+@keyframes sparkle {
+    0%   { transform: translate(0,0) scale(0.5); opacity: 0; }
+    25%  { transform: translate(10px,-10px) scale(1); opacity: 1; }
+    50%  { transform: translate(20px,5px) scale(0.5); opacity: 0.7; }
+    75%  { transform: translate(30px,-5px) scale(1); opacity: 1; }
+    100% { transform: translate(0,0) scale(0.5); opacity: 0; }
+}
 /* =========================================
       4. HIỆU ỨNG GÕ CHỮ
       ========================================= */
@@ -611,6 +612,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

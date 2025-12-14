@@ -379,10 +379,7 @@ function runStep(){
   // Cuộn mượt, KHÔNG nhảy
 function renderText(){
   textEl.textContent = currentText;
-
-  requestAnimationFrame(() => {
-    el.scrollTop = el.scrollHeight;
-  });
+  el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 }
 
 setTimeout(runStep, 2000);
@@ -548,6 +545,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 

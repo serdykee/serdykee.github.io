@@ -89,19 +89,33 @@ transform: translate(500px, 500px) rotate(45deg);
       3. KHUNG CHỨA NỘI DUNG (ĐÃ SỬA Z-INDEX)
       ========================================= */
 .serdykee{
-width: min(1200px, 90vw); 
-height: 95px;              /* 👈 CHỈ CAO ĐỦ CHỨA TIÊU ĐỀ */
-padding: 28px;
-border-radius: 22px;
-animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
-background: var(--glass-bg);
-border: 1px solid var(--glass-brd);
-backdrop-filter: blur(var(--blur)) saturate(140%);
--webkit-backdrop-filter: blur(var(--blur)) saturate(140%);
-box-shadow: 0 20px 50px var(--shadow);
+  width: min(1200px, 90vw); 
+  height: 95px;              /* chiều cao lúc chưa mở */
+  padding: 0 28px;           /* chỉ giữ padding trái/phải, trên/dưới để flex căn giữa */
+  border-radius: 22px;
+  animation: glowPulse 4s ease-in-out infinite;              
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-brd);
+  backdrop-filter: blur(var(--blur)) saturate(140%);
+  -webkit-backdrop-filter: blur(var(--blur)) saturate(140%);
+  box-shadow: 0 20px 50px var(--shadow);
+  overflow: hidden;
+  transition: height 1s ease, padding 1s ease;  /* transition mượt khi xổ ra */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* căn giữa theo trục dọc */
+  align-items: center;      /* căn giữa theo trục ngang */
+}
 
-overflow: hidden;
-transition: height 1s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
+.serdykee.open {
+  height: 520px;             /* chiều cao khi xổ ra */
+  padding: 28px;             /* padding đầy đủ cho nội dung */
+}
+
+.serdykee.open .typing {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 
@@ -112,18 +126,6 @@ transition: height 1s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
 }
 
 @keyframes rise{ from{ transform: translateY(16px); opacity:0 } to{ transform: translateY(0); opacity:1 } }
-
-
-
-.serdykee.open{
-height: 520px;   /* 👈 chiều cao khi xổ */
-}
-
-.serdykee.open .typing{
-opacity: 1;
-pointer-events: auto;
-}
-
 
 
 h1 {
@@ -557,6 +559,7 @@ ctn.appendChild(star);
 
 </body>
 </html>
+
 
 
 

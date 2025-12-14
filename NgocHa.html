@@ -465,8 +465,39 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 }
 
 // ----------------------------------------------------- // 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC CHUẨN MOBILE // ----------------------------------------------------- 
-	const bgMusic = document.getElementById('bgMusic'); const actions = document.getElementById('actions'); const note = document.getElementById('note'); // Nhạc nền dịu bgMusic.volume = 0.2; // ===== NÚT ĐỒNG Ý ===== document.getElementById('btnYes').addEventListener('click', () => { // 1. DỪNG NHẠC NỀN HOÀN TOÀN if(bgMusic && !bgMusic.paused){ bgMusic.pause(); bgMusic.currentTime = 0; } // 2. PHÁT NHẠC HIỆU ỨNG YES RIÊNG const yesEffect = new Audio('./audio/yes.mp3'); yesEffect.volume = 1; yesEffect.play().catch(e => console.log(e)); // 3. HIỆU ỨNG PHÁO HOA sparkle(); // 4. Hiển thị note note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!'; note.classList.add('show'); // 5. Thay nút bằng nút Chat actions.innerHTML = <button class="btn heart primary" id="btnChat"> 💌 NHẮN TIN CHO ANH NHÉ </button> ; document.getElementById('btnChat').addEventListener('click', () => { note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !'; window.open('https://serdykee.github.io', '_blank'); // gắn link chat }); }); // ===== NÚT KHÔNG ĐỒNG Ý ===== document.getElementById('btnNo').addEventListener('click', () => { // 1. DỪNG NHẠC NỀN HOÀN TOÀN if(bgMusic && !bgMusic.paused){ bgMusic.pause(); bgMusic.currentTime = 0; } // 2. PHÁT NHẠC HIỆU ỨNG NO RIÊNG const noEffect = new Audio('./audio/no.mp3'); noEffect.volume = 1; noEffect.play().catch(e => console.log(e)); // 3. HIỆU ỨNG PHÁO HOA sparkle(); // 4. Hiển thị note note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.'; note.classList.add('show'); // 5. Thay nút bằng nút Bye actions.innerHTML = <button class="btn" id="btnBye"> 👋 TẠM BIỆT </button> ; document.getElementById('btnBye').addEventListener('click', () => { note.innerHTML = '🍃 Chúc em luôn bình yên …'; }); });
+const bgMusic = document.getElementById('bgMusic'); const actions = document.getElementById('actions'); const note = document.getElementById('note'); 
+	// Nhạc nền dịu bg
+	Music.volume = 0.2; // ===== NÚT ĐỒNG Ý ===== 
+	document.getElementById('btnYes').addEventListener('click', () => { 
+		// 1. DỪNG NHẠC NỀN HOÀN TOÀN 
+		if(bgMusic && !bgMusic.paused){ bgMusic.pause(); bgMusic.currentTime = 0; } // 2. PHÁT NHẠC HIỆU ỨNG YES RIÊNG 
+		const yesEffect = new Audio('./audio/yes.mp3'); yesEffect.volume = 1; yesEffect.play().catch(e => console.log(e)); // 3. HIỆU ỨNG PHÁO HOA 
+		sparkle(); // 4. Hiển thị note note.
+		innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!'; note.classList.add('show'); // 5. Thay nút bằng nút Chat 
+		actions.innerHTML = <button class="btn heart primary" id="btnChat"> 💌 NHẮN TIN CHO ANH NHÉ </button> ; 
+			document.getElementById('btnChat').addEventListener('click', () => { note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !'; 
+																				window.open('https://serdykee.github.io', '_blank'); // gắn link chat 
+																			   }); }); 
+	
+	// ===== NÚT KHÔNG ĐỒNG Ý ===== 
+	document.getElementById('btnNo').addEventListener('click', () => { 
+		// 1. DỪNG NHẠC NỀN HOÀN TOÀN 
+		if(bgMusic && !bgMusic.paused){ bgMusic.pause(); bgMusic.currentTime = 0; } 
+		// 2. PHÁT NHẠC HIỆU ỨNG NO RIÊNG 
+		const noEffect = new Audio('./audio/no.mp3'); noEffect.volume = 1; noEffect.play().catch(e => console.log(e)); 
+		// 3. HIỆU ỨNG PHÁO HOA 
+		sparkle(); 
+		// 4. Hiển thị note 
+		note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.'; note.classList.add('show'); 
+		// 5. Thay nút bằng nút Bye 
+		actions.innerHTML = <button class="btn" id="btnBye"> 👋 TẠM BIỆT </button> ; document.getElementById('btnBye').addEventListener('click', () => { note.innerHTML = '🍃 Chúc em luôn bình yên …'; 
+			}); });
 
+
+
+
+
+	
 
 // -----------------------------------------------------
 // 5. HIỆU ỨNG SPARKLE PHÁO HOA
@@ -474,7 +505,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 function sparkle(){
 const card = document.querySelector('.serdykee');
 
-for(let i=0;i<60;i++){ // 🔥 tăng số hạt
+for(let i=0;i<60;i++){                                          // 🔥 Tăng số hạt
 const s = document.createElement('span');
 const size = 3 + Math.random()*6;
 
@@ -489,7 +520,7 @@ s.style.pointerEvents='none';
 s.style.zIndex = '30';
 
 const angle = Math.random() * Math.PI * 2;
-const distance = 120 + Math.random()*180; // 💥 nổ xa hơn
+const distance = 120 + Math.random()*180;                        // 💥 Nổ xa hơn
 const dx = Math.cos(angle) * distance;
 const dy = Math.sin(angle) * distance;
 
@@ -506,56 +537,39 @@ setTimeout(()=>s.remove(),2000);
 }
 }
 
-
+	
 // -----------------------------------------------------
 // 1.5. THÊM HIỆU ỨNG SAO RƠI (SHOOTING STARS)
 // -----------------------------------------------------
 (function seedStars() {
 const ctn = document.querySelector('.stars');
-const N = 15; // Số lượng sao băng bạn muốn
-
+const N = 15;                                          // Số lượng sao băng bạn muốn
 for (let i = 0; i < N; i++) {
 const star = document.createElement('div');
 star.className = 'star';
-
-// Thiết lập vị trí, kích thước, và thời gian animation ngẫu nhiên
-const randomX = Math.random() * 100 + 'vw';
+const randomX = Math.random() * 100 + 'vw';             // Thiết lập vị trí, kích thước, và thời gian animation ngẫu nhiên
 const randomY = Math.random() * 100 + 'vh';
-const randomDuration = 3 + Math.random() * 5 + 's'; // 3s đến 8s
-const randomDelay = Math.random() * -10 + 's'; // Delay âm để các ngôi sao xuất hiện ngay
-
+const randomDuration = 3 + Math.random() * 5 + 's';     // 3s đến 8s
+const randomDelay = Math.random() * -10 + 's';          // Delay âm để các ngôi sao xuất hiện ngay
 star.style.left = randomX;
 star.style.top = randomY;
 star.style.animationDuration = randomDuration;
 star.style.animationDelay = randomDelay;
-
-// Kích thước của đuôi sao
-star.style.width = 1 + Math.random() * 2 + 'px'; 
-
+star.style.width = 1 + Math.random() * 2 + 'px';        // Kích thước của đuôi sao
 ctn.appendChild(star);
 }
 })();
-
-
-
-
-
-
 </script>
 <!----------------------------------------------------- SERDYKEE | FOOTER ----------------------------------------------------->
-        <!-- SerdyKee | Footer -->
-        <div class="footer text-center">
+<div class="footer text-center">
             <a target="_blank" aria-label="SerdyKee" rel="noopener nofollow" href="./index.html">
-                <img class="serdykee--style4 text-center" src="./image/serdykee_footer.png" height="15%" width="15%" alt="SerdyKee" />
-            </a>
+            <img class="serdykee--style4 text-center" src="./image/serdykee_footer.png" height="15%" width="15%" alt="SerdyKee" /></a>
             <div class="copyright"> Made with <i class="fa fa-heart heartbeat" data-ipstooltip="" title="SERDYKEE"></i> by Chú cừu dễ thương SerdyKee !</div>
-            
-        </div>
-    </div>
 </div>
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

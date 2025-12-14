@@ -1,3 +1,5 @@
+
+You said:
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -116,7 +118,7 @@ transition: height 1s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
 
 
 .serdykee.open{
-height: 520px;   /* 👈 chiều cao khi xổ */
+height: 600px;   /* 👈 chiều cao khi xổ */
 }
 
 .serdykee.open .typing{
@@ -147,7 +149,7 @@ font-size: clamp(16px, 3.6vw, 18px);
 line-height: 1.6; 
 color: #f2f6ff; 
 text-align: justify;
-margin-top: 0;
+margin-top: 10px;
 padding-top: 0em;
 opacity: 0;              /* 👈 ẨN */
 pointer-events: none;
@@ -233,66 +235,12 @@ transition: transform .12s ease, box-shadow .2s ease, background .2s ease, borde
   opacity: 1;
   transform: translateY(0);
 }
-
-
 .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  color: var(--text);
-  z-index: 50; /* trên các hiệu ứng */
+  bottom: 32px;
+  padding-top: 15px;
+  margin-top: 20px;
 }
-
-.heartbeat {
-  color: #e74c3c;
-  animation: heartbeat 1.5s infinite;
-  font-size: 14px
-}
-@keyframes heartbeat {
-  0% {
-      transform: scale( .75 )
-  }
-  20% {
-      transform: scale( 1 )
-  }
-  40% {
-      transform: scale( .75 )
-  }
-
-  60% {
-      transform: scale( 1 )
-  }
-  80% {
-      transform: scale( .75 )
-  }
-  100% {
-      transform: scale( .75 )
-  }
-}
-.fa {
-  display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
-}
-.fa-heart:before {
-  content: "❤"
-}
-.copyright {
-  font-family: Arial;
-  color: #ffffff63;
-  font-size: 70%;
-  margin-top: 5px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.300);
-}
-
-
-
+	
 </style>
 </head>
 
@@ -466,81 +414,79 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 }
 
 // -----------------------------------------------------
-// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC
+// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC CHUẨN MOBILE
 // -----------------------------------------------------
 const bgMusic = document.getElementById('bgMusic');
-const yesMusic = document.getElementById('yesMusic');
-const noMusic  = document.getElementById('noMusic');
 const actions = document.getElementById('actions');
 const note = document.getElementById('note');
 
-bgMusic.volume = 0.2;      // Nhạc nền dịu
-yesMusic.volume = 1.0;
-noMusic.volume  = 1.0;
-
-
-
+// Nhạc nền dịu
+bgMusic.volume = 0.2;
 
 // ===== NÚT ĐỒNG Ý =====
 document.getElementById('btnYes').addEventListener('click', () => {
-// 1. GIẢM NHẠC NỀN (KHÔNG PAUSE)
-if (bgMusic && !bgMusic.paused) {
-  bgMusic.volume = 0;
-}
-// 🔊 PHÁT NHẠC ĐỒNG Ý
-if (yesMusic) {
-  yesMusic.currentTime = 0;
-  yesMusic.play().catch(e => console.log(e));
-}
+    // 1. DỪNG NHẠC NỀN HOÀN TOÀN
+    if(bgMusic && !bgMusic.paused){
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+    }
 
-sparkle();
+    // 2. PHÁT NHẠC HIỆU ỨNG YES RIÊNG
+    const yesEffect = new Audio('./audio/yes.mp3');
+    yesEffect.volume = 1;
+    yesEffect.play().catch(e => console.log(e));
 
-  note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
+    // 3. HIỆU ỨNG PHÁO HOA
+    sparkle();
 
-	note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
-	note.classList.add('show');
-	
-actions.innerHTML = `
-   <button class="btn heart primary" id="btnChat">
-     💌 NHẮN TIN CHO ANH NHÉ
-   </button>
- `;
+    // 4. Hiển thị note
+    note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
+    note.classList.add('show');
 
-document.getElementById('btnChat').addEventListener('click', () => {
-note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
-// 👉 nếu muốn mở link chat thì gắn ở đây
-window.open('https://serdykee.github.io', '_blank');
-});
+    // 5. Thay nút bằng nút Chat
+    actions.innerHTML = 
+       <button class="btn heart primary" id="btnChat">
+         💌 NHẮN TIN CHO ANH NHÉ
+       </button>
+    ;
+
+    document.getElementById('btnChat').addEventListener('click', () => {
+        note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
+        window.open('https://serdykee.github.io', '_blank'); // gắn link chat
+    });
 });
 
 // ===== NÚT KHÔNG ĐỒNG Ý =====
 document.getElementById('btnNo').addEventListener('click', () => {
-  note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
+    // 1. DỪNG NHẠC NỀN HOÀN TOÀN
+    if(bgMusic && !bgMusic.paused){
+        bgMusic.pause();
+        bgMusic.currentTime = 0;
+    }
 
- // 1. GIẢM NHẠC NỀN (KHÔNG PAUSE)
-if (bgMusic && !bgMusic.paused) {
-  bgMusic.volume = 0;
-}
-// 🔊 PHÁT NHẠC KHÔNG ĐỒNG Ý
-if (yesMusic) {
-  noMusic.currentTime = 0;
-  noMusic.play().catch(e => console.log(e));
-}
-		sparkle();
-note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
-note.classList.add('show');
-	
-actions.innerHTML = `
-   <button class="btn" id="btnBye">
-     👋 TẠM BIỆT NHE
-   </button>
- `;
+    // 2. PHÁT NHẠC HIỆU ỨNG NO RIÊNG
+    const noEffect = new Audio('./audio/no.mp3');
+    noEffect.volume = 1;
+    noEffect.play().catch(e => console.log(e));
 
-document.getElementById('btnBye').addEventListener('click', () => {
-note.innerHTML = '🍃 Chúc em luôn bình yên …';
+    // 3. HIỆU ỨNG PHÁO HOA
+    sparkle();
+
+    // 4. Hiển thị note
+    note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em.';
+    note.classList.add('show');
+
+    // 5. Thay nút bằng nút Bye
+    actions.innerHTML = 
+       <button class="btn" id="btnBye">
+         👋 TẠM BIỆT
+       </button>
+    ;
+
+    document.getElementById('btnBye').addEventListener('click', () => {
+        note.innerHTML = '🍃 Chúc em luôn bình yên …';
+    });
 });
-});
-
 
 
 
@@ -572,7 +518,7 @@ const dy = Math.sin(angle) * distance;
 
 s.animate([
 { transform:'translate(-50%,-50%) scale(1)', opacity:1 },
-{ transform:`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(.2)`, opacity:0 }
+{ transform:translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(.2), opacity:0 }
 ], {
 duration: 1200 + Math.random()*600,
 easing: 'cubic-bezier(.2,.8,.2,1)'
@@ -625,7 +571,7 @@ ctn.appendChild(star);
             <a target="_blank" aria-label="SerdyKee" rel="noopener nofollow" href="./index.html">
                 <img class="serdykee--style4 text-center" src="./image/serdykee_footer.png" height="15%" width="15%" alt="SerdyKee" />
             </a>
-            <div class="copyright"> Made with <i class="fa fa-heart heartbeat" data-ipstooltip="" title="SERDYKEE"></i> by Chú cừu dễ thương SerdyKee !</div>
+            <div class="copyright"> Made with <i class="fa fa-heart heartbeat" data-ipstooltip="" title="SERDYKEE"></i> by Chú cừu SerdyKee và bầy sói</div>
             
         </div>
     </div>
@@ -633,37 +579,4 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | FOOTER ----------------------------------------------------->
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -43,49 +43,6 @@
       background: radial-gradient(1200px 800px at 10% 10%, #2a2a72 0%, #1f1c2c 35%, #111 100%) fixed;
     }
 
-    /* ĐỊNH NGHĨA KEYFRAME SPIN CHO NHẠC */
-    @keyframes spin { 
-      100% { transform: rotate(360deg); } 
-    }
-
-    .music-control {
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        z-index: 100;
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        font-size: 24px;
-        color: var(--text); /* Đảm bảo icon có màu */
-        
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px) saturate(180%);
-        -webkit-backdrop-filter: blur(10px) saturate(180%);
-        
-        display: flex;  
-        justify-content: center;  
-        align-items: center;
-        cursor: pointer;  
-        
-        border: 1px solid rgba(255, 255, 255, 0.6); 
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
-                    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
-
-        transition: all 0.3s ease;
-        animation: spin 8s linear infinite;  
-        animation-play-state: paused;
-    }
-
-    /* Hiệu ứng khi đang phát nhạc (Thêm Glow) */
-    .music-control.playing {  
-        animation-play-state: running;  
-        background: rgba(255, 107, 159, 0.5);
-        border-color: rgba(255, 107, 159, 0.8);
-        box-shadow: 0 0 15px rgba(255, 107, 159, 0.8),
-                    0 0 25px rgba(255, 192, 203, 0.6);
-    }
-
 
     /* =========================================
        2. HIỆU ỨNG TRÁI TIM BAY (ĐÃ SỬA Z-INDEX)
@@ -136,7 +93,7 @@
   height: 120px;              /* 👈 CHỈ CAO ĐỦ CHỨA TIÊU ĐỀ */
   padding: 28px;
   border-radius: 22px;
-  animation: glowPulse 5s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
+  animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
   background: var(--glass-bg);
   border: 1px solid var(--glass-brd);
   backdrop-filter: blur(var(--blur)) saturate(140%);
@@ -160,7 +117,6 @@
 
 .serdykee.open{
   height: 520px;   /* 👈 chiều cao khi xổ */
-	  animation: glowPulse 2.8s ease-in-out infinite;
 }
 
 .serdykee.open .typing{
@@ -262,11 +218,6 @@
 <audio id="bgMusic" loop><source src="./audio/nhacnen.mp3" type="audio/mpeg"></audio>
 <audio id="effectMusic"><source src="./audio/yes.mp3" type="audio/mpeg"></audio> 
 
-<div class="music-control" id="music-control-btn" onclick="toggleMusic()">
-    <i class="fas fa-play" id="music-icon"></i> 
-</div>
-
-
   <div class="hearts" aria-hidden="true"></div>
   <div class="stars"></div>
   <section class="serdykee">
@@ -347,15 +298,24 @@
 let started = false;
 
 document.getElementById('openLetter').addEventListener('click', () => {
-  if(started) return; // chỉ cho chạy 1 lần
+  if(started) return;
   started = true;
 
   const card = document.querySelector('.serdykee');
   card.classList.add('open');
 
+  // 🎵 TỰ PHÁT NHẠC NỀN KHI MỞ THƯ
+  if (bgMusic) {
+    bgMusic.currentTime = 0;
+    bgMusic.volume = 0.2;
+    bgMusic.play().catch(e => {
+      console.log('Không phát được nhạc:', e);
+    });
+  }
+
   setTimeout(() => {
     runStep(); // ✍️ bắt đầu gõ chữ
-  }, 800);
+  }, 2500);
 });
 
 
@@ -426,33 +386,14 @@ function renderText(){
     // -----------------------------------------------------
 const bgMusic = document.getElementById('bgMusic');
 const effectMusic = document.getElementById('effectMusic');
-const musicBtn = document.getElementById('music-control-btn');
-const musicIcon = document.getElementById('music-icon');
 const actions = document.getElementById('actions');
 const note = document.getElementById('note');
 
 bgMusic.volume = 0.2;      // Nhạc nền dịu
 effectMusic.volume = 1.0;  // Hiệu ứng mạnh
 
-	      // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
-    function toggleMusic(){
-      if(bgMusic.paused){
-        // Yêu cầu tương tác của người dùng để phát nhạc
-        bgMusic.play().then(() => {
-          musicBtn.classList.add('playing');
-          musicIcon.classList.remove('fa-play');
-          musicIcon.classList.add('fa-pause');
-        }).catch(error => {
-          console.error('Lỗi phát nhạc:', error);
-        });
-      }else{
-        bgMusic.pause();
-        musicBtn.classList.remove('playing');
-        musicIcon.classList.remove('fa-pause');
-        musicIcon.classList.add('fa-play');
-      }
-    }
-    window.toggleMusic = toggleMusic;     // Gán hàm vào window để gọi từ onclick trong HTML
+
+
 	  
 // ===== NÚT ĐỒNG Ý =====
 document.getElementById('btnYes').addEventListener('click', () => {
@@ -583,6 +524,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 

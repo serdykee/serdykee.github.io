@@ -231,7 +231,6 @@ color: var(--text); font-weight: 700; letter-spacing: .3px; cursor: pointer;
 backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
-.btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,.35); border-color: rgba(255,255,255,.6); }
 .note{ 
 display: none;
   margin-top: 8px;
@@ -493,7 +492,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     note.innerHTML = '💖 Anh đang chờ hồi âm của em đấy !';
     note.classList.add('show');
     // 5. Thay nút bằng nút Chat
-    actions.innerHTML = `<button class="btn heart primary" id="btnYes">💌 NHẮN TIN CHO ANH NHÉ</button>`;
+    actions.innerHTML = `<button class="btn" id="btnYes">💌 NHẮN TIN CHO ANH NHÉ</button>`;
     document.getElementById('btnYes').addEventListener('click', () => {
     window.open('https://serdykee.github.io', '_blank'); // gắn link chat
     });
@@ -606,6 +605,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

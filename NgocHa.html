@@ -458,9 +458,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     note.innerHTML = '💖 Anh hạnh phúc lắm… nhắn tin cho anh nhé!';
     note.classList.add('show');
     // 5. Thay nút bằng nút Chat
-    actions.innerHTML = `
-    <button class="btn heart primary" id="btnChat">💌 NHẮN TIN CHO ANH BIẾT NHÉ</button>
-    `;
+    actions.innerHTML = `<button class="btn heart primary" id="btnChat">💌 NHẮN TIN CHO ANH BIẾT NHÉ</button>`;
     document.getElementById('btnChat').addEventListener('click', () => {
 	note.innerHTML = '💫 Anh đang chờ tin nhắn của em đấy !';
     window.open('https://serdykee.github.io', '_blank'); // gắn link chat
@@ -477,11 +475,10 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     note.innerHTML = '🌙 Anh sẽ tôn trọng quyết định của em !';
     note.classList.add('show');
     // 5. Thay nút bằng nút Bye
-    actions.innerHTML = `
-    <button class="btn" id="btnBye">👋 TẠM BIỆT NHÉ</button>
-    `;
+    actions.innerHTML = `<button class="btn" id="btnBye">👋 TẠM BIỆT NHÉ</button>`;
     document.getElementById('btnBye').addEventListener('click', () => {
     note.innerHTML = '🍃 Chúc em luôn bình yên …';
+	document.body.innerHTML = '<h1 style="text-align:center;margin-top:40vh;color:#fff;">👋 Tạm biệt!</h1>';
     });
 });
 
@@ -559,6 +556,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

@@ -395,9 +395,10 @@ const musicBtn = document.getElementById('music-control-btn');
 const musicIcon = document.getElementById('music-icon');
 const actions = document.getElementById('actions');
 const note = document.getElementById('note');
-const bgMusic = document.getElementById('bgMusic');
-bgMusic.volume = 0.2;      // Nhạc nền dịu xuống
-effectMusic.volume = 1.0;  // Hiệu ứng max lực 
+
+bgMusic.volume = 0.2;      // Nhạc nền dịu
+effectMusic.volume = 1.0;  // Hiệu ứng mạnh
+
 	      // Hàm điều khiển nhạc (SỬA: Đã chuyển sang sử dụng ID và Class)
     function toggleMusic(){
       if(bgMusic.paused){
@@ -547,6 +548,7 @@ document.getElementById('btnNo').addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 

@@ -526,8 +526,6 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 	document.getElementById('btnYes').addEventListener('click', () => {
 	// 1. Dừng nhạc nền hoàn toàn
     if(bgMusic && !bgMusic.paused){bgMusic.pause(); bgMusic.currentTime = 0;}
-	// 2. Hiệu ứng pháo hoa
-    sparkle();
     // 3. Phát nhạc hiệu ứng YES
     const yesEffect = new Audio('./audio/yes.mp3'); yesEffect.volume = 1; yesEffect.play().catch(e => console.log(e));
     // 4. Hiển thị note
@@ -647,6 +645,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

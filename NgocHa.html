@@ -499,7 +499,7 @@ document.getElementById('btnYes').addEventListener('click', () => {
     // 5. Thay nút bằng nút Chat
     actions.innerHTML = `
        <button class="btn heart primary" id="btnChat">
-         💌 NHẮN TIN CHO ANH NHÉ
+         💌 NHẮN TIN CHO ANH BIẾT NHÉ
        </button>
     `;
 
@@ -521,10 +521,6 @@ document.getElementById('btnNo').addEventListener('click', () => {
     const noEffect = new Audio('./audio/no.mp3');
     noEffect.volume = 1;
     noEffect.play().catch(e => console.log(e));
-
-    // 3. HIỆU ỨNG PHÁO HOA
-    sparkle();
-
     // 4. Hiển thị note
     note.innerHTML = '🌙 Không sao cả ! Anh tôn trọng quyết định của em';
     note.classList.add('show');
@@ -532,12 +528,12 @@ document.getElementById('btnNo').addEventListener('click', () => {
     // 5. Thay nút bằng nút Bye
     actions.innerHTML = `
        <button class="btn" id="btnBye">
-         👋 TẠM BIỆT
+         👋 TẠM BIỆT EM
        </button>
     `;
-
     document.getElementById('btnBye').addEventListener('click', () => {
         note.innerHTML = '🍃 Chúc em luôn bình yên …';
+		window.open('https://serdykee.github.io', '_blank'); // gắn link chat
     });
 });
 
@@ -632,6 +628,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | FOOTER ----------------------------------------------------->
 </body>
 </html>
+
 
 
 

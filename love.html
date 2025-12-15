@@ -274,22 +274,19 @@ display: none;
 }
 
 /* ----------------------------------Header--------------------------------------- */
-.display-image {
-  border-radius: 50%;
-  display: block;
-  height: 96px;
-  width: 96px;
-  border:2px solid #fff;
-  box-shadow: 0px 2px 3px #0000002a;
-  -moz-border-radius:190px;
-  -webkit-border-radius:190px;
-      position: relative;
-    z-index: 10;
-  margin-bottom: -20px; /* 👈 KÉO ẢNH ĐÈ LÊN KHUNG */
+.display-image{
+    width: 96px;
+    height: 96px;
+    display: block;
+	border-radius: 50%;
+	position: relative;
+	border: 2px solid var(--glass-brd);
+	z-index: 10; 
+	margin-bottom: -20px;
+animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
 }
-
 .serdykee-wrap{
-	 transform: translateY(-8%);
+	 transform: translateY(-5%);
     position: relative;
     display: flex;
     flex-direction: column;

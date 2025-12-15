@@ -13,6 +13,7 @@
 <meta property="og:title" content="💌 Tâm thư gửi em ! - SerdyKee">
 <meta property="og:description" content="💖 Tận sâu trong đáy lòng anh !">
 <meta property="og:image" content="https://serdykee.github.io/image/serdykee.jpg">
+<link rel="stylesheet" href="./css/serdykee.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 	
 <!----------------------------------------------------- SERDYKEE | CSS BANKER ----------------------------------------------------->
@@ -100,7 +101,7 @@ backdrop-filter: blur(var(--blur)) saturate(140%);
 -webkit-backdrop-filter: blur(var(--blur)) saturate(140%);
 box-shadow: 0 20px 50px var(--shadow);
 overflow: hidden;
-transition: height 1s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
+transition: height 2s ease;  /* 👈 CHO PHÉP XỔ MƯỢT */
   position: relative;
   display: inline-block;
 }
@@ -272,70 +273,6 @@ display: none;
     0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
     50% { text-shadow: 0 0 10px #fff, 0 0 20px #fff; }
 }
-/* ----------------------------------Footer--------------------------------------- */
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-  padding: 10px 0;
-  color: var(--text);
-  z-index: 50; /* trên các hiệu ứng */
-}
-.footer-logo{
-    background: url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/); 
-	repeat scroll 0% 0% transparent;
-  width: 60px;  
-    height: auto;
-}
-.heartbeat {
-  color: #e74c3c;
-  animation: heartbeat 1.5s infinite;
-  font-size: 14px
-}
-@keyframes heartbeat {
-  0% {
-      transform: scale( .75 )
-  }
-  20% {
-      transform: scale( 1 )
-  }
-  40% {
-      transform: scale( .75 )
-  }
-
-  60% {
-      transform: scale( 1 )
-  }
-  80% {
-      transform: scale( .75 )
-  }
-  100% {
-      transform: scale( .75 )
-  }
-}
-.fa {
-  display: inline-block;
-  font: normal normal normal 15px/1 FontAwesome;
-  font-size: inherit;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
-}
-.fa-heart:before {
-  content: "❤"
-}
-.copyright {
-  font-family: Arial;
-  color: #ffffff63;
-  font-size: clamp(11px, 2.5vw, 13px);
-  margin-top: 5px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.300);
-}
-
-
-
 </style>
 </head>
 <!----------------------------------------------------- SERDYKEE | BODY ----------------------------------------------------->	
@@ -453,7 +390,7 @@ console.log('Không phát được nhạc:', e);
 
 setTimeout(() => {
 runStep(); // ✍️ bắt đầu gõ chữ
-}, 2500);
+}, 3000);
 });
 
 
@@ -461,18 +398,15 @@ runStep(); // ✍️ bắt đầu gõ chữ
 
 
 // -----------------------------------------------------
-// 3. XỬ LÝ LOGIC GÕ CHỮ (Đã thêm chức năng cuộn tự động)
+// 3. XỬ LÝ LOGIC GÕ CHỮ, CUỘN TỰ ĐỘNG
 // -----------------------------------------------------
 const el = document.getElementById('typeTarget');
 const textEl = document.getElementById('typedText');
-
-
 const charSpeed = 50, delSpeed = 25;  
 let stepIndex = 0, charIndex = 0, currentText = '';
-
 function runStep(){
 if(stepIndex >= sequence.length){
-// === KHI KẾT THÚC GÕ CHỮ ===
+// Khi kết thúc gõ chữ
 document.getElementById('actions').classList.add('show');
 // Kích hoạt class scrollable và cuộn về cuối
 el.classList.add('scrollable');
@@ -480,7 +414,6 @@ el.scrollTop = el.scrollHeight - 10;
 return;
 }
 const step = sequence[stepIndex];
-
 if(step.text !== undefined){
 if(charIndex < step.text.length){
 currentText += step.text.charAt(charIndex++);
@@ -519,10 +452,9 @@ textEl.textContent = currentText;
 el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 }
 
-	
-	// -----------------------------------------------------
+	// ------------------------------------------------------------------
 	// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC CHUẨN MOBILE
-	// -----------------------------------------------------
+	// ------------------------------------------------------------------
 	const bgMusic = document.getElementById('bgMusic');
 	const actions = document.getElementById('actions');
 	const note = document.getElementById('note');
@@ -573,56 +505,12 @@ actions.innerHTML = '';
     text-align: center;
         ">👋 Tạm biệt !</div>
       `;
-
-		
     });
 });
 
-
-
-	
-
-// -----------------------------------------------------
-// 5. HIỆU ỨNG SPARKLE PHÁO HOA
-// -----------------------------------------------------
-function sparkle(){
-const card = document.querySelector('.serdykee');
-
-for(let i=0;i<60;i++){                                          // 🔥 Tăng số hạt
-const s = document.createElement('span');
-const size = 3 + Math.random()*6;
-
-s.style.position='absolute';
-s.style.left='50%';
-s.style.top='55%';
-s.style.width=s.style.height=size+'px';
-s.style.borderRadius='50%';
-s.style.background = ['#ff9ac0','#7cf7d4','#fff','#ffd700'][Math.floor(Math.random()*4)];
-s.style.filter='drop-shadow(0 0 12px rgba(255,255,255,.9))';
-s.style.pointerEvents='none';
-s.style.zIndex = '30';
-
-const angle = Math.random() * Math.PI * 2;
-const distance = 120 + Math.random()*180;                        // 💥 Nổ xa hơn
-const dx = Math.cos(angle) * distance;
-const dy = Math.sin(angle) * distance;
-
-s.animate([
-{ transform:'translate(-50%,-50%) scale(1)', opacity:1 },
-{ transform:`translate(calc(-50% + ${dx}px), calc(-50% + ${dy}px)) scale(.2)`, opacity:0 }
-], {
-duration: 1200 + Math.random()*600,
-easing: 'cubic-bezier(.2,.8,.2,1)'
-});
-
-card.appendChild(s);
-setTimeout(()=>s.remove(),2000);
-}
-}	
-	
-// -----------------------------------------------------
+// ------------------------------------------------------------------
 // 1.5. HIỆU ỨNG SAO RƠI (SHOOTING STARS)
-// -----------------------------------------------------
+// ------------------------------------------------------------------
 (function seedStars() {
 const ctn = document.querySelector('.stars');
 const N = 15;                                          // Số lượng sao băng bạn muốn

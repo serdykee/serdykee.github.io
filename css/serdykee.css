@@ -1239,19 +1239,7 @@ html {
 }
 
 
-/* ---------------------------------------------------------- SERDYKEE | HEADER & FOOTER ---------------------------------------------------------- */
 
-.header {
-  bottom: 32px;
-  padding-top: 15px;
-  margin-top: 20px;
-}
-
-.footer {
-  bottom: 32px;
-  padding-top: 15px;
-  margin-top: 20px;
-}
 
 /* SERDYKEE ------------------------------------------------------------------------------*/
 
@@ -1393,33 +1381,42 @@ html {
     .serdykee--style4 {
 background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scroll 0% 0% transparent;
 
-}
-.box-new {
-  margin-left: 10px;
-  color: #fff;
-  background: #4080FF;
-  border-radius: 4px;
-  padding-top: 1px;
-  padding-right: 4px;
-  padding-bottom: 1px;
-  padding-left: 4px;
-}
 
+
+/* ---------------------------------------------------------- SERDYKEE | HEADER & FOOTER ---------------------------------------------------------- */
+.header {
+  bottom: 32px;
+  padding-top: 15px;
+  margin-top: 20px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  color: var(--text);
+  z-index: 50; /* trên các hiệu ứng */
+}
+.footer-logo{
+    background: url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/); 
+	repeat scroll 0% 0% transparent;
+  width: 60px;  
+    height: auto;
+}
 .heartbeat {
   color: #e74c3c;
   animation: heartbeat 1.5s infinite;
   font-size: 14px
 }
-
 @keyframes heartbeat {
   0% {
       transform: scale( .75 )
   }
-
   20% {
       transform: scale( 1 )
   }
-
   40% {
       transform: scale( .75 )
   }
@@ -1427,18 +1424,16 @@ background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scr
   60% {
       transform: scale( 1 )
   }
-
   80% {
       transform: scale( .75 )
   }
-
   100% {
       transform: scale( .75 )
   }
 }
 .fa {
   display: inline-block;
-  font: normal normal normal 14px/1 FontAwesome;
+  font: normal normal normal 15px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -1447,12 +1442,10 @@ background:url(https://vnxf.vn/attachments/bg4_zps012f7fcf-gif.2891/) repeat scr
 .fa-heart:before {
   content: "❤"
 }
-
-
 .copyright {
   font-family: Arial;
   color: #ffffff63;
-  font-size: 70%;
+  font-size: clamp(11px, 2.5vw, 13px);
   margin-top: 5px;
   text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.300);
 }

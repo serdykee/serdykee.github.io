@@ -1117,6 +1117,7 @@ html {
 }
 
 .link-item {
+	border: 1px solid var(--glass-brd);
   backdrop-filter: blur(1px);
   position: relative;
   display: grid;
@@ -1244,6 +1245,11 @@ html {
 /* SERDYKEE ------------------------------------------------------------------------------*/
 
 #root {
+	--glass-bg: rgba(255,255,255,.05);   
+--glass-brd: rgba(255,255,255,.35);  
+--text: #f6f7fb;                     
+--shadow: rgba(0,0,0,.25);           
+--blur: 3px;   
   display: flex;
   align-items: center;
   justify-content: center;

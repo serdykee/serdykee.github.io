@@ -275,7 +275,6 @@ display: none;
 
 /* ----------------------------------Header--------------------------------------- */
 .display-image {
-	top: 0;
   border-radius: 50%;
   display: block;
   height: 96px;
@@ -284,6 +283,18 @@ display: none;
   box-shadow: 0px 2px 3px #0000002a;
   -moz-border-radius:190px;
   -webkit-border-radius:190px;
+      position: relative;
+    z-index: 10;
+  margin-bottom: -20px; /* 👈 KÉO ẢNH ĐÈ LÊN KHUNG */
+}
+
+.serdykee-wrap{
+	 transform: translateY(-80px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 5; /* trên sao & tim.. để đưa avt serdykee lên trên khung .serdykee */
 }
 /* ----------------------------------Footer--------------------------------------- */
 .footer {
@@ -359,8 +370,13 @@ display: none;
 	
 <div class="hearts" aria-hidden="true"></div>
 <div class="stars"></div>
- <div class="header text-center">
-        <img id="displayImage" class="display-image m-auto" src="./image/serdykee.jpg" alt role="presentation" /></div>
+
+<div class="serdykee-wrap">
+        <img id="displayImage"
+         class="display-image"
+         src="./image/serdykee.jpg"
+         alt="SerdyKee">
+		 
 <section class="serdykee">
 <h1 id="openLetter" style="cursor:pointer">Gửi người anh thương…</h1>
 
@@ -373,7 +389,7 @@ display: none;
 
 <div class="note" id="note"></div>
 </section>
-
+</div>
 <script>
 // -----------------------------------------------------
 // 1. TẠO HIỆU ỨNG TRÁI TIM BAY
@@ -397,7 +413,7 @@ ctn.appendChild(h);
 // 2. NỘI DUNG THƯ
 // -----------------------------------------------------
 const sequence = [
-{text: "....... yêu dấu !", pause: 2200},
+{text: "Ngọc Hà yêu dấu !", pause: 2200},
       {text: "\nAnh vốn dĩ không phải là một người hoàn hỏaoo...", pause: 700},
       {delete: 8, pause: 500},
       {text: "hảo,", pause: 1250},

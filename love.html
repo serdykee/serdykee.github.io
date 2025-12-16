@@ -471,31 +471,32 @@ const sequence = [
 // -----------------------------------------------------
 // 3. HIỆU ỨNG BẨM XỔ RA
 // -----------------------------------------------------
-
+const bgMusic = document.getElementById('bgMusic');
 let started = false;
 
-document.getElementById('openLetter').addEventListener('click', () => {
-if(started) return;
-started = true;
+function openSerdykee() {
+  if (started) return;
+  started = true;
 
 const card = document.querySelector('.serdykee');
 card.classList.add('open');
 
 // 🎵 TỰ PHÁT NHẠC NỀN KHI MỞ THƯ
-if (bgMusic) {
-bgMusic.currentTime = 0;
-bgMusic.volume = 0.2;
-bgMusic.play().catch(e => {
-console.log('Không phát được nhạc:', e);
-});
-}
+  if (bgMusic) {
+    bgMusic.currentTime = 0;
+    bgMusic.volume = 0.2;
+    bgMusic.play().catch(e => console.log(e));
+  }
 
 setTimeout(() => {
 runStep(); // ✍️ bắt đầu gõ chữ
-}, 3000);
-});
+}, 3200);
+}
+document.getElementById('openLetter')
+  .addEventListener('click', openSerdykee);
 
-
+document.getElementById('displaybadget')
+  .addEventListener('click', openSerdykee);
 
 
 
@@ -557,7 +558,6 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 	// ------------------------------------------------------------------
 	// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC CHUẨN MOBILE
 	// ------------------------------------------------------------------
-	const bgMusic = document.getElementById('bgMusic');
 	const actions = document.getElementById('actions');
 	const note = document.getElementById('note');
 	bgMusic.volume = 0.2; 	// Nhạc nền dịu

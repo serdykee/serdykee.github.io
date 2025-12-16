@@ -147,11 +147,11 @@ margin: 3px 0 0px;
 font-weight: 800;
 font-size: clamp(24px, 5vw, 34px);
 line-height: 1.2;
-background: linear-gradient(20deg, #ffda72, #5412f3);
+background: linear-gradient(150deg, #edf37d, #7877eb, #f10505);
 -webkit-background-clip: text;
 -webkit-text-fill-color: transparent;
 color: transparent;
-text-shadow: 0 2px 12px rgba(0, 150, 255, .25);
+text-shadow: 5px 5px 3px rgba(223, 237, 0, 11%);
 }
 
 /* =========================================
@@ -228,7 +228,7 @@ to  { opacity:1; transform: translateY(0); }
 
 .btn{
 padding: 10px 16px; border-radius: 55px; border: 1px solid rgba(255,255,255,.35);
-background: linear-gradient(177deg, rgb(241 208 208 / 18%), rgb(247 112 60 / 6%));
+background: linear-gradient(180deg, rgb(221 227 239 / 9%), rgb(255 72 1 / 22%));
 color: var(--text); font-weight: 700; letter-spacing: .3px; cursor: pointer;
 backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
@@ -239,7 +239,8 @@ display: none;
   margin-top: 5px;
   padding: 10px 14px;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(15px);
+  transition: opacity 1.2s ease, transform 1.2s ease; /* 👈 Tăng lên 1.2s */
   transition: all .5s ease;
 		font-weight: 750;
 		letter-spacing: -0.9px;;
@@ -248,6 +249,7 @@ display: none;
 .note.show {
     display: block;
     opacity: 1;
+	transform: translateY(0); /* 👈 Trôi lên vị trí ban đầu (hoặc -5px nếu muốn trôi cao hơn) */
     position: relative;
     /* Rainbow gradient chạy ngang */
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
@@ -258,6 +260,7 @@ display: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff;
     /* Animation tổng hợp */
     animation: rainbowMove 3s linear infinite, glow 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
+	animation-delay: 1.2s; /* 👈 QUAN TRỌNG NHẤT */
 }
 /* Rainbow gradient chạy sang phải */
 @keyframes rainbowMove {

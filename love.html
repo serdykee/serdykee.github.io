@@ -142,7 +142,7 @@ scroll-padding-top: 2em;
 
 
 h1 {
-margin: 0px 0 0px;
+margin: 3px 0 0px;
 font-weight: 800;
 font-size: clamp(24px, 5vw, 34px);
 line-height: 1.2;
@@ -275,16 +275,16 @@ display: none;
 /* ----------------------------------Header--------------------------------------- */
 .display-badget{
     width: 165px;
-    height: 170px;
+    height: 160px;
 		border-radius: 50%;
     display: block;
 	position: relative;
 	z-index: 11; 
-	margin-bottom: -132px;
+	margin-bottom: -120px;
 }
 .display-image{
-    width: 96px;
-    height: 96px;
+    width: 86px;
+    height: 86px;
     display: block;
 	border-radius: 50%;
 	position: relative;
@@ -317,6 +317,8 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
 	repeat scroll 0% 0% transparent;
   width: 60px;  
     height: auto;
+	opacity: 0.65; /* mờ 80% */
+	    transition: opacity .3s ease;
 }
 .heartbeat {
   color: #e74c3c;

@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
 
 <title>💌 Tâm thư gửi em !</title>
 <meta name="description" content="Chú cừu SerdyKee và bầy sói !" />
@@ -92,7 +92,7 @@ transform: translate(500px, 500px) rotate(45deg);
 width: min(1200px, 90vw); 
 height: 95px;              /* 👈 CHỈ CAO ĐỦ CHỨA TIÊU ĐỀ */
 padding: 28px;
-border-radius: 22px;
+border-radius: 55px;
 animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
 background: var(--glass-bg);
 border: 1px solid var(--glass-brd);
@@ -142,15 +142,15 @@ scroll-padding-top: 2em;
 
 
 h1 {
-margin: 0px 0 0px;
-font-weight: 800;
-font-size: clamp(24px, 5vw, 34px);
-line-height: 1.2;
-background: linear-gradient(20deg, #ffda72, #5412f3);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-color: transparent;
-text-shadow: 0 2px 12px rgba(0, 150, 255, .25);
+	    text-align: center;
+		margin: 3px 0 0px;
+		font-weight: 800;
+		font-size: clamp(24px, 5vw, 34px);
+		line-height: 1.2;
+		background: linear-gradient(150deg, #edf37d, #7877eb, #f10505);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		text-shadow: 5px 5px 3px rgba(223, 237, 0, 11%);
 }
 
 /* =========================================
@@ -226,24 +226,29 @@ to  { opacity:1; transform: translateY(0); }
 }
 
 .btn{
-padding: 10px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.35);
-background: linear-gradient(177deg, rgb(241 208 208 / 18%), rgb(247 112 60 / 6%));
+padding: 10px 16px; border-radius: 55px; border: 1px solid rgba(255,255,255,.35);
+background: linear-gradient(180deg, rgb(221 227 239 / 9%), rgb(255 72 1 / 22%));
 color: var(--text); font-weight: 700; letter-spacing: .3px; cursor: pointer;
 backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
 .note{ 
+    text-align: center;
 display: none;
   margin-top: 5px;
   padding: 10px 14px;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateY(15px);
+  transition: opacity 1.2s ease, transform 1.2s ease; /* 👈 Tăng lên 1.2s */
   transition: all .5s ease;
+		font-weight: 750;
+		letter-spacing: -0.9px;;
+		transform-origin: center; 
 }
 .note.show {
     display: block;
     opacity: 1;
-    text-align: center;
+	transform: translateY(0); /* 👈 Trôi lên vị trí ban đầu (hoặc -5px nếu muốn trôi cao hơn) */
     position: relative;
     /* Rainbow gradient chạy ngang */
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
@@ -254,6 +259,7 @@ display: none;
     text-shadow: 0 0 5px #fff, 0 0 10px #fff;
     /* Animation tổng hợp */
     animation: rainbowMove 3s linear infinite, glow 1.5s ease-in-out infinite, float 3s ease-in-out infinite;
+	animation-delay: 1.2s; /* 👈 QUAN TRỌNG NHẤT */
 }
 /* Rainbow gradient chạy sang phải */
 @keyframes rainbowMove {
@@ -266,7 +272,6 @@ display: none;
     50% { transform: translateY(-10px); }
     100% { transform: translateY(0); }
 }
-
 /* Glow viền chữ nhấp nháy */
 @keyframes glow {
     0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #fff; }
@@ -274,9 +279,18 @@ display: none;
 }
 
 /* ----------------------------------Header--------------------------------------- */
+.display-badget{
+    width: 165px;
+    height: 160px;
+		border-radius: 50%;
+    display: block;
+	position: relative;
+	z-index: 11; 
+	margin-bottom: -120px;
+}
 .display-image{
-    width: 96px;
-    height: 96px;
+    width: 86px;
+    height: 86px;
     display: block;
 	border-radius: 50%;
 	position: relative;
@@ -309,6 +323,8 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
 	repeat scroll 0% 0% transparent;
   width: 60px;  
     height: auto;
+	opacity: 0.65; /* mờ 80% */
+	    transition: opacity .3s ease;
 }
 .heartbeat {
   color: #e74c3c;
@@ -350,9 +366,11 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
 .copyright {
   font-family: Arial;
   color: #ffffff63;
-  font-size: clamp(11px, 2.5vw, 13px);
+  font-size: 12px; /* KHÔNG dùng clamp */
+  line-height: 1.4;
   margin-top: 5px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.300);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 
@@ -369,19 +387,24 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
 <div class="stars"></div>
 
 <div class="serdykee-wrap">
-        <img id="displayImage"
+        <img id="displaybadget"
+         class="display-badget"
+         src="./image/badget.png"
+         alt="SerdyKee">
+		 
+		<img id="displayImage"
          class="display-image"
          src="./image/serdykee.jpg"
          alt="SerdyKee">
 		 
 <section class="serdykee">
-<h1 id="openLetter" style="cursor:pointer">Gửi người anh thương…</h1>
+<h1 id="openLetter" style="cursor:pointer">Gửi người anh thương…❤️</h1>
 
 <p id="typeTarget" class="typing"><span id="typedText"></span><span class="cursor"></span></p>
 
 <div class="actions" id="actions">
 <button class="btn" id="btnYes">💖 ĐỒNG Ý</button>
-<button class="btn" id="btnNo">🌙 KHÔNG ĐỒNG Ý</button>
+<button class="btn" id="btnNo">💔 KHÔNG ĐỒNG Ý</button>
 </div>
 
 <div class="note" id="note"></div>
@@ -455,36 +478,35 @@ const sequence = [
       {text: "💖", pause: 1200}
     ];
 
-
-
 // -----------------------------------------------------
 // 3. HIỆU ỨNG BẨM XỔ RA
 // -----------------------------------------------------
-
+const bgMusic = document.getElementById('bgMusic');
 let started = false;
 
-document.getElementById('openLetter').addEventListener('click', () => {
-if(started) return;
-started = true;
+function openSerdykee() {
+  if (started) return;
+  started = true;
 
 const card = document.querySelector('.serdykee');
 card.classList.add('open');
 
 // 🎵 TỰ PHÁT NHẠC NỀN KHI MỞ THƯ
-if (bgMusic) {
-bgMusic.currentTime = 0;
-bgMusic.volume = 0.2;
-bgMusic.play().catch(e => {
-console.log('Không phát được nhạc:', e);
-});
-}
+  if (bgMusic) {
+    bgMusic.currentTime = 0;
+    bgMusic.volume = 0.2;
+    bgMusic.play().catch(e => console.log(e));
+  }
 
 setTimeout(() => {
 runStep(); // ✍️ bắt đầu gõ chữ
-}, 3000);
-});
+}, 3200);
+}
+document.getElementById('openLetter')
+  .addEventListener('click', openSerdykee);
 
-
+document.getElementById('displaybadget')
+  .addEventListener('click', openSerdykee);
 
 
 
@@ -542,11 +564,18 @@ function renderText(){
 textEl.textContent = currentText;
 el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 }
-
+	// ------------------------------------------------------------------
+	// Hàm Rung Ngắn 2 Lần (Rung: 80ms, Nghỉ: 50ms, Rung: 80ms)
+	// ------------------------------------------------------------------
+function vibrateDeny() {
+    // Kiểm tra tính năng Vibration API
+    if (navigator.vibrate) {
+        navigator.vibrate([80, 50, 80]); 
+    }
+}
 	// ------------------------------------------------------------------
 	// 4. XỬ LÝ SỰ KIỆN NÚT BẤM & NHẠC CHUẨN MOBILE
 	// ------------------------------------------------------------------
-	const bgMusic = document.getElementById('bgMusic');
 	const actions = document.getElementById('actions');
 	const note = document.getElementById('note');
 	bgMusic.volume = 0.2; 	// Nhạc nền dịu
@@ -561,7 +590,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     note.innerHTML = '💖 Anh đang chờ hồi âm của em đấy !';
     note.classList.add('show');
     // 5. Thay nút bằng nút Chat
-    actions.innerHTML = `<button class="btn" id="btnYes">💌 NHẮN TIN CHO ANH NHÉ</button>`;
+    actions.innerHTML = `<button class="btn" id="btnYes">💘 NHẮN TIN CHO ANH NHÉ !</button>`;
     document.getElementById('btnYes').addEventListener('click', () => {
     window.open('https://serdykee.github.io', '_blank'); // gắn link chat
     });
@@ -573,6 +602,12 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 	if(bgMusic && !bgMusic.paused){bgMusic.pause(); bgMusic.currentTime = 0;}
     // 2. Phát nhạc hiệu ứng NO
     const noEffect = new Audio('./audio/no.mp3'); noEffect.volume = 1; noEffect.play().catch(e => console.log(e));
+	
+	// === BỔ SUNG: GỌI HÀM RUNG 2 LẦN NGẮN VÀO ĐÂY ===
+    vibrateDeny(); 
+    // ===============================================
+	
+	
     // 4. Hiển thị note
     note.innerHTML = '🌙 Anh sẽ tôn trọng quyết định của em !';
     note.classList.add('show');
@@ -580,7 +615,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 actions.innerHTML = '';
     const btnBye = document.createElement('button');
     btnBye.className = 'btn';
-    btnBye.textContent = '👋 TẠM BIỆT NHÉ';
+    btnBye.textContent = '👋 TẠM BIỆT !';
     actions.appendChild(btnBye);
 // 5. Gắn event listener cho nút Bye
     btnBye.addEventListener('click', () => {
@@ -591,10 +626,10 @@ actions.innerHTML = '';
     align-items: center;
     height: 100vh;
     color: inherit;        /* dùng màu chữ mặc định */
-    font-size: 2.5rem;     /* giống h1 mặc định */
+    font-size: 1.5rem;     /* giống h1 mặc định */
     font-weight: 700;      /* giống h1 mặc định */
     text-align: center;
-        ">👋 Tạm biệt !</div>
+        ">🍃 Chúc em luôn bình yên …</div>
       `;
     });
 });
@@ -624,7 +659,7 @@ ctn.appendChild(star);
 <!----------------------------------------------------- SERDYKEE | FOOTER ----------------------------------------------------->
 <div class="footer text-center">
             <a target="_blank" aria-label="SerdyKee" rel="noopener nofollow" href="./index.html">
-			<img class="footer-logo" src="./image/serdykee_footer.png" alt="SerdyKee"></a>
+			<img class="footer-logo" src="./image/serdykee_footer.gif" alt="SerdyKee"></a>
             <div class="copyright"> Made with <i class="fa fa-heart heartbeat" data-ipstooltip="" title="SERDYKEE"></i> by Chú cừu dễ thương SerdyKee !</div>
 </div>
 <!----------------------------------------------------- SERDYKEE | ENDING ----------------------------------------------------->

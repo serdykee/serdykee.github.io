@@ -92,7 +92,7 @@ transform: translate(500px, 500px) rotate(45deg);
 width: min(1200px, 90vw); 
 height: 95px;              /* 👈 CHỈ CAO ĐỦ CHỨA TIÊU ĐỀ */
 padding: 28px;
-border-radius: 22px;
+border-radius: 55px;
 animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG */
 background: var(--glass-bg);
 border: 1px solid var(--glass-brd);
@@ -142,6 +142,7 @@ scroll-padding-top: 2em;
 
 
 h1 {
+	    text-align: center;
 margin: 3px 0 0px;
 font-weight: 800;
 font-size: clamp(24px, 5vw, 34px);
@@ -226,24 +227,27 @@ to  { opacity:1; transform: translateY(0); }
 }
 
 .btn{
-padding: 10px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,.35);
+padding: 10px 16px; border-radius: 55px; border: 1px solid rgba(255,255,255,.35);
 background: linear-gradient(177deg, rgb(241 208 208 / 18%), rgb(247 112 60 / 6%));
 color: var(--text); font-weight: 700; letter-spacing: .3px; cursor: pointer;
 backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
 transition: transform .12s ease, box-shadow .2s ease, background .2s ease, border-color .2s ease;
 }
 .note{ 
+    text-align: center;
 display: none;
   margin-top: 5px;
   padding: 10px 14px;
   opacity: 0;
   transform: translateY(8px);
   transition: all .5s ease;
+		font-weight: 750;
+		letter-spacing: -0.9px;;
+		transform-origin: center; 
 }
 .note.show {
     display: block;
     opacity: 1;
-    text-align: center;
     position: relative;
     /* Rainbow gradient chạy ngang */
     background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet, red);
@@ -360,9 +364,11 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
 .copyright {
   font-family: Arial;
   color: #ffffff63;
-  font-size: clamp(11px, 2.5vw, 13px);
+  font-size: 12px; /* KHÔNG dùng clamp */
+  line-height: 1.4;
   margin-top: 5px;
-  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.300);
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 
@@ -388,13 +394,13 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
          src="./image/serdykee.jpg"
          alt="SerdyKee">
 <section class="serdykee">
-<h1 id="openLetter" style="cursor:pointer">Gửi người anh thương…</h1>
+<h1 id="openLetter" style="cursor:pointer">Gửi người anh thương…❤️</h1>
 
 <p id="typeTarget" class="typing"><span id="typedText"></span><span class="cursor"></span></p>
 
 <div class="actions" id="actions">
 <button class="btn" id="btnYes">💖 ĐỒNG Ý</button>
-<button class="btn" id="btnNo">🌙 KHÔNG ĐỒNG Ý</button>
+<button class="btn" id="btnNo">💔 KHÔNG ĐỒNG Ý</button>
 </div>
 
 <div class="note" id="note"></div>
@@ -424,48 +430,7 @@ ctn.appendChild(h);
 // -----------------------------------------------------
 const sequence = [
 {text: "....... yêu dấu !", pause: 2200},
-      {text: "\nAnh vốn dĩ không phải là một người hoàn hỏaoo...", pause: 700},
-      {delete: 8, pause: 500},
-      {text: "hảo,", pause: 1250},
-      {text: " anh vẫn đầy những khuyết điểm và những thiếu soots !", pause: 1200},
-	{delete: 7, pause: 200},
-      {text: "sót, ", pause: 500},
-      {text: "chẳng phải lúc nào cũng dịu dàng trước em.", pause: 4200},
 
-      {text: " Mỗi một ngày anh đều cố gắng dành cho em thứ tình yêu mà em xứng đáng được nhận, cho em thứ cảm giác an toàn nhiều hơn, cùng nhau trải qua những ngày tồi tệ, để tìm được những ngày bình yên, như lúc này.", pause: 4200},
-
-
-
-      {text: "\nAnh từng nghĩ mình sẽ", pause: 1200},
-	{delete: 7, pause: 300},
-      {text: "trái tim mình sẽ chẳng thể rung động lại nữa...", pause: 2200},
-      {delete: 3, pause: 420},
-      {text: ". Sau", pause: 650},
-      {text: " những tổn thương cũ, ", pause: 900},
-      {text: "sau những đổ vỡ không lời, ", pause: 900},
-      {text: "anh dần học cách im lặng và tự khâu vá những vết đau mà chẳng ai thấy. ", pause: 3000},
- {text: "Có những đêm dài đến tận 2, 3 giờ sáng, ", pause: 3000},
- {text: "anh chỉ nằm đó, ", pause: 2200},
- {text: "nhìn trần nhà, ", pause: 1200},
- {text: "không buồn, ", pause: 900},
- {text: "không vui, ", pause: 1200},
- {text: "chỉ thấy trống rỗng", pause: 900},
- {text: "...", pause: 4200},
-      {text: "\nVà rồi em đến !!!", pause: 4000},
-
-
-      {text: "\nLàm người yêu anh nhé ?", pause: 4000},
-      {text: "\nĐể anh được yêu em, ", pause: 900},
-      {text: "chở che em ", pause: 900},
-      {text: "và nắm tay em đi hết quãng đời này ", pause: 1200},
-      {text: "- ", pause: 800},
-      {text: "bằng tất cả những gì chân thành nhất mà anh có ", pause: 1200},
-      {text: "và ", pause: 2200},
-      {text: "bằng cả trái tim đã sống lại ", pause: 900},
-      {text: "- vì em ", pause: 900},
-      {text: "😘😘😘", pause: 300},
-      {delete: 6, pause: 200},
-      {text: "💖", pause: 1200}
     ];
 
 
@@ -574,7 +539,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
     note.innerHTML = '💖 Anh đang chờ hồi âm của em đấy !';
     note.classList.add('show');
     // 5. Thay nút bằng nút Chat
-    actions.innerHTML = `<button class="btn" id="btnYes">💌 NHẮN TIN CHO ANH NHÉ</button>`;
+    actions.innerHTML = `<button class="btn" id="btnYes">💘 NHẮN TIN CHO ANH NHÉ !</button>`;
     document.getElementById('btnYes').addEventListener('click', () => {
     window.open('https://serdykee.github.io', '_blank'); // gắn link chat
     });
@@ -593,7 +558,7 @@ el.scrollTop = el.scrollHeight; // 🚀 CUỘN NGAY – RẤT NHANH
 actions.innerHTML = '';
     const btnBye = document.createElement('button');
     btnBye.className = 'btn';
-    btnBye.textContent = '👋 TẠM BIỆT NHÉ';
+    btnBye.textContent = '👋 TẠM BIỆT !';
     actions.appendChild(btnBye);
 // 5. Gắn event listener cho nút Bye
     btnBye.addEventListener('click', () => {
@@ -604,10 +569,10 @@ actions.innerHTML = '';
     align-items: center;
     height: 100vh;
     color: inherit;        /* dùng màu chữ mặc định */
-    font-size: 2.5rem;     /* giống h1 mặc định */
+    font-size: 1.5rem;     /* giống h1 mặc định */
     font-weight: 700;      /* giống h1 mặc định */
     text-align: center;
-        ">👋 Tạm biệt !</div>
+        ">🍃 Chúc em luôn bình yên …</div>
       `;
     });
 });

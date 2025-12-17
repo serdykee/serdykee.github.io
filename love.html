@@ -373,6 +373,36 @@ animation: glowPulse 4s ease-in-out infinite;              /* 👈 VIỀN SÁNG 
   white-space: nowrap;
 }
 
+/* =========================================
+   BOTGET Ở CHÂN KHUNG KHI SERDYKEE MỞ
+   ========================================= */
+.serdykee::before {
+  content: "";
+  position: absolute;
+  bottom: -42px;              /* 👈 thò ra ngoài chân khung */
+  left: 50%;
+  transform: translateX(-50%) scale(0.6);
+  width: 150px;               /* chỉnh theo size botget.png */
+  height: 120px;
+  background: url("./image/botget.png") no-repeat center / contain;
+  opacity: 0;
+  z-index: 30;
+  pointer-events: none;
+  transition: 
+    opacity 1.8s ease,
+    transform 2.2s ease;
+}
+
+/* Khi mở thư */
+.serdykee.open::before {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+  
+/* Ẩn botget khi chọn */
+.serdykee.hide-botget::before {
+  opacity: 0;
+  transform: translateX(-50%) scale(.7);
+}
 
 
 </style>
@@ -582,6 +612,8 @@ function vibrateDeny() {
 
 	// ============ NÚT ĐỒNG Ý ============
 	document.getElementById('btnYes').addEventListener('click', () => {
+		  // 🔴 Ẩn botget TRƯỚC
+  document.querySelector('.serdykee').classList.add('hide-botget');
 	// 1. Dừng nhạc nền hoàn toàn
     if(bgMusic && !bgMusic.paused){bgMusic.pause(); bgMusic.currentTime = 0;}
     // 3. Phát nhạc hiệu ứng YES
@@ -598,6 +630,8 @@ function vibrateDeny() {
 
 	// ========== NÚT KHÔNG ĐỒNG Ý ==========
 	document.getElementById('btnNo').addEventListener('click', () => {
+		  // 🔴 Ẩn botget TRƯỚC
+  document.querySelector('.serdykee').classList.add('hide-botget');
     // 1. Dừng nhạc nền hoàn toàn
 	if(bgMusic && !bgMusic.paused){bgMusic.pause(); bgMusic.currentTime = 0;}
     // 2. Phát nhạc hiệu ứng NO
